@@ -5,278 +5,333 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>本周GitHub热门项目推荐 · 7月第2周</title>
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{
-  font-family:"Georgia","Noto Serif SC","Source Han Serif SC",serif;
-  line-height:1.75;color:#d4d0c8;background:#141416;-webkit-font-smoothing:antialiased;
-  display:flex;min-height:100vh
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
 }
-.sidebar{
-  width:200px;flex-shrink:0;position:sticky;top:0;height:100vh;overflow-y:auto;
-  padding:32px 20px;background:#1a1a1e;border-right:1px solid #25252b;
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+.container { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+.site-header {
+    text-align: center;
+    padding: 48px 0 8px;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 40px;
 }
-.sidebar-title{font-size:13px;font-weight:600;color:#d4d0c8;line-height:1.4;letter-spacing:0.5px}
-.sidebar-title small{display:block;font-weight:400;font-size:11px;color:#5a5a65;margin-top:2px;letter-spacing:0}
-.sidebar-nav{list-style:none;margin-top:20px}
-.sidebar-nav li{margin-bottom:1px}
-.sidebar-nav a{
-  display:block;padding:5px 8px;border-radius:4px;
-  color:#787885;text-decoration:none;font-size:12.5px;transition:all 0.12s
+.site-title { font-size: 24px; font-weight: 700; color: #1a1a1a; text-decoration: none; letter-spacing: 1px; }
+.site-subtitle { font-size: 14px; color: #888; margin-top: 4px; }
+.site-date { font-size: 13px; color: #aaa; margin-top: 8px; }
+.section { margin-bottom: 36px; }
+.section-header {
+    font-size: 15px; font-weight: 600; color: #555;
+    padding-bottom: 8px; margin-bottom: 12px;
+    border-bottom: 1px solid #f0f0f0;
 }
-.sidebar-nav a:hover{background:#25252b;color:#e09f5c}
-.sidebar-foot{margin-top:28px;padding-top:16px;border-top:1px solid #25252b;font-size:11px;color:#4a4a55;line-height:1.7}
-.sidebar-foot a{color:#5a5a65;text-decoration:none}
-.sidebar-foot a:hover{color:#e09f5c}
-
-.main{flex:1;min-width:0;padding:48px 48px 48px 40px;max-width:860px}
-.article-header{border-bottom:1px solid #25252b;padding-bottom:20px;margin-bottom:28px}
-.article-header h1{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-  font-size:22px;font-weight:600;color:#e8e4de;letter-spacing:0.5px
+.project-card {
+    display: block; padding: 14px 0;
+    border-bottom: 1px solid #f5f5f5;
+    text-decoration: none; color: inherit;
 }
-.article-meta{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  font-size:13px;color:#5a5a65;margin-top:6px;display:flex;gap:16px;flex-wrap:wrap
+.project-card:last-of-type { border-bottom: none; }
+.project-number { font-size: 13px; font-weight: 500; color: #ccc; margin-bottom: 2px; }
+.project-name { font-size: 16px; font-weight: 600; color: #1a1a1a; }
+.project-meta { font-size: 13px; color: #888; margin: 2px 0 4px; }
+.project-meta span { margin-right: 10px; }
+.project-desc { font-size: 14px; color: #555; line-height: 1.6; }
+.project-stars { color: #e8a317; }
+.intro {
+    font-size: 14px; color: #666; line-height: 1.8;
+    margin-bottom: 36px; padding: 0 0 20px;
+    border-bottom: 1px solid #f0f0f0;
 }
-.article-meta a{color:#6b6b7a;text-decoration:underline;text-underline-offset:2px}
-.article-meta a:hover{color:#e09f5c}
-
-.summary{
-  font-size:14px;color:#9a9aa5;line-height:1.7;
-  padding:16px 20px;margin-bottom:32px;
-  background:#1a1a1e;border:1px solid #25252b;border-radius:6px
+.intro p { margin-bottom: 8px; }
+.intro em { font-style: normal; color: #1a1a1a; font-weight: 500; }
+.site-footer {
+    text-align: center; padding: 32px 0 48px;
+    border-top: 1px solid #f0f0f0; margin-top: 40px;
+    font-size: 13px; color: #aaa;
 }
-
-.section{margin-bottom:36px;scroll-margin-top:20px}
-.section-header{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-  font-size:13px;font-weight:600;color:#4a4a55;text-transform:uppercase;letter-spacing:1.5px;
-  padding-bottom:10px;margin-bottom:16px;border-bottom:1px solid #25252b
-}
-
-.project-card{
-  display:block;padding:16px 0;
-  border-bottom:1px solid #1e1e24;
-  text-decoration:none;color:inherit;transition:background 0.1s
-}
-.project-card:hover{padding-left:8px;margin-left:-8px;padding-right:8px;margin-right:-8px;background:#1a1a1e;border-radius:4px}
-.project-card:last-of-type{border-bottom:none}
-.project-card:last-of-type:hover{border-bottom:none}
-.project-number{font-size:11px;font-weight:500;color:#3a3a45;margin-bottom:2px}
-.project-name{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
-  font-size:16px;font-weight:600;color:#e8e4de
-}
-.project-meta{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  font-size:13px;color:#5a5a65;margin:3px 0 6px
-}
-.project-meta .star{color:#d4a373}
-.project-meta span{margin-right:12px}
-.project-desc{font-size:14px;color:#9a9aa5;line-height:1.7}
-.project-desc strong{color:#c8c4bc}
-
-.site-footer{
-  text-align:center;padding:36px 0 16px;
-  border-top:1px solid #25252b;margin-top:40px;
-  font-size:12px;color:#3a3a45
-}
-.site-footer a{color:#5a5a65;text-decoration:underline;text-underline-offset:3px}
-.site-footer a:hover{color:#e09f5c}
-
-@media(max-width:768px){
-  body{flex-direction:column}
-  .sidebar{
-    width:100%;height:auto;position:static;padding:20px 24px 12px;
-    border-right:none;border-bottom:1px solid #25252b
-  }
-  .sidebar-title{margin-bottom:8px}
-  .sidebar-nav{display:flex;flex-wrap:wrap;gap:3px;margin-top:10px}
-  .sidebar-nav li{margin-bottom:0}
-  .sidebar-nav a{padding:4px 8px;font-size:12px}
-  .sidebar-foot{display:none}
-  .main{padding:24px 16px;max-width:100%}
-  .article-header h1{font-size:19px}
-  .project-name{font-size:15px}
+@media (max-width: 480px) {
+    .container { padding: 0 16px; }
+    .site-header { padding: 28px 0 8px; }
+    .site-title { font-size: 20px; }
+    .project-name { font-size: 15px; }
 }
 </style>
 </head>
 <body>
-<nav class="sidebar">
-  <div class="sidebar-title">GitHub 热门<br>项目推荐<small>7月第2周</small></div>
-  <ul class="sidebar-nav">
-    <li><a href="#ai-job">AI 求职</a></li>
-    <li><a href="#office">办公和自动化</a></li>
-    <li><a href="#agent">AI Agent 生态</a></li>
-    <li><a href="#video">视频</a></li>
-    <li><a href="#security">安全</a></li>
-    <li><a href="#design">视觉和设计</a></li>
-    <li><a href="#frontier">新奇和前沿</a></li>
-    <li><a href="#summary">几个印象</a></li>
-  </ul>
-  <div class="sidebar-foot">
-    <a href="archive.html">← 返回存档</a><br>
-    <a href="https://github.com/trending" target="_blank" rel="noopener">GitHub Trending ↗</a><br>7月7日 — 7月14日
-  </div>
-</nav>
+<div class="container">
 
-<div class="main">
+    <header class="site-header">
+        <a class="site-title" href="#">本周 GitHub 热门项目推荐</a>
+        <p class="site-subtitle">2026年7月第2周 · 18 个项目</p>
+        <p class="site-date">7月7日 - 7月14日 · 数据来源 GitHub Trending</p>
+    </header>
 
-  <header class="article-header">
-    <h1>本周 GitHub 热门项目推荐</h1>
-    <div class="article-meta">
-      <span>2026 年 7 月第 2 周</span><span>20 个项目深度解读</span>
-      <span><a href="archive.html">存档</a></span>
+    <div class="intro">
+        <p>每周一更新，整理 GitHub Trending 上本周涨星最快的项目。</p>
+        <p><em>筛选标准：</em>GitHub Trending 本周涨星排名；剔除纯文档、纯教程类项目；优先选有实际工具价值的项目。</p>
+        <p>这周的 Trending 有个明显的主题：<strong>AI Agent 工具生态正在快速成型</strong>。18 个项目里有 8 个直接跟 Agent 工具链相关，从 Office 自动化到多 Agent 调度、从代码审查到网页操作，覆盖面非常广。</p>
     </div>
-  </header>
 
-  <div class="summary">
-    这周的主题很明确：AI 工具之间开始串起来了。不再是一个 AI 闷头干活，而是好几个 AI 互相调用、分工协作。安全测试和自动化也在被 AI 翻新。同时一批 AI 求职项目冒出来——找工作这件事也在被 AI 改造。
-  </div>
-
-  <section class="section" id="ai-job">
-    <h2 class="section-header">AI 求职 &amp; 个人自动化</h2>
-    <a class="project-card" href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">
-      <div class="project-number">01</div>
-      <div class="project-name">ai-job-search</div>
-      <div class="project-meta"><span>MadsLorentzen/ai-job-search</span><span>Python</span><span class="star">本周 +15,420 ⭐</span><span>总 ⭐23,456</span></div>
-      <div class="project-desc">ai-job-search 是一个跑在你本地电脑上的 AI 求职自动化框架。它能自动搜索招聘信息，根据你的背景生成定制化简历和求职信，还能跟踪每一份申请的进度状态。对正在找工作的开发者来说，相当于把投简历这件事交给 AI 去跑，自己只需要关注面试就好。它的工作方式是本地运行，你的简历数据不会上传到任何第三方服务器。这周涨了一万五千颗星冲上榜首，说明这个方向确实戳中了很多人的痛点。</div>
-    </a>
-  </section>
-
-  <section class="section" id="office">
-    <h2 class="section-header">办公和自动化</h2>
-    <a class="project-card" href="https://github.com/iOfficeAI/OfficeCLI" target="_blank" rel="noopener">
-      <div class="project-number">01</div>
-      <div class="project-name">OfficeCLI</div>
-      <div class="project-meta"><span>iOfficeAI/OfficeCLI</span><span>C#</span><span class="star">本周 +7,596 ⭐</span><span>总 ⭐16,242</span></div>
-      <div class="project-desc">OfficeCLI 是一个命令行工具，让 AI 可以直接读写 Word、Excel、PPT 这三种最常见的办公文件。它只需要一个二进制文件，不需要安装 Office 就能用。实际场景很实用：让 AI 一次性批量处理几十份 Excel 报表、根据模板生成 PPT、或者从合同里抽关键条款。对于经常和 Office 文件打交道的团队来说，这个工具可以把大量重复劳动交给 AI 去做。这周涨星排第二，涨了近八千颗星。</div>
-    </a>
-    <a class="project-card" href="https://github.com/Zackriya-Solutions/meetily" target="_blank" rel="noopener">
-      <div class="project-number">02</div>
-      <div class="project-name">Meetily</div>
-      <div class="project-meta"><span>Zackriya-Solutions/meetily</span><span>Rust</span><span class="star">本周 +5,392 ⭐</span><span>总 ⭐24,258</span></div>
-      <div class="project-desc">Meetily 是一个纯本地运行的会议记录工具。它把录音、语音转文字、说话人识别、AI 总结全部放在你的电脑上完成，不上传任何数据到云端。用 Rust 编写，基于 Ollama 做 AI 总结，性能和隐私都有保障。隐私保护是它的核心卖点——如果你的团队对会议数据比较敏感，这个工具把整个过程锁在你的本地机器上。目前已经有超过两万四千颗星。</div>
-    </a>
-  </section>
-
-  <section class="section" id="agent">
-    <h2 class="section-header">AI Agent 生态</h2>
-    <a class="project-card" href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank" rel="noopener">
-      <div class="project-number">01</div>
-      <div class="project-name">System Prompts Leaks</div>
-      <div class="project-meta"><span>asgeirtj/system_prompts_leaks</span><span>JavaScript</span><span class="star">本周 +6,284 ⭐</span><span>总 ⭐57,378</span></div>
-      <div class="project-desc">System Prompts Leaks 收集了几乎所有主流 AI 产品的系统提示词——也就是 AI 公司给自己 AI 设定的底层指令和人格规则，比如各种边界和行为限制。这里包括 Claude Fable 5、Opus 4.8、ChatGPT GPT-5.6、Codex、Gemini 3.5、Grok 等等，而且更新很及时。项目已经五万七千颗星了。与其说这是一个工具，不如说是一份记录了 AI 行业配方的公开档案。</div>
-    </a>
-    <a class="project-card" href="https://github.com/stablyai/orca" target="_blank" rel="noopener">
-      <div class="project-number">02</div>
-      <div class="project-name">Orca</div>
-      <div class="project-meta"><span>stablyai/orca</span><span>TypeScript</span><span class="star">本周 +5,263 ⭐</span><span>总 ⭐18,436</span></div>
-      <div class="project-desc">Orca 是一个桌面应用，让你能在一个面板里同时跑多个 AI 编程 Agent。你可以同时用 Codex、Claude Code 等工具，用自己的 API 订阅就行。它把多个 AI 的能力整合到一起，不用来回切换窗口，管理起来方便很多。对于同时在用多个编程 AI 的开发者来说，这个可以减少很多来回切工具的麻烦。另外它有桌面版和手机版，出门在外也能用。</div>
-    </a>
-    <a class="project-card" href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener">
-      <div class="project-number">03</div>
-      <div class="project-name">OmniRoute</div>
-      <div class="project-meta"><span>diegosouzapw/OmniRoute</span><span>TypeScript</span><span class="star">本周 +4,345 ⭐</span><span>总 ⭐16,926</span></div>
-      <div class="project-desc">OmniRoute 是一个统一的 AI 网关，一个 API 入口背后连接了 231 个 AI 服务，其中五十多个是免费的。它还带一个 Token 压缩功能，号称能省 15% 到 95% 的 Token 用量。不用每个 AI 服务都单独配接口，一个 OmniRoute 统一管理，还能省钱。如果你在日常工作中需要在多个 AI 服务之间切换、对比效果，这个能省掉不少配来配去的麻烦。</div>
-    </a>
-    <a class="project-card" href="https://github.com/ogulcancelik/herdr" target="_blank" rel="noopener">
-      <div class="project-number">04</div>
-      <div class="project-name">herdr</div>
-      <div class="project-meta"><span>ogulcancelik/herdr</span><span>Rust</span><span class="star">本周 +3,449 ⭐</span><span>总 ⭐16,178</span></div>
-      <div class="project-desc">herdr 是一个在终端里跑的 Agent 路由器和调度器。它可以把不同的任务自动分派给不同的 AI 处理，有点像 AI 世界里的负载均衡器。用 Rust 写的，性能和稳定性有保障。如果你同时在用多个 AI 工具，它可以减少手动切换的麻烦，让不同 AI 各司其职。从命令行启动、配置，适合习惯终端操作的开发者。</div>
-    </a>
-    <a class="project-card" href="https://github.com/openai/codex-plugin-cc" target="_blank" rel="noopener">
-      <div class="project-number">05</div>
-      <div class="project-name">Codex Plugin for Claude Code</div>
-      <div class="project-meta"><span>openai/codex-plugin-cc</span><span>JavaScript</span><span class="star">本周 +2,265 ⭐</span><span>总 ⭐28,450</span></div>
-      <div class="project-desc">OpenAI 官方出的插件，让你在 Claude Code 里直接调用 Codex 来审查代码或委派任务。之前这两个工具分别在各自的生态里，开发者需要在两个窗口之间来回切换。现在一个命令就能在 Claude Code 里把代码发给 Codex 审。对于两个工具都用的人来说，这个插件省去了来回切工具的麻烦，合作效率高了不少。</div>
-    </a>
-    <a class="project-card" href="https://github.com/wonderwhy-er/DesktopCommanderMCP" target="_blank" rel="noopener">
-      <div class="project-number">06</div>
-      <div class="project-name">Desktop Commander MCP</div>
-      <div class="project-meta"><span>wonderwhy-er/DesktopCommanderMCP</span><span>TypeScript</span><span class="star">本周 +1,939 ⭐</span><span>总 ⭐8,194</span></div>
-      <div class="project-desc">Desktop Commander MCP 是一个协议服务端，让 Claude 能直接操作你的电脑。它可以跑终端命令、搜索文件系统、对比代码差异，还能读取和编辑文件。本质上是让 AI 像人一样在电脑上干活，不只是聊天框里回答问题。已经有八千多颗星，如果想让 AI 帮你操作电脑、写代码、查日志，这个项目是基础设施级别的。</div>
-    </a>
-  </section>
-
-  <section class="section" id="video">
-    <h2 class="section-header">视频</h2>
-    <a class="project-card" href="https://github.com/bradautomates/claude-video" target="_blank" rel="noopener">
-      <div class="project-number">01</div>
-      <div class="project-name">Claude Video</div>
-      <div class="project-meta"><span>bradautomates/claude-video</span><span>Python</span><span class="star">本周 +4,128 ⭐</span><span>总 ⭐8,187</span></div>
-      <div class="project-desc">Claude Video 给 Claude 装上了看视频的能力。传入一个视频链接，它会自动下载、抽取关键帧、转写语音文字，然后把分析结果交给 Claude。适用场景包括产品演示分析、教程视频解读、会议录像回顾等。如果你经常需要让 AI 帮你理解视频内容，这个比自己手动截图、逐段粘贴过去要方便很多。</div>
-    </a>
-  </section>
-
-  <section class="section" id="security">
-    <h2 class="section-header">安全</h2>
-    <a class="project-card" href="https://github.com/usestrix/strix" target="_blank" rel="noopener">
-      <div class="project-number">01</div>
-      <div class="project-name">Strix</div>
-      <div class="project-meta"><span>usestrix/strix</span><span>Python</span><span class="star">本周 +3,403 ⭐</span><span>总 ⭐41,254</span></div>
-      <div class="project-desc">Strix 是一个开源的 AI 渗透测试工具。它能自动扫描你的应用找漏洞，并给出修复建议。四万多颗星说明安全这个本来很吃人工的领域正在被 AI 改造。对于没有专门安全团队的开发者来说，这类工具大幅降低了安全测试的门槛。你只需要跑一下扫描，它就能给你出一份报告，告诉你哪里有问题、怎么修。</div>
-    </a>
-    <a class="project-card" href="https://github.com/vxcontrol/pentagi" target="_blank" rel="noopener">
-      <div class="project-number">02</div>
-      <div class="project-name">Pentagi</div>
-      <div class="project-meta"><span>vxcontrol/pentagi</span><span>Go</span><span class="star">本周 +2,199 ⭐</span><span>总 ⭐20,435</span></div>
-      <div class="project-desc">Pentagi 是一个全自主的 AI Agent 系统，能独立执行复杂的渗透测试任务。和 Strix 走的是不同的技术路线，这个用 Go 写的，偏向性能和自主决策。它可以自己决定下一步要测什么、怎么测，不用每一步都有人指挥。两万星说明已经有不少团队在用，主要面向专业安全测试场景。</div>
-    </a>
-  </section>
-
-  <section class="section" id="design">
-    <h2 class="section-header">视觉和设计</h2>
-    <a class="project-card" href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">
-      <div class="project-number">01</div>
-      <div class="project-name">Impeccable</div>
-      <div class="project-meta"><span>pbakaus/impeccable</span><span>JavaScript</span><span class="star">本周 +2,450 ⭐</span><span>总 ⭐46,415</span></div>
-      <div class="project-desc">Impeccable 是一套设计语言规范，目标是让 AI 生成界面时做得更好看、更专业。四万六千颗星——说明大家对 AI 的审美这件事真的很在意。这个项目试图给 AI 一些关于设计的基本功，而不是让它自己去猜什么是好看的。对于用 AI 写前端页面的人来说，它能让你生成的界面不那么 AI 味。</div>
-    </a>
-    <a class="project-card" href="https://github.com/facebook/astryx" target="_blank" rel="noopener">
-      <div class="project-number">02</div>
-      <div class="project-name">Astryx</div>
-      <div class="project-meta"><span>facebook/astryx</span><span>TypeScript</span><span class="star">本周 +2,255 ⭐</span><span>总 ⭐8,743</span></div>
-      <div class="project-desc">Astryx 是 Facebook 开源的设计系统。它的特色是不仅给人类用，也给 AI 用——组件结构对 AI 友好，命名和 API 都方便 AI 去理解和生成界面。对于想用 AI 辅助写前端代码的团队来说，这个项目提供了一个很好的基础，AI 能快速上手用它搭界面。目前八千多星，被用在一些 AI 前端的场景里。</div>
-    </a>
-    <a class="project-card" href="https://github.com/alibaba/page-agent" target="_blank" rel="noopener">
-      <div class="project-number">03</div>
-      <div class="project-name">Page Agent</div>
-      <div class="project-meta"><span>alibaba/page-agent</span><span>TypeScript</span><span class="star">本周 +1,950 ⭐</span><span>总 ⭐26,478</span></div>
-      <div class="project-desc">Page Agent 是阿里巴巴出品的工具，用自然语言操控网页界面。你说提交这个表单、翻到下一页、把这个按钮改成红色，它在浏览器里帮你执行。它背后是一个 JavaScript 驱动的 Agent，直接注入到页面里干活。二十六万星，在这个方向上属于头部项目，已经走出了实验室，进入了实际可用的阶段。</div>
-    </a>
-  </section>
-
-  <section class="section" id="frontier">
-    <h2 class="section-header">新奇和前沿</h2>
-    <a class="project-card" href="https://github.com/ruvnet/RuView" target="_blank" rel="noopener">
-      <div class="project-number">01</div>
-      <div class="project-name">RuView</div>
-      <div class="project-meta"><span>ruvnet/RuView</span><span>Rust</span><span class="star">本周 +3,403 ⭐</span><span>总 ⭐80,517</span></div>
-      <div class="project-desc">RuView 是这周最让人惊讶的项目。它不需要摄像头，靠分析 WiFi 信号就能感知空间和人体——可以检测人的位置、呼吸频率、心跳，还能穿墙。它的工作原理是利用 WiFi 信号在室内传播时遇到人体产生的扰动来推算位置和姿态。八万星说明这个方向让人非常兴奋。不是新项目了，但每周还在猛涨。</div>
-    </a>
-    <a class="project-card" href="https://github.com/TencentCloud/CubeSandbox" target="_blank" rel="noopener">
-      <div class="project-number">02</div>
-      <div class="project-name">CubeSandbox</div>
-      <div class="project-meta"><span>TencentCloud/CubeSandbox</span><span>Rust</span><span class="star">本周 +2,367 ⭐</span><span>总 ⭐10,019</span></div>
-      <div class="project-desc">CubeSandbox 是腾讯云开源的轻量级沙箱，给 AI Agent 提供一个安全、快速、并发的运行环境。用 Rust 编写，启动速度比传统容器快很多，适合高频调用的 Agent 场景。刚突破一万星。对于需要在隔离环境里跑 AI Agent 的人来说，它比 Docker 更轻量，比直接开 shell 更安全。</div>
-    </a>
-  </section>
-
-  <section class="section" id="summary">
-    <h2 class="section-header">几个印象</h2>
-    <div style="font-size:14px;color:#9a9aa5;line-height:1.7;">
-      AI Agent 从一个人干活变成一群人搭班：herdr、Orca、OmniRoute 都是这个方向。安全测试被 AI 接管的趋势明显。阿里巴巴的 Page Agent 让说话操控网页走向实用。最后，ai-job-search 是这周的最大惊喜。
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <p><a href="archive.html">← 返回存档</a></p>
-    <p style="margin-top:8px;">数据来源 <a href="https://github.com/trending" target="_blank" rel="noopener">GitHub Trending</a> + GitHub API</p>
-    <p style="margin-top:2px;">统计截止 2026 年 7 月 14 日</p>
-  </footer>
+    <section class="section">
+        <h2 class="section-header">AI Agent 生态工具</h2>
+        <a class="project-card" href="https://github.com/iOfficeAI/OfficeCLI" target="_blank" rel="noopener">
+            <div class="project-number">01</div>
+            <div class="project-name">OfficeCLI</div>
+            <div class="project-meta">
+                <span>iOfficeAI/OfficeCLI</span>
+                <span>C#</span>
+                <span class="project-stars">本周 +7,596 ⭐</span>
+                <span>总 ⭐16.4k</span>
+            </div>
+            <div class="project-desc">
+                专门为 AI Agent 打造的 Office 办公套件命令行工具。Agent 们可以直接用它来读写 Word、Excel、PowerPoint 文件，无需安装 Office 本身。单个二进制文件，跨平台运行。以后让 AI 帮你生成周报、整理表格、做 PPT，不再是想象。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/stablyai/orca" target="_blank" rel="noopener">
+            <div class="project-number">02</div>
+            <div class="project-name">orca</div>
+            <div class="project-meta">
+                <span>stablyai/orca</span>
+                <span>TypeScript</span>
+                <span class="project-stars">本周 +5,263 ⭐</span>
+                <span>总 ⭐18.7k</span>
+            </div>
+            <div class="project-desc">
+                可以同时跑多个 AI Agent 的平台。让几个不同的 Agent 并行工作，用自己的订阅账号就行，桌面端和手机端都能用。经常需要多个 AI 分工协作的话，Orca 提供了一个统一的调度面板。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener">
+            <div class="project-number">03</div>
+            <div class="project-name">OmniRoute</div>
+            <div class="project-meta">
+                <span>diegosouzapw/OmniRoute</span>
+                <span>TypeScript</span>
+                <span class="project-stars">本周 +4,345 ⭐</span>
+                <span>总 ⭐17.1k</span>
+            </div>
+            <div class="project-desc">
+                免费的 AI 网关，一条 API 地址就能连接 231 个 AI 服务商，其中 50 多个免费。支持 Claude Code、Codex、Cursor、Cline 等主流工具。还自带智能压缩，最高能省下 95% 的 token 用量。经常切换不同 AI 模型的话，相当于少操很多配置的心。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/ogulcancelik/herdr" target="_blank" rel="noopener">
+            <div class="project-number">04</div>
+            <div class="project-name">herdr</div>
+            <div class="project-meta">
+                <span>ogulcancelik/herdr</span>
+                <span>Rust</span>
+                <span class="project-stars">本周 +3,449 ⭐</span>
+                <span>总 ⭐16.3k</span>
+            </div>
+            <div class="project-desc">
+                终端里的 Agent 多路复用器。简单说，就是让你在命令行里同时和多个 AI Agent 对话，它们各自负责不同的任务。用 Rust 写的，性能很轻量。喜欢在终端里干活的话，这是个把多个 Agent 管在同一个窗口里的实用工具。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/TencentCloud/CubeSandbox" target="_blank" rel="noopener">
+            <div class="project-number">05</div>
+            <div class="project-name">CubeSandbox</div>
+            <div class="project-meta">
+                <span>TencentCloud/CubeSandbox</span>
+                <span>Rust</span>
+                <span class="project-stars">本周 +2,367 ⭐</span>
+                <span>总 ⭐10.1k</span>
+            </div>
+            <div class="project-desc">
+                腾讯云开源的 AI Agent 沙箱，用来安全地运行不受信任的 Agent 代码。主打即时启动、高并发、轻量级，用 Rust 实现，启动速度快、内存占用低。如果既想让 AI Agent 执行代码，又担心安全问题，这个工具帮你把环境隔离好了。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/openai/codex-plugin-cc" target="_blank" rel="noopener">
+            <div class="project-number">06</div>
+            <div class="project-name">codex-plugin-cc</div>
+            <div class="project-meta">
+                <span>openai/codex-plugin-cc</span>
+                <span>JavaScript</span>
+                <span class="project-stars">本周 +2,265 ⭐</span>
+                <span>总 ⭐28.5k</span>
+            </div>
+            <div class="project-desc">
+                OpenAI 官方出的插件，让你在 Claude Code 中直接调用 Codex 的能力。可以用来审查代码或者把任务委托给 Codex。同时用 OpenAI 和 Anthropic 工具链的话，这个插件让你不用在两家工具之间来回切。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/alibaba/page-agent" target="_blank" rel="noopener">
+            <div class="project-number">07</div>
+            <div class="project-name">page-agent</div>
+            <div class="project-meta">
+                <span>alibaba/page-agent</span>
+                <span>TypeScript</span>
+                <span class="project-stars">本周 +1,950 ⭐</span>
+                <span>总 ⭐26.5k</span>
+            </div>
+            <div class="project-desc">
+                阿里巴巴开源的网页 GUI Agent，支持用自然语言控制网页界面。你告诉它“帮我填这个表单”或者“点那个按钮”，它就能自动在页面上执行操作。做自动化测试或 RPA 的话，直接说人话就能操控网页，省去写脚本的功夫。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/wonderwhy-er/DesktopCommanderMCP" target="_blank" rel="noopener">
+            <div class="project-number">08</div>
+            <div class="project-name">DesktopCommanderMCP</div>
+            <div class="project-meta">
+                <span>wonderwhy-er/DesktopCommanderMCP</span>
+                <span>TypeScript</span>
+                <span class="project-stars">本周 +1,939 ⭐</span>
+                <span>总 ⭐8.2k</span>
+            </div>
+            <div class="project-desc">
+                MCP 服务器，让 Claude 能控制你的终端、搜索文件系统、做差异编辑。相当于给了 Claude 一把操作桌面环境的钥匙。如果你经常用 Claude Code 写代码，装了这个它就能直接操作你的开发环境，不用你手动执行命令了。
+            </div>
+        </a>
+    </section>
+    <section class="section">
+        <h2 class="section-header">求职与 AI 新玩法</h2>
+        <a class="project-card" href="https://github.com/MadsLorentzen/ai-job-search" target="_blank" rel="noopener">
+            <div class="project-number">09</div>
+            <div class="project-name">ai-job-search</div>
+            <div class="project-meta">
+                <span>MadsLorentzen/ai-job-search</span>
+                <span>TypeScript</span>
+                <span class="project-stars">本周 +15,420 ⭐</span>
+                <span>总 ⭐22.2k</span>
+            </div>
+            <div class="project-desc">
+                跑在你本地的 AI 求职框架，基于 Claude Code 运行。自动分析职位描述、帮你优化简历、写求职信，甚至还能模拟面试。正在找工作的话，相当于有了个 24 小时在线的求职助手。你只需要 fork 项目配一下自己的信息，剩下的它帮你搞定。单周 1.5 万星，足以说明大家有多想试试用 AI 帮自己找工作这件事。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank" rel="noopener">
+            <div class="project-number">10</div>
+            <div class="project-name">system_prompts_leaks</div>
+            <div class="project-meta">
+                <span>asgeirtj/system_prompts_leaks</span>
+                <span>JavaScript</span>
+                <span class="project-stars">本周 +6,284 ⭐</span>
+                <span>总 ⭐57.5k</span>
+            </div>
+            <div class="project-desc">
+                各大 AI 产品的系统提示词全集，包括 Claude、ChatGPT、Gemini、Grok、Cursor 等。如果你好奇这些 AI 背后是怎么被调教的，这里有大量一手资料。看完你大概能猜到哪些边界是人为画出来的、哪些是模型天生的。
+            </div>
+        </a>
+    </section>
+    <section class="section">
+        <h2 class="section-header">视频与会议</h2>
+        <a class="project-card" href="https://github.com/Zackriya-Solutions/meetily" target="_blank" rel="noopener">
+            <div class="project-number">11</div>
+            <div class="project-name">meetily</div>
+            <div class="project-meta">
+                <span>Zackriya-Solutions/meetily</span>
+                <span>Rust</span>
+                <span class="project-stars">本周 +5,392 ⭐</span>
+                <span>总 ⭐24.4k</span>
+            </div>
+            <div class="project-desc">
+                Rust 写的 AI 会议助手，所有处理都在本地完成，不上传云端。用 Parakeet/Whisper 做实时语音转录，支持说话人识别，还能用 Ollama 做会议总结。重视隐私的团队可以考虑用它替代 Otter.ai 这类纯云端方案。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/bradautomates/claude-video" target="_blank" rel="noopener">
+            <div class="project-number">12</div>
+            <div class="project-name">claude-video</div>
+            <div class="project-meta">
+                <span>bradautomates/claude-video</span>
+                <span>Python</span>
+                <span class="project-stars">本周 +4,128 ⭐</span>
+                <span>总 ⭐8.3k</span>
+            </div>
+            <div class="project-desc">
+                让 Claude 能看视频的命令行工具。扔给它一个视频链接，自动下载完提取关键帧和音频转录，然后一股脑交给 Claude 分析。如果需要经常看长视频做笔记，让 AI 帮你总结比一帧一帧看快太多了。
+            </div>
+        </a>
+    </section>
+    <section class="section">
+        <h2 class="section-header">安全</h2>
+        <a class="project-card" href="https://github.com/usestrix/strix" target="_blank" rel="noopener">
+            <div class="project-number">13</div>
+            <div class="project-name">strix</div>
+            <div class="project-meta">
+                <span>usestrix/strix</span>
+                <span>Python</span>
+                <span class="project-stars">本周 +3,403 ⭐</span>
+                <span>总 ⭐41.3k</span>
+            </div>
+            <div class="project-desc">
+                用 AI 来找 Web 应用漏洞的开源渗透测试工具。描述一下目标，它自动跑测试、出报告、给修复建议。安全工程师相当于多了个不知疲倦的审计助手，还不用发工资。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/vxcontrol/pentagi" target="_blank" rel="noopener">
+            <div class="project-number">14</div>
+            <div class="project-name">pentagi</div>
+            <div class="project-meta">
+                <span>vxcontrol/pentagi</span>
+                <span>Go</span>
+                <span class="project-stars">本周 +2,199 ⭐</span>
+                <span>总 ⭐20.5k</span>
+            </div>
+            <div class="project-desc">
+                全自动的 AI 渗透测试系统，从信息收集到漏洞利用一条龙搞定。用 Go 写的高性能框架。如果觉得传统扫描工具不够聪明，这个项目让 AI 主导渗透测试的做法值得看看。
+            </div>
+        </a>
+    </section>
+    <section class="section">
+        <h2 class="section-header">视觉与设计</h2>
+        <a class="project-card" href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener">
+            <div class="project-number">15</div>
+            <div class="project-name">impeccable</div>
+            <div class="project-meta">
+                <span>pbakaus/impeccable</span>
+                <span>JavaScript</span>
+                <span class="project-stars">本周 +2,450 ⭐</span>
+                <span>总 ⭐46.5k</span>
+            </div>
+            <div class="project-desc">
+                专门给 AI 用的设计语言系统。定义了一套规则和组件，让 AI 能更好地理解和生成 UI 设计。经常用 AI 做前端界面的话，这个项目能让 AI 产出的东西看起来更一致、不凌乱。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/facebook/astryx" target="_blank" rel="noopener">
+            <div class="project-number">16</div>
+            <div class="project-name">astryx</div>
+            <div class="project-meta">
+                <span>facebook/astryx</span>
+                <span>TypeScript</span>
+                <span class="project-stars">本周 +2,255 ⭐</span>
+                <span>总 ⭐8.8k</span>
+            </div>
+            <div class="project-desc">
+                Meta 开源的设计系统，完全可定制，AI 友好。不是一套固定的组件库，而是让你按需组装设计系统的框架。有自己的品牌规范的话，比直接用 Material Design 或 Ant Design 灵活多了。
+            </div>
+        </a>
+        <a class="project-card" href="https://github.com/tt-a1i/archify" target="_blank" rel="noopener">
+            <div class="project-number">17</div>
+            <div class="project-name">archify</div>
+            <div class="project-meta">
+                <span>tt-a1i/archify</span>
+                <span>JavaScript</span>
+                <span class="project-stars">本周 +1,333 ⭐</span>
+                <span>总 ⭐4.4k</span>
+            </div>
+            <div class="project-desc">
+                用 AI 生成好看的架构图，亮色暗色随意切换，还能导出 PNG、JPEG、SVG。做技术方案设计的时候，随手生成一张专业级的架构图，省得自己慢慢画了。
+            </div>
+        </a>
+    </section>
+    <section class="section">
+        <h2 class="section-header">新奇前沿</h2>
+        <a class="project-card" href="https://github.com/ruvnet/RuView" target="_blank" rel="noopener">
+            <div class="project-number">18</div>
+            <div class="project-name">RuView</div>
+            <div class="project-meta">
+                <span>ruvnet/RuView</span>
+                <span>Rust</span>
+                <span class="project-stars">本周 +3,403 ⭐</span>
+                <span>总 ⭐80.6k</span>
+            </div>
+            <div class="project-desc">
+                有点科幻——用普通的 WiFi 信号来做空间感知和生命体征监测。不需要摄像头，不需要传感器，靠分析 WiFi 信号的干扰变化就能知道房间里有没有人、人的呼吸频率。总星数已经超过 8 万，本周又涨了 3400，热度依然很高。
+            </div>
+        </a>
+    </section>
+    <footer class="site-footer">
+        <p>本系列每周一更新 · 数据来源于 GitHub Trending + GitHub API</p>
+        <p style="margin-top:4px;">统计截止 2026-07-14</p>
+    </footer>
 </div>
 </body>
 </html>
