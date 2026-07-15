@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日GitHub热门项目推荐 · 2026年7月15日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{
+  font-family:"Georgia","Noto Serif SC","Source Han Serif SC",serif;
+  line-height:1.75;color:#d4d0c8;background:#141416;-webkit-font-smoothing:antialiased;
+  display:flex;min-height:100vh
+}
+.sidebar{
+  width:200px;flex-shrink:0;position:sticky;top:0;height:100vh;overflow-y:auto;
+  padding:32px 20px;background:#1a1a1e;border-right:1px solid #25252b;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+}
+.sidebar-title{font-size:13px;font-weight:600;color:#d4d0c8;line-height:1.4;letter-spacing:0.5px}
+.sidebar-title small{display:block;font-weight:400;font-size:11px;color:#5a5a65;margin-top:2px;letter-spacing:0}
+.sidebar-nav{list-style:none;margin-top:20px}
+.sidebar-nav li{margin-bottom:1px}
+.sidebar-nav a{
+  display:block;padding:5px 8px;border-radius:4px;
+  color:#787885;text-decoration:none;font-size:12.5px;transition:all 0.12s
+}
+.sidebar-nav a:hover{background:#25252b;color:#e09f5c}
+.sidebar-foot{margin-top:28px;padding-top:16px;border-top:1px solid #25252b;font-size:11px;color:#4a4a55;line-height:1.7}
+.sidebar-foot a{color:#5a5a65;text-decoration:none}
+.sidebar-foot a:hover{color:#e09f5c}
+.main{flex:1;min-width:0;padding:48px 48px 48px 40px;max-width:860px}
+.article-header{border-bottom:1px solid #25252b;padding-bottom:20px;margin-bottom:28px}
+.article-header h1{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:22px;font-weight:600;color:#e8e4de;letter-spacing:0.5px
+}
+.article-meta{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13px;color:#5a5a65;margin-top:6px;display:flex;gap:16px;flex-wrap:wrap
+}
+.article-meta a{color:#6b6b7a;text-decoration:underline;text-underline-offset:2px}
+.article-meta a:hover{color:#e09f5c}
+.summary{
+  font-size:14px;color:#9a9aa5;line-height:1.7;
+  padding:16px 20px;margin-bottom:32px;
+  background:#1a1a1e;border:1px solid #25252b;border-radius:6px
+}
+.section{margin-bottom:36px;scroll-margin-top:20px}
+.section-header{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:13px;font-weight:600;color:#4a4a55;text-transform:uppercase;letter-spacing:1.5px;
+  padding-bottom:10px;margin-bottom:16px;border-bottom:1px solid #25252b
+}
+.project-card{
+  display:block;padding:16px 0;
+  border-bottom:1px solid #1e1e24;
+  text-decoration:none;color:inherit;transition:background 0.1s
+}
+.project-card:hover{padding-left:8px;margin-left:-8px;padding-right:8px;margin-right:-8px;background:#1a1a1e;border-radius:4px}
+.project-card:last-of-type{border-bottom:none}
+.project-number{font-size:11px;font-weight:500;color:#3a3a45;margin-bottom:2px}
+.project-name{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:16px;font-weight:600;color:#e8e4de
+}
+.project-meta{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13px;color:#5a5a65;margin:3px 0 6px
+}
+.project-meta .star{color:#d4a373}
+.project-meta span{margin-right:12px}
+.project-desc{font-size:14px;color:#9a9aa5;line-height:1.7}
+.site-footer{
+  text-align:center;padding:36px 0 16px;
+  border-top:1px solid #25252b;margin-top:40px;
+  font-size:12px;color:#3a3a45
+}
+.site-footer a{color:#5a5a65;text-decoration:underline;text-underline-offset:3px}
+.site-footer a:hover{color:#e09f5c}
+@media(max-width:768px){
+  body{flex-direction:column}
+  .sidebar{width:100%;height:auto;position:static;padding:20px 24px 12px;border-right:none;border-bottom:1px solid #25252b}
+  .sidebar-title{margin-bottom:8px}
+  .sidebar-nav{display:flex;flex-wrap:wrap;gap:3px;margin-top:10px}
+  .sidebar-nav li{margin-bottom:0}
+  .sidebar-nav a{padding:4px 8px;font-size:12px}
+  .sidebar-foot{display:none}
+  .main{padding:24px 16px;max-width:100%}
+  .article-header h1{font-size:19px}
+  .project-name{font-size:15px}
+}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+  <div class="sidebar-title">GitHub 热门<br>项目推荐<small>TODAY</small></div>
+  <ul class="sidebar-nav">
+      <li><a href="#video-design">视频编辑与设计</a></li>
+      <li><a href="#ai-dev">AI 开发与代码助手</a></li>
+      <li><a href="#ai-app">AI 应用与探索</a></li>
+      <li><a href="#novelty">新奇与实用工具</a></li>
+  </ul>
+  <div class="sidebar-foot">
+    <a href="archive.html">← 返回存档</a><br>
+    <a href="https://github.com/trending" target="_blank" rel="noopener">GitHub Trending ↗</a><br>2026年7月15日
+  </div>
+</nav>
+<div class="main">
+  <header class="article-header">
+    <h1>今日 GitHub 热门项目推荐</h1>
+    <div class="article-meta">
+      <span>2026年7月15日</span><span>14 个项目深度解读</span>
+      <span><a href="archive.html">存档</a></span>
+    </div>
+  </header>
+  <div class="summary">今天的Trending主题很明确：开源工具正在大规模替代付费软件。OpenCut和Clypra对标CapCut、Penpot对标Figma——视频编辑和设计领域正在经历一波去付费化浪潮。AI Coding Skill生态也在爆发，Matt Pocock、Graphify、Nutlope各从一个角度把AI编程助手武装得更好用。</div>
+  <section class="section" id="video-design">
+    <h2 class="section-header">视频编辑与设计</h2>
+    <a class="project-card" href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener">
+      <div class="project-number">01</div>
+      <div class="project-name">OpenCut</div>
+      <div class="project-meta">
+        <span>OpenCut-app/OpenCut</span>
+        <span>TypeScript</span>
+        <span class="star">今日 +4,276 · ⭐69,753</span>
+      </div>
+      <div class="project-desc">开源版的剪映/CapCut替代品，用TypeScript写的视频编辑器。支持多轨道编辑、转场效果、字幕生成这些剪辑常用功能，最近加了AI驱动的自动字幕和背景移除。如果你做短视频或者需要快速剪辑，不用再忍受CapCut的收费弹窗了。</div>
+    </a>
+    <a class="project-card" href="https://github.com/penpot/penpot" target="_blank" rel="noopener">
+      <div class="project-number">02</div>
+      <div class="project-name">penpot</div>
+      <div class="project-meta">
+        <span>penpot/penpot</span>
+        <span>Clojure</span>
+        <span class="star">今日 +395 · ⭐56,373</span>
+      </div>
+      <div class="project-desc">开源设计协作平台，Figma的开源替代。支持矢量编辑、原型交互、设计系统、实时多人协作。最大卖点是完全开源可自部署，用SVG原生格式不锁数据。设计团队如果对Figma定价或数据安全有顾虑，这是个很成熟的选项。</div>
+    </a>
+    <a class="project-card" href="https://github.com/AIEraDev/Clypra" target="_blank" rel="noopener">
+      <div class="project-number">03</div>
+      <div class="project-name">Clypra</div>
+      <div class="project-meta">
+        <span>AIEraDev/Clypra</span>
+        <span>TypeScript</span>
+        <span class="star">今日 +85 · ⭐2,789</span>
+      </div>
+      <div class="project-desc">用Tauri + React + TypeScript写的现代视频编辑器，目标做CapCut免费功能的开源替代。界面现代，支持多轨道、转场、滤镜。因为用Tauri而不是Electron，比同类方案轻很多。还在早期阶段但更新频率很高。</div>
+    </a>
+  </section>
+  <section class="section" id="ai-dev">
+    <h2 class="section-header">AI 开发与代码助手</h2>
+    <a class="project-card" href="https://github.com/Graphify-Labs/graphify" target="_blank" rel="noopener">
+      <div class="project-number">01</div>
+      <div class="project-name">graphify</div>
+      <div class="project-meta">
+        <span>Graphify-Labs/graphify</span>
+        <span>Python</span>
+        <span class="star">今日 +1,851 · ⭐87,066</span>
+      </div>
+      <div class="project-desc">给AI编程助手用的知识图谱工具，支持Claude Code、Codex、Cursor等十几个平台。把代码仓库、SQL schema、文档甚至图片视频扔进去，它自动解析成可查询的图谱结构。做大项目时AI能直接理解数据库表关系、API依赖和文件结构，不用你反复解释上下文。</div>
+    </a>
+    <a class="project-card" href="https://github.com/mattpocock/skills" target="_blank" rel="noopener">
+      <div class="project-number">02</div>
+      <div class="project-name">skills</div>
+      <div class="project-meta">
+        <span>mattpocock/skills</span>
+        <span>Shell</span>
+        <span class="star">今日 +1,679 · ⭐171,275</span>
+      </div>
+      <div class="project-desc">TypeScript圈大佬Matt Pocock分享的Claude Code技能包，直接从他自己的.claude目录导出的。包含类型体操、React模式、测试策略等前端开发的实用skill。说白了就是抄一个顶级TS工程师平时怎么跟AI配合写代码的作业。</div>
+    </a>
+    <a class="project-card" href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank" rel="noopener">
+      <div class="project-number">03</div>
+      <div class="project-name">awesome-llm-apps</div>
+      <div class="project-meta">
+        <span>Shubhamsaboo/awesome-llm-apps</span>
+        <span>Python</span>
+        <span class="star">今日 +1,106 · ⭐121,422</span>
+      </div>
+      <div class="project-desc">100多个能直接跑的AI Agent和RAG应用合集，clone下来就能用。覆盖客服机器人、文档问答、数据分析助手、自动化工作流各种场景。每个项目都附带完整的前后端代码和部署指南，适合想快速搭AI应用的开发者。</div>
+    </a>
+    <a class="project-card" href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener">
+      <div class="project-number">04</div>
+      <div class="project-name">hallmark</div>
+      <div class="project-meta">
+        <span>Nutlope/hallmark</span>
+        <span>CSS</span>
+        <span class="star">今日 +1,015 · ⭐6,527</span>
+      </div>
+      <div class="project-desc">反AI味的UI设计skill，专门帮AI写代码工具摆脱千篇一律的AI设计风格。把圆角卡片、渐变背景、bokeh光斑、紫色调色板全部识别出来，换成真正有设计感的东西。如果你觉得AI写的界面都是一个模子刻出来的，装上这个就有救了。</div>
+    </a>
+  </section>
+  <section class="section" id="ai-app">
+    <h2 class="section-header">AI 应用与探索</h2>
+    <a class="project-card" href="https://github.com/HKUDS/Vibe-Trading" target="_blank" rel="noopener">
+      <div class="project-number">01</div>
+      <div class="project-name">Vibe-Trading</div>
+      <div class="project-meta">
+        <span>HKUDS/Vibe-Trading</span>
+        <span>Python</span>
+        <span class="star">今日 +1,256 · ⭐23,246</span>
+      </div>
+      <div class="project-desc">港大数据科学实验室出的AI量化交易Agent，走的是vibe路线——不用手动写交易策略，直接把市场数据扔给LLM让它自己判断买卖时机。支持回测、实时模拟、多资产类别。与其花几个月调参数，不如让AI替你盯盘。</div>
+    </a>
+    <a class="project-card" href="https://github.com/chenyme/grok2api" target="_blank" rel="noopener">
+      <div class="project-number">02</div>
+      <div class="project-name">grok2api</div>
+      <div class="project-meta">
+        <span>chenyme/grok2api</span>
+        <span>Go</span>
+        <span class="star">今日 +186 · ⭐5,980</span>
+      </div>
+      <div class="project-desc">给Grok做的多账号API网关，整合Grok Build、Grok Web和Grok Console三种渠道。一个接口统一调用，自动轮换账号避免限流。用Go写的，部署轻便。如果你在用Grok的API但觉得官方配额不够，这个能帮你绕过去。</div>
+    </a>
+    <a class="project-card" href="https://github.com/virattt/ai-hedge-fund" target="_blank" rel="noopener">
+      <div class="project-number">03</div>
+      <div class="project-name">ai-hedge-fund</div>
+      <div class="project-meta">
+        <span>virattt/ai-hedge-fund</span>
+        <span>Python</span>
+        <span class="star">今日 +109 · ⭐62,062</span>
+      </div>
+      <div class="project-desc">用多个AI Agent模拟对冲基金团队的实验项目。有基金经理Agent、研究员Agent、交易员Agent，各自分析市场、做决策、互相争论，最后投票定买卖。效果可能比不上真基金，但多Agent协作做金融决策的架构思路挺有意思。</div>
+    </a>
+  </section>
+  <section class="section" id="novelty">
+    <h2 class="section-header">新奇与实用工具</h2>
+    <a class="project-card" href="https://github.com/hasaneyldrm/exercises-dataset" target="_blank" rel="noopener">
+      <div class="project-number">01</div>
+      <div class="project-name">exercises-dataset</div>
+      <div class="project-meta">
+        <span>hasaneyldrm/exercises-dataset</span>
+        <span>HTML</span>
+        <span class="star">今日 +851 · ⭐13,929</span>
+      </div>
+      <div class="project-desc">1324个健身动作的开源数据集，每个动作都有GIF动画演示、180×180缩略图、肌肉群标签、器械信息和六种语言的步骤说明。是LogPress健身App背后的数据层。做健身App、运动分析或动作识别模型的人可以直接拿来训练。</div>
+    </a>
+    <a class="project-card" href="https://github.com/Raphire/Win11Debloat" target="_blank" rel="noopener">
+      <div class="project-number">02</div>
+      <div class="project-name">Win11Debloat</div>
+      <div class="project-meta">
+        <span>Raphire/Win11Debloat</span>
+        <span>PowerShell</span>
+        <span class="star">今日 +783 · ⭐52,061</span>
+      </div>
+      <div class="project-desc">Windows 10/11的系统清理脚本，运行后自动卸载预装应用、关掉遥测、去掉Cortana和OneDrive。一个PowerShell脚本搞定，不用手动进注册表或组策略逐个改。重装系统后的第一件事，三分钟还你一个干净的系统。</div>
+    </a>
+    <a class="project-card" href="https://github.com/par274/sharpemu" target="_blank" rel="noopener">
+      <div class="project-number">03</div>
+      <div class="project-name">sharpemu</div>
+      <div class="project-meta">
+        <span>par274/sharpemu</span>
+        <span>C#</span>
+        <span class="star">今日 +332 · ⭐2,341</span>
+      </div>
+      <div class="project-desc">实验性的PS5模拟器项目，用C#写的。目前还处于早期阶段，但已经能跑一些简单的PS5程序了。这个领域进展一向很慢——PS4模拟器搞了十年才成熟——所以每个新项目都值得保持关注。</div>
+    </a>
+    <a class="project-card" href="https://github.com/HenryNdubuaku/maths-cs-ai-compendium" target="_blank" rel="noopener">
+      <div class="project-number">04</div>
+      <div class="project-name">maths-cs-ai-compendium</div>
+      <div class="project-meta">
+        <span>HenryNdubuaku/maths-cs-ai-compendium</span>
+        <span>TypeScript</span>
+        <span class="star">今日 +112 · ⭐5,563</span>
+      </div>
+      <div class="project-desc">AI/ML研究工程师的数学与计算机速查手册，TypeScript写的交互式学习工具。覆盖线性代数、概率论、优化理论这些做AI绕不开的数学基础。按主题拆成小块，边看边练，适合补数学短板。</div>
+    </a>
+  </section>
+  <footer class="site-footer">
+    <p><a href="archive.html">← 返回存档</a></p>
+    <p style="margin-top:8px;">数据来源 <a href="https://github.com/trending" target="_blank">GitHub Trending</a> + GitHub API</p>
+    <p style="margin-top:2px;">统计截止 2026年7月15日</p>
+  </footer>
+</div>
+</body>
+</html>
