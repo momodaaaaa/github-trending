@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>今日GitHub热门项目推荐 · 2026年7月16日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{
+  font-family:"Georgia","Noto Serif SC","Source Han Serif SC",serif;
+  line-height:1.75;color:#d4d0c8;background:#141416;-webkit-font-smoothing:antialiased;
+  display:flex;min-height:100vh
+}
+.sidebar{
+  width:200px;flex-shrink:0;position:sticky;top:0;height:100vh;overflow-y:auto;
+  padding:32px 20px;background:#1a1a1e;border-right:1px solid #25252b;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif
+}
+.sidebar-title{font-size:13px;font-weight:600;color:#d4d0c8;line-height:1.4;letter-spacing:0.5px}
+.sidebar-title small{display:block;font-weight:400;font-size:11px;color:#5a5a65;margin-top:2px;letter-spacing:0}
+.sidebar-nav{list-style:none;margin-top:20px}
+.sidebar-nav li{margin-bottom:1px}
+.sidebar-nav a{
+  display:block;padding:5px 8px;border-radius:4px;
+  color:#787885;text-decoration:none;font-size:12.5px;transition:all 0.12s
+}
+.sidebar-nav a:hover{background:#25252b;color:#e09f5c}
+.sidebar-foot{margin-top:28px;padding-top:16px;border-top:1px solid #25252b;font-size:11px;color:#4a4a55;line-height:1.7}
+.sidebar-foot a{color:#5a5a65;text-decoration:none}
+.sidebar-foot a:hover{color:#e09f5c}
+.main{flex:1;min-width:0;padding:48px 48px 48px 40px;max-width:860px}
+.article-header{border-bottom:1px solid #25252b;padding-bottom:20px;margin-bottom:28px}
+.article-header h1{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:22px;font-weight:600;color:#e8e4de;letter-spacing:0.5px
+}
+.article-meta{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13px;color:#5a5a65;margin-top:6px;display:flex;gap:16px;flex-wrap:wrap
+}
+.article-meta a{color:#6b6b7a;text-decoration:underline;text-underline-offset:2px}
+.article-meta a:hover{color:#e09f5c}
+.summary{
+  font-size:14px;color:#9a9aa5;line-height:1.7;
+  padding:16px 20px;margin-bottom:32px;
+  background:#1a1a1e;border:1px solid #25252b;border-radius:6px
+}
+.section{margin-bottom:36px;scroll-margin-top:20px}
+.section-header{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:13px;font-weight:600;color:#4a4a55;text-transform:uppercase;letter-spacing:1.5px;
+  padding-bottom:10px;margin-bottom:16px;border-bottom:1px solid #25252b
+}
+.project-card{
+  display:block;padding:16px 0;
+  border-bottom:1px solid #1e1e24;
+  text-decoration:none;color:inherit;transition:background 0.1s
+}
+.project-card:hover{padding-left:8px;margin-left:-8px;padding-right:8px;margin-right:-8px;background:#1a1a1e;border-radius:4px}
+.project-card:last-of-type{border-bottom:none}
+.project-number{font-size:11px;font-weight:500;color:#3a3a45;margin-bottom:2px}
+.project-name{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:16px;font-weight:600;color:#e8e4de
+}
+.project-meta{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:13px;color:#5a5a65;margin:3px 0 6px
+}
+.project-meta .star{color:#d4a373}
+.project-meta span{margin-right:12px}
+.project-desc{font-size:14px;color:#9a9aa5;line-height:1.7}
+.site-footer{
+  text-align:center;padding:36px 0 16px;
+  border-top:1px solid #25252b;margin-top:40px;
+  font-size:12px;color:#3a3a45
+}
+.site-footer a{color:#5a5a65;text-decoration:underline;text-underline-offset:3px}
+.site-footer a:hover{color:#e09f5c}
+@media(max-width:768px){
+  body{flex-direction:column}
+  .sidebar{width:100%;height:auto;position:static;padding:20px 24px 12px;border-right:none;border-bottom:1px solid #25252b}
+  .sidebar-title{margin-bottom:8px}
+  .sidebar-nav{display:flex;flex-wrap:wrap;gap:3px;margin-top:10px}
+  .sidebar-nav li{margin-bottom:0}
+  .sidebar-nav a{padding:4px 8px;font-size:12px}
+  .sidebar-foot{display:none}
+  .main{padding:24px 16px;max-width:100%}
+  .article-header h1{font-size:19px}
+  .project-name{font-size:15px}
+}
+</style>
+</head>
+<body>
+<nav class="sidebar">
+  <div class="sidebar-title">GitHub 热门<br>项目推荐<small>TODAY</small></div>
+  <ul class="sidebar-nav">
+      <li><a href="#ai-dev">AI 开发与代码助手</a></li>
+      <li><a href="#ai-app">AI 应用与教育</a></li>
+      <li><a href="#novelty">新奇与实用工具</a></li>
+  </ul>
+  <div class="sidebar-foot">
+    <a href="archive.html">← 返回存档</a><br>
+    <a href="https://github.com/trending" target="_blank" rel="noopener">GitHub Trending ↗</a><br>2026年7月16日
+  </div>
+</nav>
+<div class="main">
+  <header class="article-header">
+    <h1>今日 GitHub 热门项目推荐</h1>
+    <div class="article-meta">
+      <span>2026年7月16日</span><span>8 个项目深度解读</span>
+      <span><a href="archive.html">存档</a></span>
+    </div>
+  </header>
+  <div class="summary">今天的Trending有一个明显的主题：连续上榜项目扎堆。hallmark、awesome-llm-apps、exercises-dataset、Vibe-Trading这4个项目连续两天都在榜单前列，说明这些方向的需求是持续性的。新面孔值得关注的是openinterpreter用Rust重写后适配低成本模型，以及港大DeepTutor这个个性化AI辅导系统。</div>
+  <section class="section" id="ai-dev">
+    <h2 class="section-header">AI 开发与代码助手</h2>
+    <a class="project-card" href="https://github.com/Nutlope/hallmark" target="_blank" rel="noopener">
+      <div class="project-number">01</div>
+      <div class="project-name">hallmark</div>
+      <div class="project-meta">
+        <span>Nutlope/hallmark</span>
+        <span>CSS</span>
+        <span class="star">今日 +1,277 · ⭐9,573</span>
+      </div>
+      <div class="project-desc">反AI设计味的UI skill，连续两天霸榜。专门帮Claude Code、Cursor、Codex这些AI写代码的工具摆脱千篇一律的AI设计风格。把圆角卡片、渐变背景、紫色调色板全部识别出来换成真正有设计感的东西。</div>
+    </a>
+    <a class="project-card" href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank" rel="noopener">
+      <div class="project-number">02</div>
+      <div class="project-name">awesome-llm-apps</div>
+      <div class="project-meta">
+        <span>Shubhamsaboo/awesome-llm-apps</span>
+        <span>Python</span>
+        <span class="star">今日 +1,236 · ⭐122,238</span>
+      </div>
+      <div class="project-desc">100多个能直接跑的AI Agent和RAG应用合集，也是连续两天的热门。覆盖客服机器人、文档问答、数据分析助手各种场景。每个项目附带完整前后端代码和部署指南，想快速搭AI应用的直接clone就能跑。</div>
+    </a>
+    <a class="project-card" href="https://github.com/openinterpreter/openinterpreter" target="_blank" rel="noopener">
+      <div class="project-number">03</div>
+      <div class="project-name">openinterpreter</div>
+      <div class="project-meta">
+        <span>openinterpreter/openinterpreter</span>
+        <span>Rust</span>
+        <span class="star">今日 +299 · ⭐65,684</span>
+      </div>
+      <div class="project-desc">用自然语言控制电脑的开源Agent，最近做了个大动作——用Rust重写了核心模块，适配低成本模型。以前只能用GPT-4才能跑得动，现在用本地小模型也能流畅运行。如果你想让AI帮你操作文件、浏览网页、执行命令，这个项目是把瑞士军刀。</div>
+    </a>
+  </section>
+  <section class="section" id="ai-app">
+    <h2 class="section-header">AI 应用与教育</h2>
+    <a class="project-card" href="https://github.com/HKUDS/Vibe-Trading" target="_blank" rel="noopener">
+      <div class="project-number">01</div>
+      <div class="project-name">Vibe-Trading</div>
+      <div class="project-meta">
+        <span>HKUDS/Vibe-Trading</span>
+        <span>Python</span>
+        <span class="star">今日 +915 · ⭐23,983</span>
+      </div>
+      <div class="project-desc">港大数据科学实验室的AI量化交易Agent，也是连续两天上榜。走vibe路线，不写策略直接把市场数据扔给LLM判断买卖时机。支持回测、实时模拟、多资产类别。</div>
+    </a>
+    <a class="project-card" href="https://github.com/HKUDS/DeepTutor" target="_blank" rel="noopener">
+      <div class="project-number">02</div>
+      <div class="project-name">DeepTutor</div>
+      <div class="project-meta">
+        <span>HKUDS/DeepTutor</span>
+        <span>Python</span>
+        <span class="star">今日 +172 · ⭐26,536</span>
+      </div>
+      <div class="project-desc">港大数据实验室的另一个项目，AI终身个性化辅导系统。不是简单的问答机器人，会根据你的学习历史、知识薄弱点个性化出题和讲解。覆盖数学、编程、数据科学多个领域，支持中英文。</div>
+    </a>
+  </section>
+  <section class="section" id="novelty">
+    <h2 class="section-header">新奇与实用工具</h2>
+    <a class="project-card" href="https://github.com/hasaneyldrm/exercises-dataset" target="_blank" rel="noopener">
+      <div class="project-number">01</div>
+      <div class="project-name">exercises-dataset</div>
+      <div class="project-meta">
+        <span>hasaneyldrm/exercises-dataset</span>
+        <span>HTML</span>
+        <span class="star">今日 +949 · ⭐14,599</span>
+      </div>
+      <div class="project-desc">1324个健身动作的开源数据集，连续两天在榜。每个动作都有GIF动画演示、肌肉群标签、器械信息和六种语言的步骤说明。做健身App或动作识别模型的人可以直接拿来训练。</div>
+    </a>
+    <a class="project-card" href="https://github.com/moeru-ai/airi" target="_blank" rel="noopener">
+      <div class="project-number">02</div>
+      <div class="project-name">airi</div>
+      <div class="project-meta">
+        <span>moeru-ai/airi</span>
+        <span>TypeScript</span>
+        <span class="star">今日 +110 · ⭐42,667</span>
+      </div>
+      <div class="project-desc">自部署的AI伴侣/虚拟角色系统，类似Grok Companion的开源替代。可以创建和管理多个AI角色，每个角色有独立的记忆、性格和对话风格。42k星说明二次元+AI这个组合的受众确实很大。</div>
+    </a>
+    <a class="project-card" href="https://github.com/YimMenu/YimMenuV2" target="_blank" rel="noopener">
+      <div class="project-number">03</div>
+      <div class="project-name">YimMenuV2</div>
+      <div class="project-meta">
+        <span>YimMenu/YimMenuV2</span>
+        <span>C++</span>
+        <span class="star">今日 +38 · ⭐1,467</span>
+      </div>
+      <div class="project-desc">GTA 5增强版的开源外挂菜单，用C++写的。说是实验性质的，但功能相当丰富，包括载具生成、传送、无敌模式等常见mod功能。注意这是单机mod用途，线上使用会被封号。</div>
+    </a>
+  </section>
+  <footer class="site-footer">
+    <p><a href="archive.html">← 返回存档</a></p>
+    <p style="margin-top:8px;">数据来源 <a href="https://github.com/trending" target="_blank">GitHub Trending</a> + GitHub API</p>
+    <p style="margin-top:2px;">统计截止 2026年7月16日</p>
+  </footer>
+</div>
+</body>
+</html>
