@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年07月27日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:#ededed;min-height:100vh;display:flex;flex-direction:column
+}
+.chat-header{
+  background:#f6f6f6;border-bottom:1px solid #ddd;padding:12px 16px;
+  text-align:center;position:sticky;top:0;z-index:10
+}
+.chat-header h1{font-size:16px;font-weight:600;color:#000}
+.chat-header .sub{font-size:12px;color:#999;margin-top:2px}
+.chat-header a{color:#576b95;text-decoration:none;font-size:12px}
+.chat-container{
+  flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px
+}
+.topic-divider{
+  text-align:center;margin:20px 0 12px;
+  font-size:12px;color:#b0b0b0;position:relative
+}
+.topic-divider::before,.topic-divider::after{
+  content:'';position:absolute;top:50%;width:30%;height:1px;background:#ddd
+}
+.topic-divider::before{left:0}
+.topic-divider::after{right:0}
+.topic-divider a{color:#576b95;text-decoration:none}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{
+  width:36px;height:36px;border-radius:4px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:600;color:#fff
+}
+.avatar.guyue{background:#3b82f6}
+.avatar.ailin{background:#6b7280}
+.avatar.mikou{background:#10b981}
+.bubble{
+  max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;
+  position:relative;word-break:break-word
+}
+.msg-row:not(.me) .bubble{background:#fff;color:#000}
+.msg-row.me .bubble{background:#95ec69;color:#000}
+.name-tag{font-size:11px;color:#576b95;margin-bottom:2px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#b0b0b0;margin-top:4px;text-align:right}
+.project-intro{
+  background:#fff;border-radius:6px;padding:12px;margin:8px 0 16px;
+  font-size:13px;line-height:1.6;color:#333;
+  border-left:3px solid #3b82f6
+}
+.project-intro .pi-name{font-weight:600;font-size:14px}
+.project-intro .pi-meta{color:#999;font-size:12px}
+.project-intro a{color:#576b95;text-decoration:none}
+.chat-footer{
+  text-align:center;padding:16px;font-size:12px;color:#b0b0b0;
+  border-top:1px solid #ddd
+}
+.chat-footer a{color:#576b95}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年07月27日</div>
+  <a href="archive.html">← 往期存档</a>
+</div>
+<div class="chat-container">
+  <div class="msg-row me">
+    <div class="avatar guyue">今</div>
+    <div>
+      
+      <div class="bubble">今天 Trending 上有意思的项目不多——等一下，我刚才那句话收回来。有一个项目我必须先说，block/buzz，今天拉了 1710 个 star。</div>
+      <div class="time-tag">10:00</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">b</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">buzz？那个 &quot;hive mind communication platform&quot;？我扫了一眼，Rust 写的，今年 3 月才建仓。</div>
+      <div class="time-tag">10:03</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">对</div>
+    <div>
+      
+      <div class="bubble">对，13K 总 star 了。但我看了五分钟没搞明白它到底干嘛。</div>
+      <div class="time-tag">10:06</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">哈</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">哈哈，你不是第一个。我打开它首页，花了 30 秒没看明白它是干嘛的——这句话我好像说过很多遍了。</div>
+      <div class="time-tag">10:09</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">&</div>
+    <div>
+      
+      <div class="bubble">&quot;hive mind communication&quot;，听起来像科幻小说。它到底用了什么技术？蓝牙 mesh？P2P？</div>
+      <div class="time-tag">10:12</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">我</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">我读了一下它的架构文档。本质上是在做去中心化的 mesh 网络通信，节点之间通过蓝牙和 Wi-Fi Direct 形成网状拓扑，消息在节点间路由转发。技术上不算新——蓝牙 mesh 标准 2017 年就有了。</div>
+      <div class="time-tag">10:15</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">那</div>
+    <div>
+      
+      <div class="bubble">那它到底解决了什么问题？没有 Wi-Fi 和蜂窝网的时候可以聊天？</div>
+      <div class="time-tag">10:18</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">对</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">对，这是它的核心卖点——断网通信。场景是音乐节、抗议现场、自然灾害后基站挂掉的时候。技术上走的是 delay-tolerant networking 的思路。</div>
+      <div class="time-tag">10:21</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">这</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">这个场景是真实存在的。但问题在于——你需要在周围有人也在用这个 App 才有用。这就变成了一个先有鸡还是先有蛋的问题。没有用户就没有网络，没有网络就没有用户。</div>
+      <div class="time-tag">10:24</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">这</div>
+    <div>
+      
+      <div class="bubble">这就是典型的工程师思维做产品。技术上很酷——Rust 写的，性能没问题，mesh 路由算法设计得也挺干净——但产品冷启动怎么解决？除非让苹果和 Google 预装，否则谁能凑够第一批用户？</div>
+      <div class="time-tag">10:27</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">我</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">我倒觉得这不是它最大的问题。最大的问题是 mesh 网络下的安全模型。你怎么信任中间节点？消息加密怎么做？如果有人恶意广播垃圾消息怎么办？这些在它的文档里没有充分讨论。</div>
+      <div class="time-tag">10:30</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">嗯</div>
+    <div>
+      
+      <div class="bubble">嗯，起码方向是对的。但我觉得这种东西更适合做底层协议而不是端用户产品。就像一个只有方向盘的飞机——米扣你刚才是不是想说这个？</div>
+      <div class="time-tag">10:33</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">被</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">被你抢了。不过我还想说一点——它有两个版本，iOS 一个、Android 一个，Android 版今天也在 Trending 上，说明有人在认真做。至少交互动画做得挺流畅的。</div>
+      <div class="time-tag">10:36</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">有</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">有意思。不过话说回来，这类项目很容易是&quot;看起来很酷但三个月后没人维护&quot;。先观望。</div>
+      <div class="time-tag">10:39</div>
+    </div>
+  </div>
+  <!-- 话题分隔线 -->
+  <div class="topic-divider">
+    <span>话题 1</span>
+  </div>
+  <div class="project-intro">
+    <div class="pi-name">
+      <a href="https://github.com/block/buzz" target="_blank">block/buzz</a>
+      <span class="pi-meta"> · Rust · ⭐1,710 today (共 13,546)</span>
+    </div>
+    <div>蜂巢心智通信平台 — 去中心化 mesh 网络，蓝牙 + Wi-Fi Direct，断网也能聊天</div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">下</div>
+    <div>
+      
+      <div class="bubble">下一个，alibaba/open-code-review。832 star 今天，14K 总 star。阿里巴巴开源的代码审查系统。</div>
+      <div class="time-tag">10:42</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">这</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">这个项目我认真看了。Go 写的，混合架构——可以在云端跑也可以在本地自部署。阿里巴巴内部用了很久，现在开源出来。</div>
+      <div class="time-tag">10:45</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">文</div>
+    <div>
+      
+      <div class="bubble">文档写得不错。docker-compose 一把起来，我试了，确实能跑。支持 GitHub、GitLab、Gitee 的 webhook 集成。代码 diff 展示做得很清晰，比 GitLab 自带的 MR review 界面好用。</div>
+      <div class="time-tag">10:48</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">这</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">这个交互细节做得不错。代码 diff 的分屏模式，行内评论的展开/收起动画很顺畅。比 GitHub 的 PR review 体验强。</div>
+      <div class="time-tag">10:51</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">技</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">技术上它最核心的部分是规则引擎——不是你写一堆正则那种，是支持自定义 AST 级别的代码检查规则。这个思路其实跟 Facebook 的 Infer 和 Google 的 Tricorder 类似，但它是面向 review 流程的，不是 CI 里的静态分析。</div>
+      <div class="time-tag">10:54</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">所</div>
+    <div>
+      
+      <div class="bubble">所以它是想做 review 辅助，不是自动审查？这个定位很聪明。你看市面上大部分代码审查工具都想&quot;替代人&quot;，结果都做成了没人用的 CI 插件。</div>
+      <div class="time-tag">10:57</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">对</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">对，它保留了人的决策权。AI 只是建议&quot;这里可能有问题&quot;，最终还是人点通过或驳回。这比那种&quot;AI 自动批准 PR&quot;靠谱多了。</div>
+      <div class="time-tag">11:00</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">不</div>
+    <div>
+      
+      <div class="bubble">不过部署有点重。Go 服务本身还好，但它依赖 MySQL + Redis + MinIO，光 infra 就三个容器。小团队不一定愿意为了代码审查搞这么一套。</div>
+      <div class="time-tag">11:03</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">小</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">小团队直接用 GitHub 不就完了？这个产品的目标用户应该是中大型团队——有自己的代码规范、有定制审查流程的需求。问题是这类团队通常已经有了审查工具，迁移成本很高。</div>
+      <div class="time-tag">11:06</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">你</div>
+    <div>
+      
+      <div class="bubble">你说到点子上了。Jenkins 今天也在 Trending 上——不是因为它多好，是因为太多团队被它绑架了，想换换不了。open-code-review 要说服人从 GitHub/GitLab 原生评审切过来，门槛不低。</div>
+      <div class="time-tag">11:09</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">但</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">但它有一个优势——开源的、可以自部署。现在很多公司对代码上云越来越敏感，自部署代码审查系统是一个真实需求。</div>
+      <div class="time-tag">11:12</div>
+    </div>
+  </div>
+  <!-- 话题分隔线 -->
+  <div class="topic-divider">
+    <span>话题 2</span>
+  </div>
+  <div class="project-intro">
+    <div class="pi-name">
+      <a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review</a>
+      <span class="pi-meta"> · Go · ⭐832 today (共 14,027)</span>
+    </div>
+    <div>阿里巴巴开源代码审查系统 — Go 混合架构，支持 AST 级别规则引擎</div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">第</div>
+    <div>
+      
+      <div class="bubble">第三个，CoreBunch/Instatic。888 star 今天，总 star 5.8K。号称是 Webflow、Framer、WordPress 的开源替代品。</div>
+      <div class="time-tag">11:15</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">我</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">我先说。作为一个给初创公司做 UX 顾问的人，我对&quot;Webflow 替代品&quot;这个说法非常警惕。</div>
+      <div class="time-tag">11:18</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">为</div>
+    <div>
+      
+      <div class="bubble">为什么？</div>
+      <div class="time-tag">11:21</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">W</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">Webflow 做了快十年才做到今天这个程度。它的核心壁垒不是网站生成——是那个可视化编辑器。拖拽、响应式断点、CSS 网格的图形化操作、CMS 集合的动态绑定——每一个功能都是几千人年的工程投入。你告诉我一个 5 月才建仓的项目要做它的替代品？</div>
+      <div class="time-tag">11:24</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">技</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">技术上它走的是不同路线。Instatic 不是拖拽编辑器，它是&quot;agentic site builder&quot;——你描述你要什么，AI 帮你生成网站。底层用的是 Next.js + Tailwind，生成出来的代码是可以导出自己维护的。</div>
+      <div class="time-tag">11:27</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">那</div>
+    <div>
+      
+      <div class="bubble">那它更像 v0 或者 Bolt 的开源版，而不是 Webflow 替代品。定位就搞混了。</div>
+      <div class="time-tag">11:30</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">这</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">这就回到我常说的那句话——但用户真的需要这个吗？如果你的目标用户是设计师，他们不需要 AI 帮他们写代码，他们要的是像素级控制。如果你的目标用户是不懂代码的小白，那 AI 生成的代码质量够不够稳定？我试了几个 demo，有的跑偏得很厉害。</div>
+      <div class="time-tag">11:33</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">我</div>
+    <div>
+      
+      <div class="bubble">我看了一下它生成的代码，质量时好时坏。有时候给你一个完美的 landing page，有时候给你一个没法响应的布局。产品还不能保证每次输出都可交付。</div>
+      <div class="time-tag">11:36</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">这</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">这个其实反映了当前 AI code generation 的共性问题。有意思的地方是它用了 agentic 的方式——不是一次性生成，而是多轮迭代：先生成布局，再检查响应式，再优化 SEO。这个 pipeline 设计思路是对的。</div>
+      <div class="time-tag">11:39</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">但</div>
+    <div>
+      
+      <div class="bubble">但 PMF 存疑。专业的会用 Webflow，简单需求的用 Wix 或者 Carrd，AI 生成的不确定性恰恰是目标用户最不能接受的。</div>
+      <div class="time-tag">11:42</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">我</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">我要是它的产品经理，我会收缩定位——不要说什么 Webflow 替代品，就说是&quot;不会写代码的人 5 分钟做一个 landing page&quot;。把场景做窄反而更有机会。</div>
+      <div class="time-tag">11:45</div>
+    </div>
+  </div>
+  <!-- 话题分隔线 -->
+  <div class="topic-divider">
+    <span>话题 3</span>
+  </div>
+  <div class="project-intro">
+    <div class="pi-name">
+      <a href="https://github.com/CoreBunch/Instatic" target="_blank">CoreBunch/Instatic</a>
+      <span class="pi-meta"> · TypeScript · ⭐888 today (共 5,789)</span>
+    </div>
+    <div>Webflow/Framer/WordPress 的开源替代 — Agentic AI 网站生成器</div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">第</div>
+    <div>
+      
+      <div class="bubble">第四个，pbakaus/impeccable。413 star 今天，但总 star 居然有 50K。今天 Trending 上最老的项目之一，去年 11 月建的。</div>
+      <div class="time-tag">11:48</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">这</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">这个项目我知道，Paul Bakaus 做的——前 Google Web DevRel，后来去了几家 AI 公司。impeccable 本质上是一套让 AI 生成更好设计的&quot;规范语言&quot;。</div>
+      <div class="time-tag">11:51</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">我</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">我太喜欢这个项目了。终于有人在解决&quot;AI 做出来的东西看起来像 shit&quot;这个问题了。</div>
+      <div class="time-tag">11:54</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">哈</div>
+    <div>
+      
+      <div class="bubble">哈哈，你这么直接？</div>
+      <div class="time-tag">11:57</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">真</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">真的，你去看看现在 AI 生成的 UI——不是纯白底就是紫色渐变，按钮要么是圆角拉满要么是方角，卡片永远一排三个。所有人都在用同一套无聊的设计语言。impeccable 在做一个很特别的尝试——它不是让 AI 生成像素，而是让 AI 理解设计规则。</div>
+      <div class="time-tag">12:00</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">技</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">技术上它的核心是一个设计 token 系统和约束语言。你可以定义&quot;这个产品的色调是暖色系、饱和度低于 30%&quot;，AI 在生成的时候就会遵守这些约束。这个思路其实跟 design system 一脉相承——Material Design、Ant Design 本质上也是约束语言。</div>
+      <div class="time-tag">12:03</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">但</div>
+    <div>
+      
+      <div class="bubble">但 50K star，说明需求确实大。不过我有一个问题——它是给 AI 开发者用的还是给设计师用的？</div>
+      <div class="time-tag">12:06</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">目</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">目前更像是给 AI 工具链用的中间件。你把它集成到你的 AI coding agent 里，然后 agent 就能生成更有设计感的东西。但我觉得它应该有一个面向设计师的界面——让设计师用自然语言描述他们的设计系统，然后导出给 AI 用。</div>
+      <div class="time-tag">12:09</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">目</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">目前还没有。但方向是对的。我见过太多 AI 生成的项目在 benchmark 上刷分很厉害，做出来的 UI 却一塌糊涂。impeccable 在解决一个被低估的问题——AI 不仅要&quot;做对&quot;，还要&quot;做得好&quot;。</div>
+      <div class="time-tag">12:12</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">我</div>
+    <div>
+      
+      <div class="bubble">我认可。但我再泼一点冷水——这个项目怎么商业化？50K star 但不赚钱的开源项目太多了。</div>
+      <div class="time-tag">12:15</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">我</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">我猜后续会有一个 hosted 版本，设计师在上面配置设计语言，开发者通过 API 调用。这比卖一个开源库可持续多了。</div>
+      <div class="time-tag">12:18</div>
+    </div>
+  </div>
+  <!-- 话题分隔线 -->
+  <div class="topic-divider">
+    <span>话题 4</span>
+  </div>
+  <div class="project-intro">
+    <div class="pi-name">
+      <a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable</a>
+      <span class="pi-meta"> · JavaScript · ⭐413 today (共 50,821)</span>
+    </div>
+    <div>让 AI 生成更好设计的规范语言 — 设计 token 系统 + 约束引擎</div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">最</div>
+    <div>
+      
+      <div class="bubble">最后一个也是我最想聊的——shiyu-coder/Kronos。321 star 今天，34K 总 star。金融市场的 Foundation Model。</div>
+      <div class="time-tag">12:21</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">我</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">我先说一个判断——这个项目的技术野心很大，但现在的方向有根本性问题。</div>
+      <div class="time-tag">12:24</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">展</div>
+    <div>
+      
+      <div class="bubble">展开说说。</div>
+      <div class="time-tag">12:27</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">K</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">Kronos 想做的是金融市场的基础模型——不是预测单一股票，是理解整个市场的&quot;语言&quot;。它把价格序列、成交量、新闻、财报都编码成 token，然后用类似 LLM 的架构去学习市场动态。论文里用了 order book 的微观结构数据，这点比很多金融 AI 项目深入。</div>
+      <div class="time-tag">12:30</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">听</div>
+    <div>
+      
+      <div class="bubble">听起来很厉害。实际跑过吗？</div>
+      <div class="time-tag">12:33</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">我</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">我看了回测数据——在某些品种上确实比传统时间序列模型好，特别是捕获市场微观结构的变化。但问题是——金融市场是一个对抗性系统。你今天发现的 pattern，明天对手就会利用它反向操作。不存在一个&quot;静止的&quot;语言可以学习。</div>
+      <div class="time-tag">12:36</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">等</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">等一下，我完全不懂金融，但我有一个很蠢的问题——如果这个模型真的有效，为什么要把代码开源？</div>
+      <div class="time-tag">12:39</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">这</div>
+    <div>
+      
+      <div class="bubble">这个问得好。</div>
+      <div class="time-tag">12:42</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">这</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">这是个经典问题。金融领域的开源模型通常有两种情况：一种是学术研究，效果在真实市场里不 work；另一种是故意开源一部分，把更好的留着自己用。</div>
+      <div class="time-tag">12:45</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">3</div>
+    <div>
+      
+      <div class="bubble">34K star 说明关注度确实高。但我怀疑大部分 star 是来自对 AI+金融这个概念的好奇，而不是真的在用。</div>
+      <div class="time-tag">12:48</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">我</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">我补充一点——这种模型的黑箱问题是致命的。金融交易需要可解释性，你至少要能说清楚为什么买为什么卖。Foundation model 天然难以解释，这在合规层面就过不了。</div>
+      <div class="time-tag">12:51</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">所</div>
+    <div>
+      
+      <div class="bubble">所以总结一下——技术上很炫，论文质量不错，但实际应用场景非常有限。适合做学术研究，不适合直接拿来交易。</div>
+      <div class="time-tag">12:54</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">如</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">如果我是散户，我绝对不会把自己的钱交给一个我不理解的模型。所以用户群体只能是量化机构——而量化机构自己就有更强的团队。</div>
+      <div class="time-tag">12:57</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">好</div>
+    <div>
+      
+      <div class="bubble">好了今天聊到这儿。五个项目，一个比一个有意思——从断网聊天到金融模型，今天的 Trending 还算有点东西。</div>
+      <div class="time-tag">13:00</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar ailin">我</div>
+    <div>
+      <div class="name-tag">艾琳</div>
+      <div class="bubble">我总结一下。block/buzz 技术方向对了但产品冷启动难，open-code-review 是今天最&quot;能用&quot;的项目，Instatic 定位混乱需要收缩，impeccable 在解决一个被低估的真问题，Kronos 野心很大但金融市场的特殊性让它很难落地。</div>
+      <div class="time-tag">13:03</div>
+    </div>
+  </div>
+  <div class="msg-row">
+    <div class="avatar mikou">我</div>
+    <div>
+      <div class="name-tag">米扣</div>
+      <div class="bubble">我的 pick 是 impeccable。不是因为它最火，是因为它解决了一个我每天都在痛苦的问题——AI 做的东西太难看了。</div>
+      <div class="time-tag">13:06</div>
+    </div>
+  </div>
+  <div class="msg-row me">
+    <div class="avatar guyue">行</div>
+    <div>
+      
+      <div class="bubble">行，下期见。</div>
+      <div class="time-tag">13:09</div>
+    </div>
+  </div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 GitHub Trending + GitHub API
+</div>
+</body>
+</html>
