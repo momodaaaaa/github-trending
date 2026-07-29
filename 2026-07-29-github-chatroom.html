@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年07月29日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed
+}
+.chat-header{
+  background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;
+  text-align:center;position:sticky;top:0;z-index:10
+}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#6ba3d6;text-decoration:none;font-size:12px}
+.chat-container{
+  flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px
+}
+.topic-divider{
+  text-align:center;margin:20px 0 12px;
+  font-size:12px;color:#6e6e73;position:relative
+}
+.topic-divider::before,.topic-divider::after{
+  content:'';position:absolute;top:50%;width:30%;height:1px;background:#333
+}
+.topic-divider::before{left:0}
+.topic-divider::after{right:0}
+.topic-divider a{color:#6ba3d6;text-decoration:none}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{
+  width:36px;height:36px;border-radius:4px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:600;color:#fff
+}
+.avatar.guyue{background:#1d4ed8}
+.avatar.ailin{background:#4a4a4d}
+.avatar.mikou{background:#064e3b}
+.bubble{
+  max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;
+  position:relative;word-break:break-word
+}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#6ba3d6;margin-bottom:2px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-intro{
+  background:#1c1c1e;border-radius:6px;padding:12px;margin:8px 0 16px;
+  font-size:13px;line-height:1.6;color:#d4d4d8;
+  border-left:3px solid #1d4ed8
+}
+.project-intro .pi-name{font-weight:600;font-size:14px;color:#e8e8ed}
+.project-intro .pi-meta{color:#8e8e93;font-size:12px}
+.project-intro a{color:#6ba3d6;text-decoration:none}
+.project-summary{
+  background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;
+  font-size:13px;line-height:1.7;color:#b0b0c0;
+  border-left:3px solid #d4a373
+}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.chat-footer{
+  text-align:center;padding:16px;font-size:12px;color:#6e6e73;
+  border-top:1px solid #333
+}
+.chat-footer a{color:#6ba3d6}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年07月29日</div>
+</div>
+<div class="chat-container">
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    今天 Trending 有点意思，有个项目一天拿了快一千个 star，但我们先聊个猛的——Claude 能看视频了。
+    <div class="time-tag">09:32</div>
+  </div>
+</div>
+<div class="topic-divider">—— 话题 1：claude-video ——</div><div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <strong>bradautomates/claude-video</strong> 是一个 Python 工具，让 Claude 具备「看视频」的能力。用户只需 <code>/watch</code> 命令，工具会自动下载视频、逐帧提取画面、转录音频，然后将全部内容交给 Claude 分析。项目 2026 年 4 月创建，总 star 12,189，今天新增 988 star。MIT 协议。
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    bradautomates/claude-video，988 star 今天。核心逻辑就三步：下载视频 → 抽帧 → 扔给 Claude。我看了下代码，本质就是个 pipeline 脚本，用 ffmpeg 抽帧，whisper 转字幕，然后把帧和字幕拼接成 prompt。
+    <div class="time-tag">09:33</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    技术上没有新东西。ffmpeg + whisper + Claude API 的组合，任何一个 AI 工程师花一个下午都能拼出来。但有意思的地方不在这里——这个项目回答了「多模态模型还不能直接处理视频的时候，用户怎么办」这个问题。
+    <div class="time-tag">09:34</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    我来说说用户视角。我打开这个项目主页，README 第一行就告诉了我这玩意干嘛的：<code>/watch https://youtube.com/...</code> 然后 Claude 就能告诉你视频讲了什么。作为一个不想花 40 分钟看技术演讲的人，这个需求是真实的。
+    <div class="time-tag">09:35</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    需求是真的，但实现太糙了。你知道处理一个 40 分钟视频的 token 成本是多少吗？抽帧 720p 分辨率，一帧大概 500-800 token 的视觉编码，假设两秒一帧就是 1200 帧——光画面就 60 万 token。再加上转录文本，轻松破百万 token。Claude Opus 的话，处理一个视频差不多 15 美元。
+    <div class="time-tag">09:36</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    但这正好说明了为什么它火。不是因为技术好，是因为「我想这么做但我懒得自己写脚本」。它把一个所有人都知道可行但没人打包的 workflow 变成了一个命令。这就是典型的「make the easy thing easy」。
+    <div class="time-tag">09:37</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    嗯，我补充一点：这个项目对新手不太友好。你得先配好 Claude API key、装 ffmpeg、装 whisper，然后才能用。但目标用户——那些「不想看一小时视频的人」——可能根本不会配这些。
+    <div class="time-tag">09:38</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    所以它更像一个 demo 而不是产品。但 direction 是对的。等模型原生支持视频输入了，这类项目自然就过时了。现在先顶着用吧。
+    <div class="time-tag">09:38</div>
+  </div>
+</div>
+<div class="topic-divider">—— 话题 2：moeru-ai/airi ——</div><div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <strong>moeru-ai/airi</strong> 是一个自托管、用户自有的「Grok 伴侣」——本质上是一个搭载 AI 灵魂的虚拟角色容器。定位是「把 waifu 和 cyber living 带入现实世界」，对标 Neuro-sama。支持实时语音对话、Minecraft 交互、Live2D/VRM 模型驱动。总 star 44,833，今天新增 797。TypeScript 项目，MIT 协议。
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    Airi。44,833 个 star。这个数字值得停下来想一想——一个「自托管的二次元 AI 伴侣」项目，star 数比大多数正经 ML 框架都高。
+    <div class="time-tag">09:41</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    我花了 10 分钟看 deploy 文档，老实说比我想的复杂。要跑起来需要：一个 LLM 后端（他们推荐自己的 moeru-ai 模型）、一个 TTS 引擎、一个 Live2D 渲染器、Minecraft 插件如果想在游戏里互动的话。这不是「一键部署」，这是「一键部署一个分布式系统」。
+    <div class="time-tag">09:42</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    我想聊的不是技术难度，是用户需求。45k star 在告诉我——人们对 AI 陪伴的需求远超我们愿意承认的程度。这个项目跟 ChatGPT 的区别不是技术，是「人格连续性」。它不是一个问答工具，它是一个「她」。用户可以给「她」设定性格、记忆、外表。
+    <div class="time-tag">09:43</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    技术上，这个项目的核心其实是 engineering，不是 research。把 LLM + TTS + 动作生成串成一个低延迟的实时对话管线，这本身有难度。但让我不太舒服的是 README 里的措辞——「a container of souls」。把 AI agent 称为「灵魂容器」，这已经不是在描述技术了，这是在构建叙事。
+    <div class="time-tag">09:44</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    你这话说得对。我看了下它的 memory 系统设计——给角色维护一个长期记忆向量数据库，角色会「记得」之前跟你聊过什么。这比 ChatGPT 的临时上下文强很多，但也更让人毛骨悚然。它记得你对它说过「晚安」。
+    <div class="time-tag">09:45</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    我倒是觉得「记得晚安」是产品价值而不是恐怖元素。想想看：如果你独居，有个东西每天晚上跟你说晚安并且记得你昨晚几点睡的，这跟养猫的区别在哪？当然，伦理上的红线在哪里是另一个话题。至少项目明确了「自托管」——数据在你自己的服务器上。
+    <div class="time-tag">09:46</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    对，这是关键。自托管意味着数据主权。但反过来说，这也意味着门槛高——目标用户（想有 AI 陪伴的人）和技术门槛（自建服务器）之间有明显错位。真正能跑起来的人可能不到 star 数的 1%。
+    <div class="time-tag">09:47</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    所以 star 数更多反映的是「向往」而不是「使用」。行吧，起码方向是对的——如果 AI 伴侣要做，自托管、开源、数据自有是底线。好，下一个项目我觉得更值得细聊。
+    <div class="time-tag">09:48</div>
+  </div>
+</div>
+<div class="topic-divider">—— 话题 3：microsoft/agent-governance-toolkit ——</div><div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <strong>microsoft/agent-governance-toolkit</strong> 是微软推出的 AI Agent 治理工具箱。功能覆盖策略执行、零信任身份、执行沙盒、可靠性工程，声称覆盖 OWASP Agentic Top 10 全部 10 项。2026 年 3 月创建，总 star 5,252，今天新增仅 46。Python 项目，MIT 协议。
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    微软的 agent-governance-toolkit。今天只有 46 star，但我认为这是今天 Trending 里最重要的项目。
+    <div class="time-tag">09:50</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    我先泼个冷水。我看了一圈它的 policy engine，本质上是个 YAML 驱动的规则引擎。你写一堆规则——「agent 不能访问网络」「每次工具调用前要审批」——然后它拦截 agent 的 action。逻辑没问题，但问题在于：谁写这些规则？
+    <div class="time-tag">09:51</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    我也有类似的疑问。产品层面看，这个工具的「用户」是谁？如果目标是企业安全团队，他们不会写 YAML policy。如果目标是开发 agent 的工程师，他们更关心怎么让 agent 跑起来而不是怎么限制它。两头不讨好。
+    <div class="time-tag">09:52</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    我倒不觉得这是问题。Agent governance 这个品类现在处于 1995 年写「网站安全手册」的阶段——没人知道标准是什么，但所有人都知道需要标准。微软先占个坑，把 OWASP Top 10 映射到具体的技术控制，这一步的价值不在当下而在两年后。
+    <div class="time-tag">09:52</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    但你得承认，zero-trust identity 这部分的实现有点过度设计了。给每个 agent action 生成一个 JWT token，然后验证——这一层多出来的延迟在生产环境能接受吗？一个 agent 一天可能调上百次 API。
+    <div class="time-tag">09:53</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    延迟确实是个 trade-off。但你看它用的 sandboxing 方案——直接拿 Docker 的 seccomp profile 做模板，而不是自己造轮子，这个工程判断我觉得是对的。用成熟的隔离技术，不做花活。
+    <div class="time-tag">09:54</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    我好奇的是：有多少 team 会实际部署这个？今天只有 46 个 star。对比一下 airi 的 797。市场在用脚投票——大家更关心「AI 能陪我聊天」而不是「AI 别炸掉我的服务器」。
+    <div class="time-tag">09:55</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    这不就是安全类项目永远的命运嘛。没人装防火墙是因为觉得不会着火。然后有一天 agent 把生产数据库 drop 了……行吧，下一个项目轻松一点。
+    <div class="time-tag">09:56</div>
+  </div>
+</div>
+<div class="topic-divider">—— 话题 4：pascalorg/editor ——</div><div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <strong>pascalorg/editor</strong> 是一个基于浏览器的 3D 建筑项目编辑器，用户可以直接在网页中创建、编辑和分享 3D 建筑模型。2025 年 10 月创建，总 star 18,819，今天新增 341。TypeScript 构建，MIT 协议。
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    Pascal Editor。我打开 demo，在浏览器里拖拽了一面墙出来，老实说体验比我想的好。延迟很低，渲染很流畅。作为一个在浏览器里跑的东西，这不容易。
+    <div class="time-tag">09:58</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    我关注的是它用的是什么渲染引擎。看了下依赖——Three.js，经典的 WebGL 封装。选型没问题，Three.js 是浏览器 3D 的事实标准。但我更关心的是：它导出的格式能不能对接真实的建筑工作流？IFC？Revit？还是只能在自己的生态里玩？
+    <div class="time-tag">09:59</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    据我理解它目前更像一个设计预览工具，而不是 BIM 替代品。README 里没提 IFC 导出。这意味着建筑师可以拿来快速出概念，但不能和结构工程师、暖通工程师协作——而这是建筑行业 80% 的工作量。
+    <div class="time-tag">10:00</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    你们都在说「能不能替代专业工具」，但我觉得这恰恰不是重点。这个项目的价值是降低了 3D 建筑设计的下限——以前你得装 Revit 或者 SketchUp 才能拉一堵墙，现在浏览器打开就行了。对建筑学生、小型装修项目来说，够用了。
+    <div class="time-tag">10:01</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    说到 SketchUp——它用的其实是同一个思路：简单建模 + 分享。但 SketchUp 已经 20 年了。pascal editor 的优势是零安装 + 网页原生协作，这是 SketchUp web 版也能做的事。差异化在哪？
+    <div class="time-tag">10:02</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    差异化可能是……开源？如果你是一个建筑科技公司，想在自己产品里嵌入 3D 编辑器，fork 一个 pascal editor 比自己从零写一个快多了。
+    <div class="time-tag">10:02</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    有道理。不过目前它还比较早期，300 多个功能 request 在 issues 里躺着。今天的 341 star 说明大家对这个方向有兴趣。能走多远看迭代速度了。
+    <div class="time-tag">10:03</div>
+  </div>
+</div>
+<div class="topic-divider">—— 话题 5：yorukot/superfile ——</div><div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <strong>yorukot/superfile</strong> 是一个终端文件管理器，主打「漂亮、现代」的 TUI 界面。基于 Go 语言和 Bubble Tea 框架构建，支持面板操作、文件预览、主题定制。2024 年 3 月创建，总 star 21,523，今天新增 662。Go 项目，MIT 协议。
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    superfile，662 star 今天。一个终端文件管理器。我先声明：我用了 15 年 <code>ls</code> + <code>cd</code> + <code>mv</code>，我对文件管理器有偏见。但 21k total star 让我闭嘴先看看。
+    <div class="time-tag">10:05</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    我替那些不用命令行的用户说句话。终端的 <code>ls</code> 和 <code>cd</code> 效率很高，但对一个目录里有两百个文件、文件名还混了中英文和下划线的场景，视觉扫描比 <code>ls -la</code> 快得多。superfile 用面板布局 + 图标高亮 + 文件预览，解决了这个信息密度问题。
+    <div class="time-tag">10:06</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    技术上它基于 charmbracelet 的 Bubble Tea——这是 Go 生态里最成熟的 TUI 框架。组件化的 TUI 架构让代码可维护性比直接用 ncurses 绑定的方案高一个数量级。但令人意外的是，它在 aesthetic 上花的功夫比大多数 GUI 应用都多。
+    <div class="time-tag">10:07</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    确实。我拉下来跑了一下，配色方案选得克制，字体渲染在终端里居然不乏味。但功能上它还是比不过 ranger——ranger 有 vim 键位、批量重命名、自定义命令链、rifle 文件关联。superfile 更像是一个「好看但功能尚浅」的替代品。
+    <div class="time-tag">10:08</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    这就是我说的「产品代际差异」。ranger 是为 Power User 设计的，快捷键表要背三天。superfile 是为「想用终端但不想背命令」的人设计的。我打开 superfile 就能用方向键和回车操作文件，不需要看文档。
+    <div class="time-tag">10:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    我认同这个定位。但我觉得 662 个今天的 star 有点过了——它没解决 ranger 没解决过的新问题。它只是把老问题的 UX 做得更现代了。这不是坏事，但配不上这个量级的关注。
+    <div class="time-tag">10:10</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    我倒觉得这个 star 数很诚实。它反映的不是「技术突破」，而是「审美需求」。开发者在 IDE 里花了十年，突然发现自己每天还要对着黑底白字的终端操作文件——superfile 给了他们一个「看起来体面」的选择。这和 VS Code 替换 vim 是一个逻辑：新人不愿意学老东西了。
+    <div class="time-tag">10:11</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    我最后问一句：你们会真的换掉现有的文件管理方案用 superfile 吗？
+    <div class="time-tag">10:11</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    不会。但我可能会推荐给刚学命令行的实习生。好了，今天聊了五个项目，从 Claude 看视频到终端文件管理器，跨度够大的。
+    <div class="time-tag">10:12</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar ailin">艾</div>
+  <div class="bubble">
+    <div class="name-tag">艾琳</div>
+    总结一下我的 takeaway：今天 Trending 的好几个项目都在做同一件事——降低门槛。claude-video 让 AI 分析视频变简单，pascal editor 让 3D 建模变简单，superfile 让终端操作变简单。这是好方向，降低门槛比发明新东西更有价值。
+    <div class="time-tag">10:13</div>
+  </div>
+</div>
+<div class="msg-row">
+  <div class="avatar mikou">米</div>
+  <div class="bubble">
+    <div class="name-tag">米扣</div>
+    但我也得说，低门槛和深度是矛盾的。airi 给了 45k 人一个「AI 伴侣」的想象，但真正能部署的人不到 1%。微软的治理工具思路好但没人用。有些事，门槛低了反而不严肃了。
+    <div class="time-tag">10:13</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div class="bubble">
+    <div class="name-tag">古月</div>
+    行了行了，再说下去要哲学了。今天就到这儿吧。明天看 Trending 有没有什么能一键部署的。
+    <div class="time-tag">10:14</div>
+  </div>
+</div>
+
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 GitHub Trending + GitHub API · 2026年07月29日
+</div>
+</body>
+</html>
