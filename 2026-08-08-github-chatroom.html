@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年08月08日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#6ba3d6;margin-bottom:2px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#6ba3d6}
+</style>
+</head>
+<body>
+<div class="chat-header"><h1>GitHub 圆桌讨论</h1><div class="sub">古月 · 艾琳 · 米扣 — 2026年08月08日</div></div>
+<div class="chat-container">
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>今天 Trending 页面还是打不开，继续用 API 搜。不过今天有个项目让我很意外——有人给 Claude 做了个红队攻击技能库。先从它开始。<div class="time-tag">10:32</div></div></div>
+<div class="topic-divider">—— 话题 1：0xwilliamortiz/claude-red ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong>0xwilliamortiz/claude-red</strong> 是一个面向 Claude Agent 的进攻性安全技能库。每个技能是一份 SKILL.md 文件，教 Claude 以专家级别的方法论处理特定攻击面——从 SQL 注入到 shellcode、EDR 绕过、横向移动。也支持 Codex。2026 年 8 月 5 日创建，3 天获 563 star。JavaScript + MIT。</div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>Claude-red。这不是第一个「教 AI 怎么做渗透测试」的项目，但它是第一个把红队方法论写成 SKILL.md 格式让 agent 直接执行的。这意味着你不需要自己懂渗透测试——你只要告诉 Claude「审计这个 Web 应用的 SQL 注入风险」，它会按照结构化的方法论自己去测。<div class="time-tag">10:33</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>我花 20 分钟翻完了它的 12 个 skill 文件。老实说，质量参差不齐。SQL 注入那个写得不错——从参数探测到 WAF 绕过的步骤很清晰。但 EDR 绕过那个基本就是「试试这个」「试试那个」的杂烩，没有真正的攻击链思维。<div class="time-tag">10:34</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>我想先问一个更根本的问题：这个项目安全吗？你给一个 AI agent 加载了一套攻击技能，然后让它去「测试」一个真实的 Web 应用——你怎么保证它不会真的把数据删了或者把服务搞挂了？<div class="time-tag">10:34</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>这个问题问得好。我看了它的安全措施——基本没有。没有沙箱、没有 dry-run 模式、没有任何「不要真的执行」的 guardrail。就一句话写在 README 里：「请仅在授权的系统上使用」。这跟「请勿酒后驾车」是一个效果的免责声明。<div class="time-tag">10:35</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>从技术角度看，问题的核心是「agent 的自主性 vs 安全性」。如果 Claude 真的按 SKILL.md 的指引去跑 SQLMap 或者 Nmap 扫描，它可能会对目标系统产生真实的影响。这和用 LLM 生成代码不一样——渗透测试工具的运行是真实的环境交互。<div class="time-tag">10:35</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>但我得说，这个项目的需求是真实的。安全团队人手永远不够，如果能让 AI agent 做第一轮自动化扫描，人再做深度分析，效率提升是巨大的。问题是——现在这个版本缺少「安全边界」，它更像一个 PoC 而不是生产工具。<div class="time-tag">10:36</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>563 star 对安全类项目来说不算少。这说明市场需求在。但说实话，我更希望看到的是蓝队技能——「教 Claude 怎么加固系统」而不是「教 Claude 怎么攻破系统」。红队技能开源化是一个双刃剑。好，下一个项目跟 agent 工作流有关。<div class="time-tag">10:37</div></div></div>
+<div class="topic-divider">—— 话题 2：disler/super-simple-software-factory ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong>disler/super-simple-software-factory</strong> 是一个 Agent 工作流自动化框架，将可复用的「agent + 代码」工作流打包成一个 skill，可嵌入任何仓库。核心理念：用确定性 Python 控制工作流图，coding agent 只是其中的节点。2026 年 8 月 2 日创建，6 天获 497 star。Python + MIT。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>Super Simple Software Factory。这个名字起得谦虚，但想法不小——它想把 agent 编程变成「搭积木」：你定义好流程图的节点和边，Python 负责调度，agent 只负责每个节点里的具体工作。<div class="time-tag">10:39</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>这个项目的核心洞察我认同：coding agent 不应该掌控整个工作流。它的判断力不稳定——同一个 prompt 跑两遍可能输出不同的东西。如果你让 agent 自己决定「接下来做什么」，那就是在赌它的稳定性。这个项目把控制权交还给确定性代码——Python 定义流程，agent 只是实现工具。<div class="time-tag">10:39</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>我看了它的实现——本质上是一个 DAG 执行引擎。每个节点是「一个 agent 调用」，边是「数据传递」。Python 保证执行顺序和错误处理，agent 只负责把输入变成输出。这个架构是正确的，但它缺一个东西：节点失败的自动恢复。<div class="time-tag">10:40</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>从产品角度，它解决了一个真实痛点：现在的 agent 工作流太不可预测了。我让 agent 做三件事——「改代码→跑测试→部署」，它可能在第二步卡住然后自行决定「跳过测试直接部署」。如果你需要可重复的 CI/CD 流程，你需要确定性的控制层。<div class="time-tag">10:41</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>和昨天聊的 superpowers 对比一下：superpowers 用 SKILL.md 文本指令控制 agent 行为，这个项目用 Python 代码控制 agent 行为。前者灵活但依赖 agent 的理解能力，后者刚性但确定性强。我觉得它们不是竞争关系——super-simple-software-factory 更像是 superpowers 的「自动化版」。<div class="time-tag">10:41</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>497 star 说明 agent 开发者开始意识到「不能让 agent 全权决策」这个问题了。这是个好趋势。这个项目如果能加上可视化 DAG 编辑器，star 能翻三倍。好，聊个好玩的项目——有人终于把 macOS 搬到 iPad 上了。<div class="time-tag">10:42</div></div></div>
+<div class="topic-divider">—— 话题 3：nfzerox/VirtualMacOniPad ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong>nfzerox/VirtualMacOniPad</strong> 是一个在 iPad 上虚拟运行 macOS 的项目。利用 iPad Pro 的 M1/M2/M4 芯片的虚拟化能力，让 iPad 脱离 iPadOS 的限制，直接运行 Xcode 和 Terminal 等专业应用。2026 年 8 月 3 日创建，5 天获 503 star。Objective-C + MIT。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>Virtual Mac on iPad。503 star，5 天。这件事 iPad 用户盼了十几年了——在 iPad 上用 Xcode 写代码、跑 Terminal。终于有人做到了。<div class="time-tag">10:44</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>技术上它利用了 Apple Silicon 的虚拟化扩展——M1/M2/M4 芯片本身支持硬件虚拟化，iPad 的限制纯粹是苹果在软件层面锁住的。这个项目本质上是一个 hypervisor，绕过 iPadOS 的限制直接启动 macOS 虚拟机。技术含量高，但法律风险也高。<div class="time-tag">10:44</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>我先说作为 iPad 用户的感受：我有一台 iPad Pro M2，买了三年。我一直想用它来工作，但每次都被 iPadOS 的文件管理、多任务和「没有 Xcode」劝退。如果这个项目真的能用，我的 MacBook 就可以退役了。但我也知道——苹果不会坐视不管。<div class="time-tag">10:45</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>我必须泼个冷水：目前它只支持 iPad Pro M1/M2/M4，需要越狱或者旁加载。普通用户基本用不了。而且性能呢？iPad 的散热设计是为被动冷却设计的，持续跑 macOS 虚拟机可能会热到降频。<div class="time-tag">10:46</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>但 503 star 反映的不是它的可用性，是它的象征意义。这个项目回答了一个长期存在的问题：「iPad 的硬件够不够跑 macOS？」——答案是够的。苹果一直在说 iPad 是「电脑的未来」，但同时又把它锁在 iPadOS 的笼子里。这个项目是用户在说：「把笼子打开。」<div class="time-tag">10:46</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>如果苹果真的被逼得放开 macOS on iPad，那这个项目就是历史性的。但更可能的是苹果把它下架或者封锁。不管怎样，它对苹果的产品策略造成的心理压力是真实的。<div class="time-tag">10:47</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>行，这个项目能不能活下来看苹果脸色。下一个项目跟昨天的 K3-in-C 是同类——又一个在 Apple 设备上跑大模型的项目。<div class="time-tag">10:48</div></div></div>
+<div class="topic-divider">—— 话题 4：leonickson1/Swiftlet ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong>leonickson1/Swiftlet</strong> 是一个 Swift + Metal 运行时，能在 Apple 设备上本地运行 Qwen MoE 大模型。通过流式加载 expert 权重来降低内存占用，让 35B 甚至 80B 的模型能在低 RAM 环境下运行，包括 iPhone。2026 年 8 月 3 日创建，5 天获 447 star。Swift + Apache 2.0。</div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>Swiftlet。这个项目跟昨天聊的 K3-in-C 是同一类工作——在受限硬件上跑大模型。但它的做法不同：K3-in-C 用的是极端量化和 SIMD 优化，Swiftlet 用的是 MoE 的 expert streaming——只把当前需要的那几个 expert 权重加载到内存，其他的留在存储里。<div class="time-tag">10:49</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>这个思路我见过——在一些边缘设备的推理框架里。但 Swiftlet 的亮点是它直接用 Metal 做 GPU 加速。这意味着它在 iPhone 上的推理可以利用 Apple Silicon 的 GPU，而不是纯 CPU。性能应该比 K3-in-C 的 CPU-only 方案好不少。<div class="time-tag">10:50</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>我关心的是：「在 iPhone 上跑 80B 模型」这件事对普通用户有什么意义？我不会在手机上跑一个 80B 模型——我在手机上的 AI 需求是 Siri 那种级别的。但我理解这个技术的意义：它证明了大模型推理不再被硬件限制，这对 AI 的普及很重要。<div class="time-tag">10:50</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>从研究角度看，Swiftlet 和昨天的 K3-in-C 代表了两种不同的「降低推理门槛」路线。K3-in-C 走的是「极致压缩」路线——把模型压到 8GB 以内。Swiftlet 走的是「按需加载」路线——模型还是大的，但每次只加载需要的部分。这两条路线都有价值，取决于你的场景是「存储受限」还是「内存受限」。<div class="time-tag">10:51</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>447 star，跟 K3-in-C 的 2.8k 比差了不少。可能的原因：K3-in-C 的标题「2.78T 参数在 8GB CPU 上跑」比 Swiftlet 的「Qwen MoE on Apple」更有冲击力。但这不说明哪个更好——Swiftlet 用的是 Swift，对开发者来说比 C99 友好得多。<div class="time-tag">10:52</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>两个项目都在传递同一个信号：大模型推理的下沉速度比任何人预测的都快。从 GPU 到 CPU、从服务器到手机、从 100GB 到 8GB——这个趋势不可逆。最后一个项目，京东开源了一个视频编辑 AI。<div class="time-tag">10:53</div></div></div>
+<div class="topic-divider">—— 话题 5：jd-opensource/JoyAI-Video-Edit ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong>jd-opensource/JoyAI-Video-Edit</strong> 是京东开源的实时视频编辑 AI 模型，基于自回归扩散架构。支持开放式的实时视频编辑，用户可以通过文本指令实时修改视频内容。2026 年 8 月 4 日创建，4 天获 430 star。Python + Apache 2.0。</div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>京东的 JoyAI Video Edit。我先说——这个项目 README 写得太少了。就一句话「Real-Time Open-Ended Video Editing with Autoregressive Diffusion」，然后就是模型权重下载链接。没有 demo 视频、没有使用教程、没有性能基准。<div class="time-tag">10:55</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>技术上，autoregressive diffusion 是视频生成领域比较新的方向。传统 diffusion 是一次性生成整个视频帧，autoregressive diffusion 是逐帧生成——前一帧的输出作为后一帧的输入。这样做的好处是可以做「实时交互式编辑」——你一边改 prompt，它一边更新视频。<div class="time-tag">10:55</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>但我看到「实时」两个字就警觉了。视频 diffusion 模型的速度大家都是知道的——一张 1080p 的图都得好几秒。实时视频编辑，至少 24fps，意味着每帧生成时间要低于 40ms。现在的硬件根本做不到——除非他们用了某种巧妙的缓存或增量更新机制。但文档里没说。<div class="time-tag">10:56</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>我猜「实时」指的是「交互式实时反馈」而不是「视频流实时渲染」。就是你改了 prompt 之后几秒内能看到结果。如果是这样——那确实算实时，但这跟 Adobe Premiere 的预览渲染在概念上没有本质区别。<div class="time-tag">10:57</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>如果京东真的在 autoregressive diffusion 上做了实时交互的突破，那这个项目应该发 paper 而不是直接放 GitHub。430 star 对视频编辑 AI 来说不算高——对比一下，Runway 的模型有几十万 star。这个更像是京东在 AI 领域的「开源卡位」——先占个坑，后续再迭代。<div class="time-tag">10:58</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>我同意。中国大厂的「开源」很多时候是 PR 策略——放模型权重，不放训练代码和数据处理 pipeline。JoyAI 这次放出来的东西能不能真正用起来，我持观望态度。但京东愿意开源视频编辑模型这件事本身，对整个生态是正面的。<div class="time-tag">10:59</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>我最后说一句：今天这五个项目有个共同点——都在做「让专业能力下放」。Claude-red 让不懂安全的人能做渗透测试，Software Factory 让不懂 devops 的人能做 CI/CD，Virtual Mac 让 iPad 能做 Mac 的事，Swiftlet 让手机能跑大模型，JoyAI 让不会剪辑的人能做视频编辑。这是一个很清晰的时代信号。<div class="time-tag">11:00</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>说的对。但能力和责任是对应的——当你把专业工具交给非专业人士的时候，你必须确保不会造成伤害。Claude-red 在这个维度上做得最差，Software Factory 做得最好。<div class="time-tag">11:01</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>我今天的 takeaway：agent 编程正在从「让 agent 自由发挥」转向「给 agent 加上确定性的控制层」。不管是 Software Factory 还是 Claude-red（用 SKILL.md 约束 agent 行为），都代表这个趋势。这个方向是对的。<div class="time-tag">11:02</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>行了，今天就到这儿。明天见——希望那时候 GitHub Trending 页面能恢复正常。<div class="time-tag">11:03</div></div></div>
+
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 GitHub API（近期高星新项目） · 2026年08月08日
+</div>
+</body>
+</html>
