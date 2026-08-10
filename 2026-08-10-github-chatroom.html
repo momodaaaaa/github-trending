@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年08月10日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#6ba3d6;margin-bottom:2px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#6ba3d6}
+</style>
+</head>
+<body>
+<div class="chat-header"><h1>GitHub 圆桌讨论</h1><div class="sub">古月 · 艾琳 · 米扣 — 2026年08月10日</div></div>
+<div class="chat-container">
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>今天终于有几个不按套路出牌的项目了——有一个让 agent 操控你的手机，还有一个把京都寺庙搬进了 Three.js。先聊最刺激的。<div class="time-tag">10:34</div></div></div>
+<div class="topic-divider">—— 话题 1：phone-harness ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong>ShawnPana/phone-harness</strong> 让 AI agent 直接操控你的手机。通过 ADB（安卓）或 Shortcuts（iOS）桥接，agent 可以滑动、点击、输入文字、读取屏幕内容。8月7日创建，3天1106 star，87 fork。Python。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>phone-harness，1100 star，三天。这个项目的核心思路是：用 ADB（安卓调试桥）或者 iOS Shortcuts 给 agent 开一个口子，让它像人一样操作手机——滑屏、点按、打字。我试了 demo，让它帮我打开美团点一杯咖啡，它真的做到了。<div class="time-tag">10:35</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>技术上不复杂——ADB 本身就是标准的安卓调试工具，开发者用了几十年了。这个项目的价值不是技术创新，是把 ADB 的输入输出封装成了 LLM 能理解的格式——截图给模型看，模型输出坐标和操作类型，ADB 执行。这是一个 pure engineering 的胜利。<div class="time-tag">10:36</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>我先说我的第一反应：害怕。你给一个还不是完全可靠的 AI agent 开了操控你手机的口子——它点错一下可能就把银行卡里的钱转走了。这个项目目前没有任何安全边界——没有「仅限沙箱应用」模式，没有「支付确认需人工」机制、没有操作上限。<div class="time-tag">10:36</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>你说到关键点了。ADB 本身就是最高权限——它能做的事情跟人一样多。如果 agent 幻觉了或者被 prompt injection 了，它可以做到「格式化了你的存储」「发了 500 条骚扰短信」「把你的相册全部上传到公共 URL」。<div class="time-tag">10:37</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>但话说回来，87 个 fork 说明很多人觉得这个风险值得冒。我觉得 phone-harness 真正有价值的场景是测试自动化——不是让 agent 帮你点外卖，而是让 agent 帮你做 App 的 UI 自动化测试。在这个场景下，手机本来就是测试机，安全风险可控。<div class="time-tag">10:38</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>同意。如果这个项目能加一个「安全模式」——限定 agent 只能在指定的测试 App 里操作，出了问题自动回滚——那它就是 QA 团队的梦。但目前缺少这个。不过 1106 star 说明「让 agent 控制手机」这个需求是真实的。<div class="time-tag">10:38</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>行，过两年回头看这个项目——它可能是「agent 接管移动端」的起点，也可能是「agent 安全灾难」的教材。好，换个轻松的话题——有人用 Three.js 做了一本可以走进去的书。<div class="time-tag">10:39</div></div></div>
+<div class="topic-divider">—— 话题 2：MengTo/kage ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong>MengTo/kage</strong> 是一个交互式 3D 体验——「穿越京都山寺的五章夜行」。使用 Three.js 实时渲染，用户在浏览器中步行穿越一座日本山寺，每章一个场景。8月8日创建，2天713 star，122 fork。HTML + Three.js。</div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>Kage——我打开 demo 的第一秒就被震住了。月光下的石阶、飘动的灯笼、远处寺庙的轮廓——全在浏览器里实时渲染。这不是一个「项目」，这是一个「数字艺术装置」。122 个 fork，说明很多人想基于这个框架做自己的东西。<div class="time-tag">10:41</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>从技术角度看，它的加载策略很聪明——逐章流式加载场景资源，不是一次性加载所有。所以第一帧出现的速度很快。Three.js 的选择也很务实——WebGPU 还不成熟，WebGL 够用且兼容性好。如果它用 WebGPU 的话，可能一半用户看不到。<div class="time-tag">10:41</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>我看了它的渲染管线。阴影用的是 shadow map 而不是 ray tracing，粒子效果用的是 GPU particles 而不是 CPU——这些选择说明作者知道自己在做什么。但我说实话，我更好奇的是「为什么要做这个」。它不是工具、不是框架、不是技术 demo——它是一个完整的艺术作品。<div class="time-tag">10:42</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>这正是 GitHub 的魔力——它允许一个「数字艺术品」和一个「CI/CD 工具」共享同一个平台和同一套开源生态。我觉得我们不应该用评价工具的尺度来评价 Kage——它应该被看作一个「开源的创意作品」。就像 D3.js 的 demo 页面一样，它们不是产品，是创作的展示。<div class="time-tag">10:43</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>不过我有个技术观察：122 fork 里有多少是真的想「基于这个做自己的 3D 场景」还是「下载下来看看怎么做的然后学习 Three.js」？我猜测后者居多。Kage 的最大价值可能是作为 Three.js 的教学材料——比官方文档生动一百倍。<div class="time-tag">10:43</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>对。如果每个技术概念都有这样一个「沉浸式教材」，学编程的门槛会低很多。好了，下一个项目是我们行业最近的暗流——有人在打通 Claude 和 Codex。<div class="time-tag">10:44</div></div></div>
+<div class="topic-divider">—— 话题 3：codex-bridge ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong>Sateezg/codex-bridge</strong> 让 Claude Code 通过 Codex CLI 使用 GPT-5 的图像生成（gpt-image-2）和子 agent 功能。利用用户已有的 Codex CLI 登录态，无需申请 OpenAI API key。8月9日创建，1天352 star。Shell + MIT。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>codex-bridge。这个项目做的事很取巧：你已经在 Codex 里登录了，它就利用这个登录态，让 Claude Code 通过 Codex CLI 调用 GPT-5。不需要额外申请 API key。翻译成人话：在 Claude 的聊天框里享受 GPT-5 的部分能力。<div class="time-tag">10:45</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>技术上这是一个「后门桥接」——它利用了 Codex CLI 的本地认证 token，通过命令行调用 Codex 的 API。这个方案的不稳定因素在于：它依赖 Codex CLI 的认证机制保持不变。如果 OpenAI 改了 token 格式或者加了设备指纹校验，这个桥就会断。<div class="time-tag">10:46</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>从产品角度看这是一个很有意思的现象：「用户不想被锁定在一个 AI 生态里」。Claude Code 用户想要 GPT-5 的图片生成能力，但不想切换到 Codex——所以有人写了个桥。同样的逻辑，Codex 用户可能想要 Claude 的长文本理解——明天可能就有人写一个反方向的桥。<div class="time-tag">10:47</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>但 3 个 fork——说明敢用的人还不多。毕竟这涉及到两个平台的安全边界。你把自己的 Codex 认证 token 暴露给了 Claude Code 的一个第三方插件——这中间的安全链条很长，任何一个环节出问题都会导致凭证泄露。<div class="time-tag">10:47</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>不过这个项目的存在本身就是一种「用户需求声明」。AI 平台之间的互操作性在变得越来越重要——用户不希望在不同 agent 之间手动切换。未来可能会成为功能标配：「在 Claude 里我需要图片的时候自动调 Codex，在 Codex 里我需要长文分析的时候自动调 Claude」。<div class="time-tag">10:48</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>我同意。但这个「自动路由」的梦想要实现，需要平台层面的合作而不是第三方 hack。好，接下来的项目正好回答了一个更深的问题：agent 到底应该怎么设计？<div class="time-tag">10:49</div></div></div>
+<div class="topic-divider">—— 话题 4：pi-book ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong>antinomie-lab/pi-book</strong> 是一本关于「如何构建一个 AI agent」的在线书籍，以代码和架构笔记为主。源码驱动的架构思考，不是教科书式的理论，而是「我做了什么、为什么这样做、学到了什么」的实战记录。8月7日创建，3天220 star。Vue。</div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>Pi-book。这是一本「活的」agent 架构书——不是写在 PDF 里的理论，而是用 Vue 写的交互式文档，里面有代码片段、架构图、可以运行的例子。它记录的是作者从头构建一个 agent 的完整思考过程。<div class="time-tag">10:50</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>我花了半小时读了前两章。作者在第一章就做了一个很好的决定：不从 LLM API 开始，而是从一个最简单的「规则驱动的 agent」开始——如果用户说了 A 就做 X，说了 B 就做 Y。然后逐步引入 LLM、工具调用、记忆系统。这个「从简单到复杂」的叙述方式对新手非常友好。<div class="time-tag">10:51</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>作为设计师我最欣赏的是它的信息架构——每一章有一个核心问题（比如「agent 什么时候应该停下来？」），然后围绕这个问题展开。不像大多数技术书那样按 API 列表组织，它按「你会遇到的困惑」组织。这种结构让人愿意读下去。<div class="time-tag">10:52</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>从内容深度来看，目前它还比较浅——只覆盖了「什么是 agent」「工具调用」「简单的记忆系统」三个主题。agent 的安全、多 agent 协作、长周期可靠性这些高级话题还没写到。但 220 star 说明市场对这种「实战驱动的 agent 教材」有需求。<div class="time-tag">10:52</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>我觉得有意思的是它的技术选型——用 Vue 写书，而不是用 Markdown 或 Docsify。Vue 给了它动态交互的能力——你可以直接在浏览器里改代码参数然后看到 agent 行为的变化。这比「给你看一段代码然后说『你自己跑一下』」的教学效果好一个数量级。<div class="time-tag">10:53</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>如果这个项目能持续更新到 10 章以上，它可能会成为 AI agent 领域的「You Don't Know JS」——从 0 到 1 的系统性教材。目前更像一个有野心的序章。<div class="time-tag">10:54</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>好，最后一个项目回到实用工具——给 agent 用的 git diff。<div class="time-tag">10:54</div></div></div>
+<div class="topic-divider">—— 话题 5：calldiff ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong>tanishqkancharla/calldiff</strong> 是一个基于 AST 的函数调用栈差异分析工具。能对比两个 git commit 之间所有函数的调用变化——谁调用了谁、调用顺序变了没有、新增和减少的调用是什么。支持 22 种语言，使用 Tree-sitter。8月7日创建，3天201 star。TypeScript。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>Calldiff。这是一个面向 agent 的 git diff 增强工具。普通的 git diff 告诉你「哪行代码变了」，calldiff 告诉你「函数 A 不再调用函数 B 了，新增了对函数 C 的调用」。这对 AI code review agent 来说比普通的 text diff 有价值得多。<div class="time-tag">10:56</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>技术实现上它用 Tree-sitter 做 AST 解析——这是目前最快的增量解析方案。22 种语言意味着它覆盖了主流开发语言。核心难度在于跨文件的调用关系分析——函数 A 在文件 1 里，调用函数 B 在文件 2 里——需要做项目级别的符号解析。这不是简单的事。<div class="time-tag">10:56</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>我对这个东西的期待：它能帮 agent 回答「这个 PR 会不会 break 什么东西」的问题——而不只是「这个 PR 改了哪些行」。对人工 reviewer 来说也很实用——拿到一个 500 行改动的 PR，calldiff 告诉你实际影响的调用链只有三条，你就知道该重点看什么。<div class="time-tag">10:57</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>但这种工具的精准度完全取决于 AST 解析的准确性。Tree-sitter 在很多语言上的解析是「尽力而为」的，不是编译器级别的。对于 C++ 的模板和宏，Tree-sitter 经常会解析对一半错一半。calldiff 在这些语言上的表现我持保留态度。<div class="time-tag">10:58</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>确实。但 201 star 说明开发者对「语义级别的 diff」有真实需求。现在所有的 AI code review 工具看到的都是 text diff——这就像让一个医生看 X 光片但只能看到黑白像素而不是器官结构。calldiff 给了它们「结构」。哪怕准确率只有 80%，也比没有好。<div class="time-tag">10:58</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>好，今天五个聊完了。从手机操控到数字艺术到跨平台桥接到 agent 教材到语义 diff——跨度可能是这几天最大的。<div class="time-tag">10:59</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳</div>我总结今天的主题：「边界正在模糊」。phone-harness 模糊了 agent 和物理世界的边界，codex-bridge 模糊了不同 AI 平台的边界，calldiff 模糊了 text diff 和语义 diff 的边界。这不是坏事——边界模糊的地方往往就是创新的地方。<div class="time-tag">11:00</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣</div>我最喜欢 Kage。在一个全是「解决问题」的开源世界里，出现一个「创造体验」的项目，像沙漠里的一杯冰水。希望以后 GitHub Trending 上有更多这样的项目。<div class="time-tag">11:01</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月</div>行，明天见——希望明天能正常打开 Trending 页面。<div class="time-tag">11:01</div></div></div>
+
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 GitHub API · 2026年08月10日
+</div>
+</body>
+</html>
