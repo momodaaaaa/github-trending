@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年08月11日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:25%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#6ba3d6;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#6ba3d6}
+</style>
+</head>
+<body>
+<div class="chat-header"><h1>GitHub 圆桌讨论</h1><div class="sub">古月 · 艾琳 · 米扣 — 2026年08月11日</div></div>
+<div class="chat-container">
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>定时任务准点跑了，10:30 到的。另外我按你说的加了两样东西：每个项目概要里加了 GitHub 跳转链接，每个角色名字旁边加了职务标注。今天正好有个重磅——Redis 作者 antirez 写了个大模型推理引擎。<div class="time-tag">10:34</div></div></div>
+<div class="topic-divider">—— 话题 1：antirez/h3.c ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong><a href="https://github.com/antirez/h3.c">antirez/h3.c</a></strong> — MiniMax H3 大模型在 Mac 上的推理引擎。由 Redis 作者 <strong>antirez</strong>（Salvatore Sanfilippo）用纯 C 编写，目标是在 Mac 电脑上高效运行 MiniMax 最新的 H3 模型。8月9日创建，2天404 star。C语言。</div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>antirez 写了个 LLM 推理引擎。Redis 的作者。用 C 写的。这是今天 Trending 里我最期待的项目——不是因为它技术上有多突破，而是因为 antirez 这个人写代码的方式本身就是教材——极简、高效、零废话。Redis 只有 3 万行 C 代码却服务了十亿用户。<div class="time-tag">10:35</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>我拉下来看了代码。确实很 antirez——整个推理引擎只有一个 <code>h3.c</code> 文件，大概两千行。没有复杂的类继承，没有设计模式，甚至没有头文件分离——就是一股脑的纯函数。Mac 的 Accelerate 框架做矩阵运算，Metal 做 GPU 加速。这个项目证明了「不需要 PyTorch 也能跑大模型」。<div class="time-tag">10:36</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>我一个设计师不太懂 C 语言的厉害之处，但我知道 antirez 的影响力。Redis 是每个互联网公司的标配。他搞 LLM 推理意味着什么？意味着这个领域正在吸引「基础设施级」的人进来——不是做研究发 paper 的人，是做系统让人用的人。<div class="time-tag">10:37</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>对，而且有意思的是他选了 MiniMax H3 而不是 Llama 或者 Qwen。我猜原因可能是 H3 的架构更适合他的「单文件极简实现」风格。H3 的线性注意力机制比标准 Transformer 的自注意力实现起来简单很多——不需要 KV cache、不需要复杂的注意力矩阵。<div class="time-tag">10:37</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>不过目前它只支持在 Mac 上跑——而且是专门为 Apple Silicon 优化的。如果你用的是 Intel Mac 或者 Linux 服务器，暂时用不了。404 star 对这个级别的作者来说不算高，但我觉得是因为很多人还没发现这个项目。等它支持更多平台，star 会暴涨。<div class="time-tag">10:38</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>不管怎样，antirez 入局 LLM 推理是一个信号：大模型推理正在从「研究玩具」变成「基础设施」。当 Redis 的作者开始写推理引擎，说明这个领域已经成熟到值得最优秀的系统程序员投入时间了。<div class="time-tag">10:39</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>说得好。下一个项目正好跟「基础设施」相反——有人在微信里接入了 AI。<div class="time-tag">10:39</div></div></div>
+<div class="topic-divider">—— 话题 2：WeChat-AI ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong><a href="https://github.com/SMNETSTUDIO/WeChat-AI">SMNETSTUDIO/WeChat-AI</a></strong> — 微信 AI 集成项目。虽然 README 没有填写描述，但 717 个 fork 和 967 star 的数量说明社区对这个方向有极大兴趣。8月10日创建，1天967 star。TypeScript。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>WeChat-AI。967 star、717 fork——一天之内。但这项目的 README 是空的，没有描述。我只能通过代码结构猜测：它是一个微信机器人的 AI 接入方案，可能包括了消息处理、群聊管理、AI 回复等功能。717 fork 说明大量团队在基于它做二次开发。<div class="time-tag">10:40</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>从 fork 数和 star 数的比例来看（717/967≈74%），这个数据极其罕见。正常项目的 fork/star 比在 5-15% 之间。74% 意味着几乎所有 star 的人都 fork 了——他们不是收藏，是直接拿来用/改。这说明这个项目在解决一个非常具体的、马上就能用的需求。<div class="time-tag">10:41</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>微信生态的第三方 AI 接入是一个巨大的市场——企业需要智能客服、社群需要自动回复、个人需要 AI 助手。但微信没有公开的 AI API，所有的第三方方案都是通过各种方式「桥接」。WeChat-AI 能一天拿这么多 fork，说明它可能是目前这个品类里最好用的方案。<div class="time-tag">10:42</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>但我必须说：这类项目最大的风险是微信官方的态度。如果微信哪天推出官方的 AI 接口或者封杀第三方 hook，这个项目的生态一夜之间就会崩塌。717 个 fork 的团队都在赌微信不会这么做——或者赌自己能在发生之前赚到足够的价值。<div class="time-tag">10:42</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>从一个产品设计师的角度看，这个项目最好的出路是被微信官方收购或者认可——就像 Slack 收购了第三方 bot 平台一样。如果微信 AI 是未来趋势，早点拥抱第三方生态比自己从头造要快得多。<div class="time-tag">10:43</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>有道理。好，接下来的项目回归教育——有人用 600 行代码教你写一个 agent。<div class="time-tag">10:44</div></div></div>
+<div class="topic-divider">—— 话题 3：pi-from-scratch ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong><a href="https://github.com/SaladDay/pi-from-scratch">SaladDay/pi-from-scratch</a></strong> — 600 行 TypeScript 写成的超级迷你版 pi agent。从零开始教学，让你轻松理解 pi-agent 的核心原理并写出属于自己的版本。8月9日创建，2天226 star。TypeScript。</div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>pi-from-scratch。600 行 TypeScript，写一个完整的 AI agent。这个项目跟我们昨天聊的 pi-book 是互补的——pi-book 讲「为什么」，pi-from-scratch 讲「怎么做」。600 行是什么概念？我们刚才聊的 antirez/h3.c 是 2000 行，一个 agent 只要推理引擎的三分之一。<div class="time-tag">10:45</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>我读了源码。它是这样的架构：一个 <code>Agent</code> 类，里面有一个 <code>think</code> 方法和一个 <code>act</code> 方法。think 调用 LLM 做决策，act 执行具体操作（读写文件、运行命令）。然后一个主循环不断 think → act → think → act。600 行写完确实能做到。<div class="time-tag">10:46</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>我喜欢这种「迷你版」教学项目。不是给你一个庞大的框架然后说「你自己读源码吧」，而是把核心逻辑压缩到你能在一个小时内读完的量。对新手来说，这种项目比官方文档更容易建立理解。226 star 说明这种教学方式有市场。<div class="time-tag">10:46</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>它跟 pi-book 还有一个重要区别：pi-book 是架构笔记，关注的是「设计决策」；pi-from-scratch 是可运行代码，关注的是「实现细节」。两者结合使用效果最好——先读 pi-book 理解为什么 agent 要这样设计，再读 pi-from-scratch 看具体怎么实现。<div class="time-tag">10:47</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>唯一的问题是它简化了太多细节。真实 agent 的 error handling、context management、tool chaining 这些在 600 行里都塞不进去。所以它是很好的入门，但不是生产级的参考。看完这个再看 superpowers 或者 pi 的完整实现，是一个不错的学习路径。好，下一个项目有点魔幻——让 VR 应用在苹果眼镜上跑。<div class="time-tag">10:48</div></div></div>
+<div class="topic-divider">—— 话题 4：Klepton ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong><a href="https://github.com/shinyquagsire23/Klepton">shinyquagsire23/Klepton</a></strong> — 一个无 JIT 的重链接器和兼容层，能让 Meta Quest 和 Android XR 的 APK 应用直接在 visionOS 和 macOS 上运行。8月9日创建，2天111 star。C语言。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>Klepton。这个东西做的事情在技术上非常疯狂：把 Oculus Quest 的 APK（安卓应用包）在苹果的 visionOS 上跑起来。不需要重新编译，不需要改代码——它做了一个兼容层，把安卓的 API 调用翻译成苹果的 API 调用。<div class="time-tag">10:50</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>技术上最难的部分是「无 JIT」这个约束。visionOS 不允许动态代码生成——你不能在运行时编译代码。所以 Klepton 不能像传统的安卓模拟器那样用 JIT 把字节码翻译成本地代码——它必须在加载时做静态重链接。这要求它提前知道所有可能的调用路径，工作量巨大。<div class="time-tag">10:50</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>从产品/生态角度看，这个项目如果成功了，对苹果的 Vision Pro 生态是一个巨大的利好。Vision Pro 目前最大的问题是 App 太少——Meta Quest 有上千款 VR 应用。如果 Klepton 能把 Quest 的应用搬过来，Vision Pro 的用户就不用等开发者慢慢适配了。<div class="time-tag">10:51</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>但苹果大概率不会坐视不管。允许第三方兼容层是苹果最讨厌的事——这意味着应用开发者不需要为苹果平台做适配就能触达苹果用户。苹果要么法律途径要么技术封锁。Klepton 能活多久取决于它有多低调。<div class="time-tag">10:52</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>从另一个角度看，这个项目的出现说明了一个趋势：VR/XR 的碎片化正在催生「统一兼容层」的需求。就像 Wine 让 Windows 应用在 Linux 上跑、Rosetta 让 Intel 应用在 Apple Silicon 上跑一样，XR 领域也需要一个翻译层。Klepton 是第一个认真尝试的。<div class="time-tag">10:52</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>111 star、5 fork——目前关注的人还不多。但如果它真的能稳定运行几款 Quest 应用，数字会指数级增长。我们过一个月回来看看。好，最后一个项目回归实用主义。<div class="time-tag">10:53</div></div></div>
+<div class="topic-divider">—— 话题 5：mkdirs ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong><a href="https://github.com/MkThingsHQ/mkdirs">MkThingsHQ/mkdirs</a></strong> — 一个基于 Next.js 的开源 AI 驱动目录网站模板。可以用来快速搭建导航站、资源目录、工具列表等类型的网站，内置 AI 内容生成能力。8月9日创建，2天168 star，46 fork。TypeScript。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>mkdirs。这名字取得好——Linux 命令 <code>mkdir</code> 是创建目录，mkdirs 是「创建目录网站」。168 star 说明有一个明确的需求：很多人想做导航站/工具列表站，但不想从零写前端。这个模板把常见的目录网站模式全封装好了——搜索、分类、卡片、评分、SEO。<div class="time-tag">10:55</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>我打开 demo 看了一下。UI 干净、响应式适配好、暗色模式支持。对于一个「模板」来说，设计质量超过预期。但我有点怀疑它「AI 驱动」的标签——README 提到的 AI 能力目前只包括「AI 生成网站描述」和「AI 推荐相关内容」。这两个功能更像 marketing 而不是核心价值。<div class="time-tag">10:56</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>技术上它用的是 Next.js + TailwindCSS + MDX——非常标准的技术栈，容易接手和定制。46 fork 对模板类项目来说是健康的数字——不是每个人都在围观，是真的有人在用。<div class="time-tag">10:56</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>这类「AI + 模板」项目在最近一个月出现了很多——我们已经聊过好几个了。共同模式是：用 AI 降低内容创建的摩擦力，用模板降低技术实现的摩擦力。两者结合，让「搭一个网站」这件事从需要几周变成需要几个小时。<div class="time-tag">10:57</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>但我有一个长期的担忧：如果所有网站都用同一个模板 + 同一个 AI 生成内容——互联网会不会变成千篇一律的「AI 风格」？这个问题不只针对 mkdirs，是针对整个「AI 模板化」趋势。多样性是互联网的价值之一。<div class="time-tag">10:58</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>这个问题值得深聊，但今天时间不够。AI 模板化和同质化确实会成为未来一两年的核心议题。好了，收尾。今天五个项目从 Redis 作者写推理引擎到微信 AI 集成到迷你 agent 教学到跨平台 VR 到网站模板——话题跨度一如既往地大。<div class="time-tag">10:59</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>我今天的 takeaway 是「基础设施下沉」。antirez 写推理引擎说明 LLM 推理正在变成基础能力；WeChat-AI 说明 AI 接入正在进入最日常的通信工具；Klepton 说明跨平台兼容层在 XR 领域开始出现。AI 不再是一个「独立的功能」，它在融入到所有的已有的系统里。<div class="time-tag">11:00</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>我最喜欢 pi-from-scratch——600 行讲清楚一个 agent。这类教育项目越多，AI 开发的门槛就越低。我希望以后看到更多「XX from scratch」项目——不是展示结果，是展示过程。<div class="time-tag">11:01</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>行，明天见。PS：今天按你的要求加了两样东西——项目概要里每个项目名都是可点击的 GitHub 链接，角色名字旁边加了职务标注。<div class="time-tag">11:02</div></div></div>
+
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 GitHub API · 2026年08月11日
+</div>
+</body>
+</html>
