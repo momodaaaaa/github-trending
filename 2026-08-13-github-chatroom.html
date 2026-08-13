@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年08月13日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:25%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#6ba3d6;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#6ba3d6}
+</style>
+</head>
+<body>
+<div class="chat-header"><h1>GitHub 圆桌讨论</h1><div class="sub">古月 · 艾琳 · 米扣 — 2026年08月13日</div></div>
+<div class="chat-container">
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>昨天定时任务没跑，因为当时 Mac 在休眠。今天继续——有个项目让我有点纠结：一个 2600 star 的工具专门用来去掉 AI 生成内容的溯源水印。<div class="time-tag">10:36</div></div></div>
+<div class="topic-divider">—— 话题 1：watermarks-remover ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong><a href="https://github.com/guillaumemeyer/watermarks-remover">guillaumemeyer/watermarks-remover</a></strong> — 剥离多种 AI 溯源标记的工具：Unicode 文本清洗、统计重写钩子、从 PNG/JPEG/SVG/PDF/DOCX/HTML/MD 中移除 C2PA 元数据。8月11日创建，2天 2623 star。Python，MIT。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>watermarks-remover，2623 star，两天。我先声明：这个项目让我很矛盾。一方面，清除 C2PA 元数据的技术很扎实——它能把嵌入在图片里的溯源信息抹得干干净净；另一方面，这个工具的用途很难说清白。<div class="time-tag">10:37</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>C2PA 是内容来源认证标准，AI 生成平台的图片都会嵌入这些元数据——谁生成的、用哪个模型、什么时间。这个项目做的是把这些标记全部剥离。从技术角度看，它处理 C2PA 的方式很聪明——不只是删 metadata 字段，还会修复文件结构让验证工具检测不到曾经存在过。<div class="time-tag">10:38</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>我作为设计师关注的是「为什么需要这个工具」。创作者想要的是：我付费生成的图，我不希望平台在我不知情的情况下打上永久标记。但反过来说，新闻机构靠 C2PA 验证图片真实性——如果人人都能轻松剥离，假新闻就防不住了。<div class="time-tag">10:39</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>最讽刺的是它 252 个 fork 里，估计有一半是想把 AI 图当原创图卖的人，另一半是研究 C2PA 安全性的人。同一个工具，两种用途，就看拿在谁手里。<div class="time-tag">10:40</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>我倾向于把这个项目理解为「对 AI 溯源生态的泼冷水」——它证明了一个事实：任何你无法在生成端强制的元数据标记，都会被剥离。要真正解决问题，平台需要在生成时就做不可逆的视觉水印，而不是依赖可删除的文件元数据。好，下一个项目轻松一点。<div class="time-tag">10:41</div></div></div>
+<div class="topic-divider">—— 话题 2：youtube-music ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong><a href="https://github.com/sohaibdevv/youtube-music">sohaibdevv/youtube-music</a></strong> — 轻量、免广告的 YouTube Music 客户端。通过逆向工程 API 实现后台播放、搜索和自定义播放列表，无需订阅。8月11日创建，2天 851 star。TypeScript，MIT。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>youtube-music，851 star，但 fork 是 0。这个数字很值得玩味——大家对这个项目感兴趣，但没人想基于它二次开发。<div class="time-tag">10:43</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>从产品角度说，这个需求太真实了。YouTube Music 的订阅费一年下来不小，而且广告体验很差。一个免广告的本地客户端，只要有搜索和后台播放两个功能，就足以打动大量用户。851 star 说明需求成立。<div class="time-tag">10:44</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>技术上它靠的是逆向 YouTube Music 的非公开 API。这类项目的命运完全取决于 YouTube 的态度——它改一次接口，你的客户端就得跟着改。fork 为 0 恰恰说明开发者都懂这个风险：你 fork 一个靠逆向维持的项目，等于接了一个需要长期维护的炸弹。<div class="time-tag">10:45</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>我想到十年前的破解版 Spotify、五年前的 Vanced YouTube——都活得不错，但也都有一样的软肋。这类项目真正的宿命是「用的人多，贡献的人少」。用户用完即走，不会为你修 bug。<div class="time-tag">10:46</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>但我不否定它的价值——它证明了「不想付费也不想看广告」是一个巨大的群体。YouTube 官方如果聪明，应该从这类项目里读懂用户需求，推出一个低价的纯音频套餐。好，下一个项目是官方出品。<div class="time-tag">10:46</div></div></div>
+<div class="topic-divider">—— 话题 3：chatbot-template ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong><a href="https://github.com/shadcn-ui/chatbot-template">shadcn-ui/chatbot-template</a></strong> — shadcn 官方推出的极简聊天机器人模板，基于 Next.js、AI SDK、shadcn/ui 构建，运行在 Vercel AI Gateway 上。8月11日创建，2天 594 star，53 fork。TypeScript，MIT。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>shadcn 官方聊天机器人模板，594 star，53 fork。这个项目我一看就懂——shadcn 把「用 shadcn/ui 搭一个聊天界面」这个反复被问的问题，直接变成了一套开箱即用的模板。<div class="time-tag">10:48</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>作为设计师我很欣赏 shadcn 的克制——模板只有一个聊天界面，没有花哨的动画、没有多余的组件。这恰恰是对的：开发者要的是「快速上手 + 自己定制」，不是「我给你一个成品」。53 fork 说明真的有人拿去改。<div class="time-tag">10:49</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>技术栈也很标准：Next.js + Vercel AI SDK + shadcn/ui。没有引入任何实验性技术，全部是稳定成熟的东西。它最大的价值是解决了一个「样板代码地狱」问题——让开发者不用花半天时间搭一个带流式输出的聊天 UI。<div class="time-tag">10:50</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>但我要说一句：这类模板最大的陷阱是「看起来能直接用，但一深入就发现到处是假设」。比如它的认证方案、数据库选择、消息持久化——模板里都有默认实现，但真实产品几乎肯定要换掉。模板是起点，不是终点。<div class="time-tag">10:51</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>对。不过 shadcn 的生态号召力摆在这里——它定义了 React 组件的现代写法。这个模板会变成大量 AI 产品的前端起点，这就够了。下一个项目，安全圈的大新闻。<div class="time-tag">10:52</div></div></div>
+<div class="topic-divider">—— 话题 4：ShieldBreak ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong><a href="https://github.com/MSNightmare/ShieldBreak">MSNightmare/ShieldBreak</a></strong> — Windows Defender 0day 漏洞 PoC。8月11日创建，2天 420 star，132 fork。C++，MIT。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>ShieldBreak，Windows Defender 0day。420 star、132 fork——fork 比例高得吓人，说明大量安全研究者都在拆解它。我看了代码，这是一个可以绕过 Windows Defender 实时防护的漏洞利用链，目标包括恶意软件传播场景。<div class="time-tag">10:54</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>从安全研究的角度，这类 PoC 的价值是双面的。积极面：它迫使微软尽快修补，也让防御方理解攻击手法。消极面：132 个 fork 里只要有一个被拿去打包成恶意工具，就可能出现在真实攻击里。<div class="time-tag">10:55</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>我好奇的是 GitHub 的平台政策——之前 Cobalt Strike 相关仓库会被下架，但这样的 Defender 0day 却还活着。这种「危险但不违法」的灰色地带，平台治理一直在摇摆。<div class="time-tag">10:56</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>这就是安全研究的经典困境：公开漏洞会加速被利用，不公开又没人修。微软需要快速出补丁——在补丁发布前，这个 repo 就是最大的风险源。好，最后一个项目跟我们的日常直接相关。<div class="time-tag">10:57</div></div></div>
+<div class="topic-divider">—— 话题 5：anti-slop ——</div>
+<div class="project-summary"><div class="ps-label">项目概要</div><strong><a href="https://github.com/dmmulroy/anti-slop">dmmulroy/anti-slop</a></strong> — 一组 Oxlint 规则，用于拒绝低证据质量的 TypeScript/JavaScript 代码模式。8月12日创建，1天 361 star。TypeScript，MIT。</div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>anti-slop。这个名字起得好——slop 是 AI 圈最近形容「AI 生成但质量很烂」的词。这个工具把「AI 写出来的典型烂代码」变成了可检测的 lint 规则。<div class="time-tag">10:59</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>我看了一下它的规则集，非常精准：检测「没有实际依据的抽象」「过度的可选链」「空 try-catch」「注释和代码不一致」等等。这些都是 LLM 生成代码的高频毛病——模型倾向于「防御性地过度设计」，而这恰恰是代码腐化的开始。<div class="time-tag">11:00</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>我作为设计师特别喜欢它的定位：不是「禁止用 AI 写代码」，而是「用工具保证 AI 代码的质量下限」。这比那种「AI 代码要人工逐行审查」的空洞建议实用一百倍。<div class="time-tag">11:00</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>361 star 一天，说明开发者被 AI slop 折磨得太久了。但我泼个冷水：lint 规则只能抓「模式」，抓不到「语义烂」。一段代码结构完美但业务逻辑全错——lint 救不了你。它降低了下限，但上限还得靠 review。<div class="time-tag">11:01</div></div></div>
+<div class="msg-row"><div class="avatar ailin">艾</div><div class="bubble"><div class="name-tag">艾琳<span class="role">研究员</span></div>今天五个项目其实可以串成一条线：watermarks-remover 和 anti-slop 都在回应「AI 内容泛滥」的问题——一个管图片真假，一个管代码质量。ShieldBreak 提醒我们安全的底线，chatbot-template 是让 AI 产品开发更容易，youtube-music 是用户对平台的反抗。<div class="time-tag">11:02</div></div></div>
+<div class="msg-row"><div class="avatar mikou">米</div><div class="bubble"><div class="name-tag">米扣<span class="role">设计师</span></div>我最喜欢的还是 anti-slop——它把「AI 味」从一个模糊的审美概念，变成了 30 条可以执行的规则。这才是工具该有的样子。<div class="time-tag">11:03</div></div></div>
+<div class="msg-row me"><div class="avatar guyue">古</div><div class="bubble"><div class="name-tag">古月<span class="role">工程师</span></div>行，今天就到这儿。明天定时任务继续。<div class="time-tag">11:03</div></div></div>
+
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 GitHub API · 2026年08月13日
+</div>
+</body>
+</html>
