@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年08月15日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年08月15日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>cathrynlavery/diagram-design 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 3,646 star，总 star 17,381，主要语言 HTML，创建于 2026-04-16，当前 open issue 15 个。它的定位：29 editorial diagram types for Claude Code. Self-contained HTML + SVG. No shadows, no Mermaid-slop.。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/cathrynlavery/diagram-design" target="_blank">cathrynlavery/diagram-design →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">今天榜单挺有意思，从画图到剪视频到远程桌面，还有两个“AI 基建”项目。我先说，diagram-design 26 天涨了 17k star，这速度有点吓人。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">确实，不过 star 数不代表创新。先聊这个 diagram-design吧，29 种 editorial 图表类型，纯 HTML+SVG，我看了下，本质是把数据可视化的设计模式做成了可复用的模板，技术含量不高，但胜在“克制”——明确反对 Mermaid 那种自动生成的丑图。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页，第一眼确实被它的“干净”吸引了。但用户真的需要 29 种固定的图表类型吗？我作为设计师，更想要的是能自由调整的组件，而不是一套锁死的“editorial”风格模板，这会不会限制了创作？</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，米扣说得在点子上。我看了下，它就是一堆 HTML 文件，零依赖，这个我很喜欢。部署文档写了，直接打开浏览器就能用。但问题是它只适配 Claude Code 的 Artifacts 场景，如果我想在别的项目里用这些 SVG，得自己抠代码，没有 API 设计。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的核心思路其实是“设计系统”而不是“工具库”。但这不是新东西，2022 年就有不少数据新闻团队这么干。它聪明在绑定了 Claude Code 这个生态，让 AI 生成图表时能遵循预设的视觉规范，这确实是刚需——解决了 AI 画图太丑的问题。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但这里有个悖论：如果 AI 严格按照这 29 种模板生成，那所有用这个工具的人做出来的图表会不会长得一模一样？作为产品，它赢了“审美底线”，但输了“独特性”。用户真的愿意为了不出错而放弃自己的视觉辨识度吗？</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">米扣这个担忧很实际。我今天试了一下，模板质量确实高，但改起来麻烦。你想改个配色，得直接动 SVG 源码。对程序员来说不如直接用 ECharts，对设计师来说又太底层。它定位有点尴尬，大概率是“叫好不叫座”。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>semantica-agi/semantica 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 1,181 star，总 star 7,563，主要语言 Python，创建于 2025-06-25，当前 open issue 60 个。它的定位：Graph-Native Infrastructure for Context and Accountable AI Systems。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/semantica-agi/semantica" target="_blank">semantica-agi/semantica →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">行，这个项目我们达成共识：是个好“画册”，不是个好“工具”。下一个，semantica，Graph-Native 基础设施，这个听起来有点玄乎。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我先泼冷水。Python 写的，7.5k star，60 个 open issues，创建一年了。我去看了下 README，概念一大堆，什么“可问责 AI 系统”，但部署文档就三行字，docker-compose.yml 都没有。这种项目我一般直接关掉。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">古月你别急。它的核心思路是用图数据库（Graph）来管理 AI 的上下文和决策链路，让系统能追溯“为什么 AI 这么回答”。从架构角度看，这个方向是对的。但确实不是新东西，LangChain 的 LangSmith 已经在做 trace 了，Neo4j 也有类似方案。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它想解决的是“AI 黑盒”问题？那我作为用户，最关心的是：我装了这个东西，能直观地看到 AI 的思考路径吗？还是说它只是给开发者看的一堆节点和边？如果最终用户感知不到“可问责”，这产品就太技术自嗨了。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">米扣说到关键了。我看了它的示例，那些图确实漂亮，但你需要自己搭一个 Graph DB 来存数据。而且它和现有的 Agent 框架集成度不高，你得自己写适配器。这个学习成本，不是一般团队能承受的。60 个 issues 里有一半是“怎么安装”。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我补充一点，它的“可问责”定义太宽泛了。学术上，AI 可解释性分为全局和局部，它目前做的更像是一种“静态的审计日志”，而不是真正的“动态解释”。如果它不能解决推理过程中的因果溯源，那这个 Graph-Native 只是个噱头。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我理解它想做一个“AI 系统的仪表盘”，但仪表盘是给飞机驾驶员看的，不是给乘客看的。现在它的目标用户是开发者，但开发者又觉得它太重了。我觉得它需要找一个像“数据合规官”这样的具体角色来切入，而不是面向所有人。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>github/spec-kit 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 1,160 star，总 star 128,569，主要语言 Python，创建于 2025-08-21，当前 open issue 309 个。它的定位：💫 Toolkit to help you get started with Spec-Driven Development。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/github/spec-kit" target="_blank">github/spec-kit →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，定位不清是最大的问题。下一个吧，github/spec-kit，这 star 数有点离谱，128k，还是 GitHub 官方的。Spec-Driven Development，听起来像是 2015 年的概念复兴。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>OpenCut-app/OpenCut 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 255 star，总 star 83,205，主要语言 TypeScript，创建于 2025-06-22，当前 open issue 368 个。它的定位：The open-source CapCut alternative。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/OpenCut-app/OpenCut" target="_blank">OpenCut-app/OpenCut →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思，但这不是新东西。OpenAPI 和 AsyncAPI 就是干这个的。但 GitHub 官方下场做工具包，意义就不一样了。它的核心思路是让代码生成和规范文档同步，避免“文档和代码脱节”。技术上没太大突破，但生态位很关键。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我先看看 docker-compose……哦，这个不用部署，是个 CLI 工具，直接 pip install。这点我喜欢。但我看了下，它依赖一大堆，什么 pydantic、typer、rich，都是重库。而且 309 个 open issues 说明维护压力很大，官方项目也逃不过。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">作为设计师，我关心的是：它生成的 API 文档好看吗？我见过太多 Swagger UI 那种反人类的界面了。如果 Spec Kit 能生成那种有设计品味的交互式文档，那对前端和测试同学是个福音。你们用过的，它生成的文档长什么样？</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">中规中矩，还是那种标准的 Markdown 风格，没有惊艳。它更像是一个“规范校验器”加“脚手架生成器”。我试了试，它能从你的 Python 代码里反推出 Pydantic 模型，然后生成 OpenAPI schema，这个挺实用的。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，它的价值在于把“规范”变成了“代码即文档”的流程。但问题在于，它锁定了 Python 生态。如果我是 Node.js 或 Go 开发者，这个工具包就没什么用。GitHub 官方做这个，有点偏心。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那换个角度，用户真的需要“规范驱动”吗？我接触的大部分初创公司，都是先写代码再补文档。Spec-Driven 需要很强的自律性和前期设计投入。这个工具是给完美主义团队准备的，对大多数“先跑起来再说”的团队来说，有点过度设计。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">确实是。不过它有 128k star，说明很多人只是 star 了，真正用的不多。我看了下 issues，好多都是“怎么用”而不是“有 bug”。算了，下一个轮到 OpenCut，开源版 CapCut，这个倒是很直白。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">这个我熟！我剪视频就用剪映。OpenCut 作为开源替代，最核心的问题是：它能不能达到剪映那种“傻瓜级”的操作体验？我试了下网页版，剪辑轨道拖拽的手感还行，但特效和转场太少了，模板库基本是空的。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我看了下它的架构，TypeScript 写的，前端应该是 WebAssembly + Canvas 渲染，这个技术路线是可行的，和 Figma 类似。但问题在于，视频编码和解码这块，纯前端做性能优化很难。我跑了个 4K 视频，预览卡顿明显。文档倒是很全，部署也简单，就是个静态站点。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的核心思路是用 WebCodecs API 在浏览器里做硬解，这个思路是新的，比传统的 FFmpeg.wasm 要高效。但 368 个 open issues，有一半是关于“导出时内存溢出”的。这说明它在处理长视频和复杂时间线时，稳定性还差得远。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">用户真的需要一个开源的剪映吗？我觉得大多数普通用户不在乎是不是开源，他们只在乎“模板多不多”和“导出快不快”。OpenCut 现在的定位很尴尬——比专业剪辑软件简单，但比剪映专业版又复杂，而且生态没起来。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，它现在就是“极客玩具”。我试了试，加个文字特效，需要自己写 CSS。剪映里点两下就完事了。这个上手门槛就把 90% 的普通用户挡在门外了。不过它的底层渲染引擎确实写得好，以后可能会被别的项目借鉴。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我同意古月，这个项目的价值在于技术验证，而不是产品成功。它证明了纯前端可以做 4K 剪辑，但离“替代 CapCut”还差一个百万级的模板库和素材库。最后一个是 rustdesk，这个老熟人了，120k star，我公司服务器上就装了一个。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>rustdesk/rustdesk 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 143 star，总 star 120,669，主要语言 Rust，创建于 2020-09-28，当前 open issue 134 个。它的定位：An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/rustdesk/rustdesk" target="_blank">rustdesk/rustdesk →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">RustDesk 才是今天榜单里最踏实的项目。Rust 写的，性能好，内存占用低。我直接 docker run 就起来了，5 分钟部署好一个中继服务器。文档写得非常清楚，网络拓扑、端口配置都给你画好了图。这是今天唯一一个让我觉得“拿来就能用”的项目。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我作为用户，最担心的是自建服务器的安全问题。我连 TeamViewer 都不太放心，更何况是自己搭的服务器？它有没有做端到端加密？如果中继服务器被黑客攻破了，我的屏幕是不是就暴露了？</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个你放心，它的加密用的是 NaCl 加密库，默认开启端到端加密，中继服务器只能转发加密后的数据流，看不到内容。这个我在它的安全文档里确认过。而且它支持 P2P 直连，服务器只做握手，数据不走中继。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">从技术架构看，它的核心思路是复用 WebRTC 的 DTLS 协议来做打洞，这个在 2018 年的开源项目里就有人这么干了。但 RustDesk 的工程完成度很高，特别是移动端的适配，比很多商业软件都好。不过 134 个 issues 里，有几个是关于 NAT 穿透失败的，在一些严格的防火墙环境下还是会出问题。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那这样看，它的用户价值就清晰了——给那些不信任商业远程软件、或者公司有数据合规要求的团队提供了一个可控的选择。但我还是那个问题：普通家庭用户，谁会去自己搭服务器？这个门槛还是太高了。它应该是企业级的工具，而不是大众消费品。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，它的定位就是“反 TeamViewer 联盟”的基础设施。我看了下它的星标趋势，五年了还在涨，这才是健康项目的曲线。不像前面那几个，一个月爆红，三个月后可能就没人维护了。今天聊下来，我觉得最值得关注的反而是它和 spec-kit，一个稳一个实用。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我补充下，RustDesk 在 AI 远程协助这个方向也有布局，比如屏幕共享时叠加 AI 操作提示，但那个还在实验阶段。总体来看，今天的榜单里，RustDesk 是唯一一个让我觉得“团队靠谱、路线清晰”的项目。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">同意，一个好的工具应该像空气一样，用的时候感觉不到它存在。RustDesk 做到了。其他几个项目，要么是太前端，要么是太概念，要么是太复杂。今天这期播客的结论就一句话：别追星，追那些五年后还在更新的项目。</div>
+    <div class="time-tag">12:15</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">行，那就这样，下期我们聊聊那几个 AI 绘画工具，听说又卷起来了。</div>
+    <div class="time-tag">12:18</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
