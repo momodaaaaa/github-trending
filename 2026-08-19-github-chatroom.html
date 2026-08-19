@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年08月19日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年08月19日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">今天榜单上这几个项目，一个比一个能吹，我先看看有没有能跑的。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>harry0703/MoneyPrinterTurbo 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 2,304 star，总 star 108,753，主要语言 Python，创建于 2024-03-11，当前 open issue 26 个。它的定位：利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703/MoneyPrinterTurbo →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">MoneyPrinterTurbo 这个 star 涨得离谱，10 万+，我先说，这核心思路不新，就是 LLM 生成脚本 + 语音合成 + 剪辑拼接，2023 年就有类似开源项目了。但把它做成全自动流水线，确实有点意思。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页，30 秒没看明白它到底是给谁用的。你说一键生成短视频，那用户是营销号、自媒体、还是普通发朋友圈的人？这群人需求完全不一样。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">部署文档写了吗？我看一眼，Python 项目，依赖肯定一堆，FFmpeg、AI 模型下载，没有 docker-compose 我直接关页面。哦，还真有，那还行，但模型下载动不动几个 G，跑起来要 16G 内存，普通用户别想了。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上它就是典型的 Agent 工作流编排，核心是那个 prompt 模板和工具调用链。创新点在于把“生成视频”这个多模态任务拆成了字幕、配音、画面检索几个子任务，但每个环节用的都是现成模型，缝合度算高，但不算突破。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那问题来了，我随便输个“做菜教程”，它生成的画面是网上随便抓的素材吧？版权问题谁管？用户拿去发了抖音，被投诉了算谁的？这个产品设计上根本没考虑责任边界。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我实测过类似项目，生成 30 秒视频大概要 3-5 分钟，成本按 API 算大概 0.2 美元一条。你说它实用，那是真能省剪辑时间，但你说它赚流量钱，那得看平台查不查重，反正我是不敢拿它做商业号。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，它本质上是一个“提示词到视频”的封装，这类项目生命力取决于背后模型的更新速度。现在这个 star 量，大概率是 Twitter 上有人推了一把，三个月后如果作者不更新，模型一换，工作流就断了。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那行，我总结下用户画像：要么是懒得学剪辑的小白，要么是批量做号的灰产。前者用两次就腻了，后者把 API 薅秃。这个设计没有一个可持续的付费点，我觉得它火得快，凉得也快。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">下一个，public-apis，这个老古董又上来了，464k star，2016 年的项目，到现在一千多个 issue 没关。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这个项目没技术含量，就是个列表，但它的价值在“维护机制”——社区提交、人工审核、分类清晰。它不解决算法问题，解决的是“信息发现”问题。说白了一个高质量书签，但这就是它长寿的原因。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但我打开它，第一反应是——这跟我用 Google 搜 “free api list” 有啥区别？而且它没有筛选条件，我找个带鉴权的、有速率限制的 API，得翻半天。用户要的是“能用”，不是“存在”。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">确实，1700 个 open issue，大多是“这个 API 挂了”或者“链接失效”。它靠的是志愿者审核，但显然审核速度跟不上 API 的死亡速度。我说实话，这项目适合当古董收藏，不适合当工具用。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">但我得说，它给后来所有的 awesome-list 类项目立了个标杆。你可以说它不严谨，但你找不到比它更全的免费 API 索引。它在 AI 时代反而更值钱了，因为 Agent 需要调外部工具，这个列表就是工具目录。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那用户画像又来了——开发者查 API 是刚需，但要我装个 APP 或者开个网页去翻列表，不如直接问 ChatGPT。除非它能做成交互式目录，比如“给我一个天气 API”，那才有产品价值。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">行，下一个，Anthropic-Cybersecurity-Skills，这个创建时间是 2026 年？我穿越了？817 个网络安全技能，映射到 6 个框架，听起来像把安全知识库喂给 AI Agent 用。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这个方向我关注过，把 MITRE ATT&CK 这种攻击知识库结构化，让 Agent 能理解“攻击链”概念。核心创新是把框架映射做成机器可读的标准，agentskills.io 这个格式我之前没见过，算新东西。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">但 817 个技能，多大体积？我估计一个仓库至少几百 MB，加载到 Claude Code 里，上下文窗口塞得下？而且 26 个 issue，刚发布几天就这么多问题，文档肯定没写清楚怎么接入。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>mukul975/Anthropic-Cybersecurity-Skills 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 730 star，总 star 29,269，主要语言 Python，创建于 2026-02-25，当前 open issue 47 个。它的定位：817 structured cybersecurity skills for AI agents · Mapped to 6 frameworks: MITRE ATT&CK, NIST CSF 2.0, MITRE ATLAS, D3F。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank">mukul975/Anthropic-Cybersecurity-Skills →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">用户是谁？安全分析师？他们要的不是技能列表，是“帮我检测一下系统有没有漏洞”这种结果。你给我 817 个技能，我怎么知道哪个对我的场景有用？这又是一个“工具库”思维，不是“产品”思维。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">但它的价值在于标准化，如果这个格式能被 Cursor、Copilot 都支持，那以后安全工具就是“插拔式”的。不过现在 20+ 平台支持是吹的，我看了下，很多只是能加载，不能真正触发技能。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我看了下安装方式，要配 API key，要设环境变量，要下载技能仓库。没有 Docker 镜像，没有一键脚本。安全人员普遍不是 DevOps 专家，这个门槛会筛掉 80% 的目标用户。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以我作为顾问会问：你到底是卖给安全团队当“内部知识库”，还是卖给开发者当“安全插件”？如果是前者，你需要一个 UI 界面和搜索功能；如果是后者，你需要一个 API。现在这个样子，两头不靠。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">行，下一个 Motrix，下载工具，TypeScript 写的，53k star，2018 年的项目，还在更新，不容易。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">下载器这领域，老牌的有 aria2、IDM，新出的有 Gopeed。Motrix 的优势是跨平台全支持，而且底层就是 aria2，相当于套了个好看的壳。技术上新意不多，但胜在稳定。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">用户需要下载器吗？现在浏览器自带下载都挺快了，而且百度网盘那种限速的，你下啥都白搭。除非它能突破网盘限制，不然我只能说“这很酷，但我用不上”。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我用它下过 BT 和磁力链，速度确实能跑满带宽，比浏览器强多了。但问题是有 779 个 open issue，很多是“macOS 上崩溃”“暂停后无法恢复”。团队就一两个人维护吧，这种个人项目，出问题只能等。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，下载器这种工具，拼的不是技术，是“长期维护的耐心”。aria2 本身很稳定，Motrix 的价值是把 aria2 的配置复杂度藏起来，但这也意味着一旦 aria2 升级，Motrix 就可能炸。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那我换个角度——我打开它的官网，界面挺好看的，Mac 和 Windows 风格统一。但如果我 30 秒内不知道它跟迅雷的差别，我就走了。它的核心卖点应该是“无广告、无捆绑”，这个得在首页第一屏说清楚。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最后一个，basecamp/omarchy，Basecamp 出的 Linux 发行版，26k star，2025 年创建的。Basecamp 做项目管理软件的公司，突然做 Linux，有点跨界。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我扫了一眼，它是基于 Arch 的，主打“好看、现代、有主见”。核心是预配置了桌面环境和一堆开发工具，本质上是个“开箱即用的 Arch + 定制主题”。技术上不新，但品牌效应很强。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要一个新的 Linux 发行版吗？Debian、Ubuntu、Fedora 不香吗？它说“Opinionated”，意思就是“你听我的”，这跟 Linux 社区“自由定制”的文化是冲突的。我很好奇它怎么说服用户放弃自己折腾。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我看了下，它 939 个 open issue，有点吓人。而且基于 Arch，意味着滚动更新，今天装好了，明天一个更新可能就崩了。Basecamp 的员工用它当开发机还行，普通用户玩不转。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的技术亮点是用了“不可变系统”概念，根文件系统是只读的，升级靠切换快照。这个思路跟 Fedora Silverblue 一样，不算首创，但 Basecamp 把它做成了“默认推荐”给非技术用户，风险很大。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开它的宣传页，截图确实好看，壁纸、图标、终端配色都很统一。但 UI 好看不等于用户体验好，我装个驱动可能都要改系统配置，那这个“好看”就只值一周的新鲜感。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我总结一下今天榜单：MoneyPrinterTurbo 是 AI 缝合怪，public-apis 是古董目录，Anthropic 是安全界的瑞士军刀但没人会用，Motrix 是老黄牛，omarchy 是好看但烫手的 Arch。一句话，今天没有一个是“装完就能立刻爽”的项目。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>agalwood/Motrix 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 609 star，总 star 53,747，主要语言 TypeScript，创建于 2018-12-18，当前 open issue 779 个。它的定位：A full-featured download manager.。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/agalwood/Motrix" target="_blank">agalwood/Motrix →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">但这也正常，GitHub Trending 本来就不是“最佳工具榜”，而是“好奇榜”，大家点进去看个热闹，真正能留下来的，还是 Motrix 这种踏实的工具。</div>
+    <div class="time-tag">12:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那我作为用户，今天打开榜单，唯一想下载试试的可能是 Motrix，剩下的，要么太专业，要么太折腾。希望明天榜单能来点真正解决我痛点的东西。收工。</div>
+    <div class="time-tag">12:18</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
