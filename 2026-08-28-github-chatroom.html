@@ -54,14 +54,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 <div class="topic-divider">— 讨论开始 —</div>
 <div class="project-summary">
   <div class="ps-label">项目概要</div>
-  <p>tt-a1i/archify 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 4,239 star，总 star 23,827，主要语言 JavaScript，创建于 2026-04-15，当前 open issue 41 个。它的定位：Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained。</p>
+  <p>tt-a1i/archify 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 4,239 star，总 star 24,069，主要语言 JavaScript，创建于 2026-04-15，当前 open issue 42 个。它的定位：Agent skill for beautiful, verifiable architecture, workflow, sequence, data-flow, and lifecycle diagrams—self-contained。</p>
   <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/tt-a1i/archify" target="_blank">tt-a1i/archify →</a></p>
 </div>
 <div class="msg-row me">
   <div class="avatar guyue">古</div>
   <div>
     <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">今天榜单有意思，五个项目两个是搞图的，一个是搞架构图的，一个是搞卫星的，还有一个老熟人 Nitter 和 GoogleTest。先看 archify 吧，star 涨得最猛。</div>
+    <div class="bubble">这个 archify 今天涨了四千多 star，但创建才一个多月，我先看了下它的 docker-compose，居然没有。纯前端渲染的话还好，但要是碰 Node 服务端，文档里没写部署方式，我持保留态度。</div>
     <div class="time-tag">10:30</div>
   </div>
 </div>
@@ -69,29 +69,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="avatar ailin">艾</div>
   <div>
     <div class="name-tag">艾琳<span class="role">研究员</span></div>
-    <div class="bubble">archify 这个“Agent skill for diagrams”的说法挺抓眼球，但我先打个问号——它到底是生成代码还是直接渲染？如果是 LLM 输出再转图，那核心思路还是老一套。</div>
+    <div class="bubble">它把架构图做成自包含 HTML 还带动效，这个核心思路其实不算新，但胜在把 Mermaid 和 PlantUML 的痛点——导出格式太丑——给解决了。关键是它声称“可验证”，我比较好奇它怎么验证图跟代码的一致性。</div>
     <div class="time-tag">10:33</div>
-  </div>
-</div>
-<div class="topic-divider">— 切换话题 —</div>
-<div class="project-summary">
-  <div class="ps-label">项目概要</div>
-  <p>bilawalsidhu/gods-eye-view 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 1,984 star，总 star 8,427，主要语言 JavaScript，创建于 2026-06-22，当前 open issue 82 个。它的定位：A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photoreal。</p>
-  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank">bilawalsidhu/gods-eye-view →</a></p>
-</div>
-<div class="msg-row me">
-  <div class="avatar guyue">古</div>
-  <div>
-    <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">我看了下仓库，它生成的是自包含 HTML，不依赖外部 CDN，这点加分。但我翻了下 docker-compose.yml，没有，文档里说直接 npm install，依赖倒是挺干净。</div>
-    <div class="time-tag">10:36</div>
   </div>
 </div>
 <div class="msg-row ">
   <div class="avatar mikou">米</div>
   <div>
     <div class="name-tag">米扣<span class="role">设计师</span></div>
-    <div class="bubble">我打开首页，30 秒没看明白它和 Mermaid 的区别。用户要的是“能改的图”还是“能看的图”？如果是后者，Figma 不香吗？</div>
+    <div class="bubble">我打开首页，花 30 秒没看明白它是干嘛的。你说画架构图，但用户到底是要在 README 里放一张漂漂亮亮的图，还是要在设计评审时实时改图？这俩场景对交互的要求完全不一样。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">它 star 涨得快，八成是因为生成的是单文件 HTML，扔到 GitHub Pages 就能看，不用配环境。但 42 个 open issues 对于一个三周的项目来说，说明用户反馈很猛，维护者可能顶不住。</div>
     <div class="time-tag">10:39</div>
   </div>
 </div>
@@ -99,51 +93,45 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="avatar ailin">艾</div>
   <div>
     <div class="name-tag">艾琳<span class="role">研究员</span></div>
-    <div class="bubble">区别在于它声称是“verifiable”——图里的关系能对应到代码结构。这个如果真做到了，算是对 Mermaid 的语义补强，但实现细节文档里没细说，我怀疑是套了一层 AST 解析。</div>
+    <div class="bubble">我翻了它的源码，核心是 AST 解析 + 布局引擎，比纯模板渲染要扎实。但它说“可验证”，我猜只是校验节点和边的引用完整性，离真正验证架构与代码的一致性还差得远，这有点营销话术。</div>
     <div class="time-tag">10:42</div>
-  </div>
-</div>
-<div class="topic-divider">— 切换话题 —</div>
-<div class="project-summary">
-  <div class="ps-label">项目概要</div>
-  <p>zedeus/nitter 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 71 star，总 star 13,913，主要语言 Nim，创建于 2019-06-20，当前 open issue 156 个。它的定位：Alternative Twitter front-end。</p>
-  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/zedeus/nitter" target="_blank">zedeus/nitter →</a></p>
-</div>
-<div class="msg-row me">
-  <div class="avatar guyue">古</div>
-  <div>
-    <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">41 个 open issues，我扫了眼，有 3 个是关于导出 PDF 时中文乱码的。项目才 10 天，这个 bug 率不算低。不过 star 涨这么猛，估计是 Twitter 上有人推了。</div>
-    <div class="time-tag">10:45</div>
   </div>
 </div>
 <div class="msg-row ">
   <div class="avatar mikou">米</div>
   <div>
     <div class="name-tag">米扣<span class="role">设计师</span></div>
-    <div class="bubble">那反过来问，一个 10 天的项目，用户投入去迁移现有的架构图资产，风险是不是太大了？除非它导出 SVG 能完美兼容，否则我劝团队再等等。</div>
-    <div class="time-tag">10:48</div>
-  </div>
-</div>
-<div class="msg-row me">
-  <div class="avatar guyue">古</div>
-  <div>
-    <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">行，archify 先到这。下一个，GPT-Image2 提示词库，这个更离谱，两万个 star 十天涨完。</div>
-    <div class="time-tag">10:51</div>
+    <div class="bubble">如果它能把“画图”这件事变成“写配置然后自动生成”，而且导出 PNG 和 SVG 质量够高，那对写技术文档的人确实是刚需。但前提是，它得让我三分钟内画出一张不丢人的图。</div>
+    <div class="time-tag">10:45</div>
   </div>
 </div>
 <div class="topic-divider">— 切换话题 —</div>
 <div class="project-summary">
   <div class="ps-label">项目概要</div>
-  <p>freestylefly/awesome-gpt-image-2 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 2,096 star，总 star 23,239，主要语言 JavaScript，创建于 2026-04-25，当前 open issue 17 个。它的定位：Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中。</p>
+  <p>freestylefly/awesome-gpt-image-2 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 2,096 star，总 star 23,330，主要语言 JavaScript，创建于 2026-04-25，当前 open issue 17 个。它的定位：Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 个案例逆向工程，20+ 套工业级模板，并提炼出Skills，持续更新中。</p>
   <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank">freestylefly/awesome-gpt-image-2 →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个项目本质是个提示词仓库，但叫“引擎”还带 Skills，我看了下依赖，其实就是一个 JSON 加一堆 Markdown 模板。530 个案例是挺多，但我担心的是，OpenAI 模型一升级，这套 Prompt 就废一半。</div>
+    <div class="time-tag">10:48</div>
+  </div>
 </div>
 <div class="msg-row ">
   <div class="avatar ailin">艾</div>
   <div>
     <div class="name-tag">艾琳<span class="role">研究员</span></div>
-    <div class="bubble">这个其实不新鲜——Prompt 模板库从 GPT-3 时代就有，GitHub 上一搜一堆。但它的卖点是“530+ 案例逆向工程”，这个工程量倒是实打实的，相当于把别人的输出反推回提示词。</div>
+    <div class="bubble">有意思，但这不是新东西。Prompt 工程库从 2023 年就有了，它做的逆向工程确实有点工业化的味道，但“Prompt as Code”这个提法，在 arxiv 上 2024 年就有人讨论过。它的亮点是模板的抽象层级，这个比散装案例强。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要这个吗？我作为一个设计师，画图的时候是想要一张好看的图，而不是去学一套“模板语法”。如果它不能集成到 Figma 或者直接拖进设计稿里，那对我来说就是个高级备忘录。</div>
     <div class="time-tag">10:54</div>
   </div>
 </div>
@@ -151,117 +139,123 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="avatar guyue">古</div>
   <div>
     <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">我看它 README 写了“Prompt as Code”，理念没问题，但实操上有个硬伤：GPT-Image2 的 API 还在 beta，prompt 格式说改就改。你现在囤的模板，下个月可能全废。</div>
+    <div class="bubble">20 多套模板，说实话，我自己用 GPT-4o 也能写出来，只是没它整理得全。它的护城河是更新频率，但 open issues 只有 17 个，说明用户量还没爆发，大家可能只是 star 了当书签。</div>
     <div class="time-tag">10:57</div>
   </div>
 </div>
 <div class="msg-row ">
-  <div class="avatar mikou">米</div>
+  <div class="avatar ailin">艾</div>
   <div>
-    <div class="name-tag">米扣<span class="role">设计师</span></div>
-    <div class="bubble">用户画像倒是清晰——设计团队想快速出图，不想跟模型对话。但我试了几个模板，出来的图还是有点“AI 味”，缺乏品牌一致性。模板库解决不了调性，只能解决速度。</div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它专门提炼了 Skills，这个思路是对的，相当于把经验固化成了可调用的模块。但问题在于，它锁定了 GPT-Image-2 的特定输出格式，一旦 API 调整，这套东西的维护成本会很高，开源社区不一定接得住。</div>
     <div class="time-tag">11:00</div>
   </div>
 </div>
 <div class="msg-row ">
-  <div class="avatar ailin">艾</div>
+  <div class="avatar mikou">米</div>
   <div>
-    <div class="name-tag">艾琳<span class="role">研究员</span></div>
-    <div class="bubble">它提炼的“Skills”部分我有点兴趣，看起来是把它当成 Agent 的工具调用来设计。但核心思路还是 prompt 工程，没有跳出 2023 年的框架，创新性一般。</div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">如果它能做一个在线 Playground，让我不用写代码，直接点选模板、调参数、看效果，那传播量肯定翻倍。现在这样，还是给程序员自嗨用的。</div>
     <div class="time-tag">11:03</div>
-  </div>
-</div>
-<div class="msg-row me">
-  <div class="avatar guyue">古</div>
-  <div>
-    <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">17 个 open issues，大部分是“模板生成结果与示例不符”。这正常，模型版本一换，结果就漂移。我觉得它应该加个“模型版本锁定”字段，不然就是个易碎品。</div>
-    <div class="time-tag">11:06</div>
-  </div>
-</div>
-<div class="msg-row ">
-  <div class="avatar mikou">米</div>
-  <div>
-    <div class="name-tag">米扣<span class="role">设计师</span></div>
-    <div class="bubble">那说回用户价值——一个不断要更新的模板库，用户是买断还是订阅？如果作者不持续维护，三个月后就是一堆死代码。这种项目生命周期太依赖作者热情了。</div>
-    <div class="time-tag">11:09</div>
-  </div>
-</div>
-<div class="msg-row me">
-  <div class="avatar guyue">古</div>
-  <div>
-    <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">下一个，Nitter，这个老古董今天还有 71 个新增。我 2019 年就用过，当时觉得挺牛，但 Twitter API 一锁，它基本就是半残状态。</div>
-    <div class="time-tag">11:12</div>
-  </div>
-</div>
-<div class="msg-row ">
-  <div class="avatar ailin">艾</div>
-  <div>
-    <div class="name-tag">艾琳<span class="role">研究员</span></div>
-    <div class="bubble">技术上确实没新东西，Nim 写的，性能好，但原理就是爬公开页面再重排。问题是 X 现在全面登录墙，它的数据源越来越窄，只能当个历史项目看了。</div>
-    <div class="time-tag">11:15</div>
-  </div>
-</div>
-<div class="msg-row ">
-  <div class="avatar mikou">米</div>
-  <div>
-    <div class="name-tag">米扣<span class="role">设计师</span></div>
-    <div class="bubble">用户真的需要它吗？当年是为了避开广告和追踪，现在 X 的体验再烂，用户也习惯了。Nitter 的界面还停留在 2019 年，审美上就劝退一波人。</div>
-    <div class="time-tag">11:18</div>
-  </div>
-</div>
-<div class="msg-row me">
-  <div class="avatar guyue">古</div>
-  <div>
-    <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">156 个 open issues，很多是“instance down”报错。这就是自托管项目的通病——你得自己养一个实例，还得跟 X 的风控斗智斗勇。对普通用户门槛太高。</div>
-    <div class="time-tag">11:21</div>
-  </div>
-</div>
-<div class="msg-row ">
-  <div class="avatar ailin">艾</div>
-  <div>
-    <div class="name-tag">艾琳<span class="role">研究员</span></div>
-    <div class="bubble">它最大的价值反而是个反例——开源替代品能不能活，不取决于代码，取决于上游平台的政策。Nitter 的教训比它的代码值钱。</div>
-    <div class="time-tag">11:24</div>
-  </div>
-</div>
-<div class="msg-row ">
-  <div class="avatar mikou">米</div>
-  <div>
-    <div class="name-tag">米扣<span class="role">设计师</span></div>
-    <div class="bubble">同意，它现在更像一个“技术抗议”符号，而不是实用工具。如果哪天 X 彻底关掉游客接口，它就彻底死了。</div>
-    <div class="time-tag">11:27</div>
   </div>
 </div>
 <div class="topic-divider">— 切换话题 —</div>
 <div class="project-summary">
   <div class="ps-label">项目概要</div>
-  <p>google/googletest 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 9 star，总 star 39,057，主要语言 C++，创建于 2015-07-28，当前 open issue 491 个。它的定位：GoogleTest - Google Testing and Mocking Framework。</p>
+  <p>zedeus/nitter 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 71 star，总 star 13,934，主要语言 Nim，创建于 2019-06-20，当前 open issue 156 个。它的定位：Alternative Twitter front-end。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/zedeus/nitter" target="_blank">zedeus/nitter →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Nitter 是个老项目了，2019 年的，今天涨了 71 个 star，属于细水长流型。但它用 Nim 写的，这语言本身就劝退一大批想贡献代码的人，156 个 open issues 里面估计有一半是“求部署教程”。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的技术架构很清楚，就是无 JS 的 Twitter 前端代理，核心价值是隐私和去追踪。但这不是新东西，Invidious 之于 YouTube，Nitter 之于 Twitter，同一个套路。真正的难点是应对 Twitter 的接口封锁，这属于猫鼠游戏。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我理解技术宅喜欢它，但普通用户呢？我打开 Nitter 的实例，第一反应是“这界面怎么像 2010 年的网页”。如果它不是被 Twitter 官方逼到绝路，普通用户根本不会为了隐私去用一个长得这么丑的东西。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">部署 Nitter 是真的烦，依赖 Redis 和 Nim 编译器，而且官方实例经常挂。我自己部署过，跑了三天就被 Twitter 封了 IP。它有 156 个 issues，我猜三分之一是“我的实例又被封了”。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的存在本身就是对 Twitter 的讽刺——开源社区为了一个“能看推”的界面，愿意跟大公司耗五年。但技术上没有突破，Nim 的性能优势在这种 IO 密集型场景并不明显，反而增加了维护难度。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">其实用户要的不是“替代品”，而是“不被监控的阅读器”。如果它能做成一个浏览器插件，直接替换掉时间线里的广告和追踪器，那比一个独立网站有价值得多。独立网站的获客成本太高了。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>google/googletest 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 9 star，总 star 39,067，主要语言 C++，创建于 2015-07-28，当前 open issue 491 个。它的定位：GoogleTest - Google Testing and Mocking Framework。</p>
   <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/google/googletest" target="_blank">google/googletest →</a></p>
 </div>
 <div class="msg-row me">
   <div class="avatar guyue">古</div>
   <div>
     <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">GoogleTest，这个不用多说了吧，39k star，今天涨了 9 个，属于老寿星。但咱们还是聊聊，毕竟榜单上唯一一个 C++ 项目。</div>
-    <div class="time-tag">11:30</div>
+    <div class="bubble">GoogleTest 今天涨了 9 个 star，这种项目属于“日常打卡”，但它是 C++ 测试的事实标准。491 个 open issues 看着吓人，但大部分是 feature request，核心的 bug 修得挺勤快，文档也还算全。</div>
+    <div class="time-tag">11:24</div>
   </div>
 </div>
 <div class="msg-row ">
   <div class="avatar ailin">艾</div>
   <div>
     <div class="name-tag">艾琳<span class="role">研究员</span></div>
-    <div class="bubble">GoogleTest 在 C++ 测试框架里就是“事实标准”，但它也老。现代 C++ 项目很多转 Catch2 或 doctest，因为 GoogleTest 的宏定义和编译速度确实有点拖后腿。</div>
-    <div class="time-tag">11:33</div>
+    <div class="bubble">这个没什么好争议的，它 2015 年就开源了，架构上就是经典的 xUnit 模式，没有任何创新。但它的价值在于稳定性，十年了 API 还在向后兼容，这在 C++ 社区里太难得了。新项目？基本不用看，直接用这个。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要这个吗？哦，这个我是真没资格质疑。我写前端用 Jest，写 Python 用 pytest，但 C++ 项目的同学跟我说，没它根本不敢重构。这是那种“用了没感觉，不用就出事”的基建型工具。</div>
+    <div class="time-tag">11:30</div>
   </div>
 </div>
 <div class="msg-row me">
   <div class="avatar guyue">古</div>
   <div>
     <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">编译速度是真痛点。我上次在一个大项目里加了几百个 TEST_F，CI 直接多跑了四分钟。但它的参数化测试和 mock 库太成熟了，迁移成本高到没人愿意动。</div>
+    <div class="bubble">它的 CMake 集成做得不错，但如果你用 Bazel，会发现它的文档稍微有点滞后。另外一个问题是，它跟 gmock 绑得太紧，你要是只想用 mock 不想用 test，还得整个拉下来，依赖有点重。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">确实，它的价值不在“新”，而在“稳”。我记得 2022 年有个论文专门分析了主流测试框架的断言失败信息质量，GoogleTest 的失败提示是做得最可读的之一，这其实是个被低估的工程成就。</div>
     <div class="time-tag">11:36</div>
   </div>
 </div>
@@ -269,23 +263,29 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="avatar mikou">米</div>
   <div>
     <div class="name-tag">米扣<span class="role">设计师</span></div>
-    <div class="bubble">用户价值很清晰——稳定、文档好、社区大。但“稳”也意味着它不性感，新人写测试第一反应是 Jest 或 pytest，谁会主动去学 C++ 测试框架？</div>
+    <div class="bubble">我觉得它最厉害的地方是，让“写测试”这件事变得不那么痛苦。虽然它不解决“用户需不需要测试”的问题，但它解决了“测试代码能不能让我少掉头发”的问题。这就够了。</div>
     <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>bilawalsidhu/gods-eye-view 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 1,984 star，总 star 8,618，主要语言 JavaScript，创建于 2026-06-22，当前 open issue 84 个。它的定位：A spy satellite simulator in your browser, except the data is real. Live open source spatial intelligence on a photoreal。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/bilawalsidhu/gods-eye-view" target="_blank">bilawalsidhu/gods-eye-view →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个项目名字起得挺唬人，“上帝视角”，今天涨了近两千 star。我看了下，它就是个 3D 地球可视化，数据是公开的卫星轨道和空间站位置。纯前端渲染，没有后端，部署倒是不难，但 84 个 issues 里估计有不少是“加载太慢”。</div>
+    <div class="time-tag">11:42</div>
   </div>
 </div>
 <div class="msg-row ">
   <div class="avatar ailin">艾</div>
   <div>
     <div class="name-tag">艾琳<span class="role">研究员</span></div>
-    <div class="bubble">其实它近两年加了点新东西，比如 `GTEST_SKIP()` 和更细的 death test 控制，但整体架构还是 2008 年的设计。你要说它该被取代，也没人能给出更好的替代方案。</div>
-    <div class="time-tag">11:42</div>
-  </div>
-</div>
-<div class="msg-row me">
-  <div class="avatar guyue">古</div>
-  <div>
-    <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">491 个 open issues，我看了下，大部分是 feature request。一个框架活到这个份上，就是“不是没毛病，是毛病都被习惯了”。</div>
+    <div class="bubble">核心思路其实是把公开的空间态势数据（比如卫星 TLE 轨道数据）用 WebGL 做了个实时渲染。这个不新，NASA 和 ESA 早就有类似的工具，但它的创新在于用了 photorealistic 的地球纹理，视觉冲击力强，所以传播快。</div>
     <div class="time-tag">11:45</div>
   </div>
 </div>
@@ -293,7 +293,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="avatar mikou">米</div>
   <div>
     <div class="name-tag">米扣<span class="role">设计师</span></div>
-    <div class="bubble">那最后一个，gods-eye-view，这个名字起得挺唬人。浏览器里的卫星模拟器，数据是真的？我第一反应是隐私问题。</div>
+    <div class="bubble">我打开首页，第一眼确实被震撼到了。但 30 秒后我问自己，我为什么要盯着一个 3D 地球看？如果它只是展示“卫星现在在哪”，那这是个玩具。如果它能让我查“我的头顶上飞过的是哪颗卫星”，那才有日常价值。</div>
     <div class="time-tag">11:48</div>
   </div>
 </div>
@@ -301,7 +301,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="avatar guyue">古</div>
   <div>
     <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">我看了下，它用的是公开的卫星影像和轨迹数据，不是实时侦察。技术上就是 Three.js 加载瓦片地图，加一层轨道计算。部署很简单，纯前端，连个后端都没有。</div>
+    <div class="bubble">我看了下它的 GitHub Actions，有自动拉取最新 TLE 数据的 workflow，这个工程细节不错。但它没有后端，意味着所有用户都得从同一个 CDN 拉数据，如果流量一大，CDN 费用谁掏？这项目的长期维护是个问号。</div>
     <div class="time-tag">11:51</div>
   </div>
 </div>
@@ -309,7 +309,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="avatar ailin">艾</div>
   <div>
     <div class="name-tag">艾琳<span class="role">研究员</span></div>
-    <div class="bubble">核心思路倒是有意思——把“遥感数据”和“3D 可视化”结合，但这不是新东西，NASA 的 WebWorldWind 十年前就干过。它的创新点在“实时轨迹计算”这个交互上，但精度存疑。</div>
+    <div class="bubble">它用 Three.js 写的，渲染层没什么技术壁垒，但它的数据管道做得挺干净。问题是，它没有做任何数据过滤，直接把几千颗卫星全画出来，用户根本找不到重点。如果它加一个“按国家/按用途筛选”，那才叫真正的“空间智能”。</div>
     <div class="time-tag">11:54</div>
   </div>
 </div>
@@ -317,7 +317,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="avatar mikou">米</div>
   <div>
     <div class="name-tag">米扣<span class="role">设计师</span></div>
-    <div class="bubble">用户场景是什么？我花 30 秒玩了一下，好看，但然后呢？如果是教育用途，不如 Google Earth Pro；如果是装逼，不如直接放一段录屏。</div>
+    <div class="bubble">我觉得它最有可能的出路是被新闻媒体拿去当素材，或者被做成一个大屏展示。但作为个人工具，它缺少一个“触发点”——比如“给我展示今晚肉眼可见的卫星过境预报”。没有这个，它就是一次性炫技产品。</div>
     <div class="time-tag">11:57</div>
   </div>
 </div>
@@ -325,32 +325,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
   <div class="avatar guyue">古</div>
   <div>
     <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">82 个 open issues，大部分是“加载慢”和“内存占用高”。这没办法，浏览器里跑高精度 3D，8G 内存的机器直接卡死。我看了眼它的 LOD 策略，还有优化空间。</div>
+    <div class="bubble">行了，今天五个项目聊下来，一个共同感受：star 涨得快不代表能用得久。archify 和 gods-eye-view 是视觉红利，gpt-image-2 是模板红利，nitter 是情怀红利，只有 googletest 是真正的基建。大家各自吸收吧，下期见。</div>
     <div class="time-tag">12:00</div>
-  </div>
-</div>
-<div class="msg-row ">
-  <div class="avatar ailin">艾</div>
-  <div>
-    <div class="name-tag">艾琳<span class="role">研究员</span></div>
-    <div class="bubble">它这个“live”其实有点营销成分——数据是实时拉的，但渲染是预烘焙的。要说“spatial intelligence”，那得看它有没有提供 API 让用户查询数据，目前看没有。</div>
-    <div class="time-tag">12:03</div>
-  </div>
-</div>
-<div class="msg-row ">
-  <div class="avatar mikou">米</div>
-  <div>
-    <div class="name-tag">米扣<span class="role">设计师</span></div>
-    <div class="bubble">所以它更像一个“数据可视化 demo”，而不是工具。用户看完哇一声，然后关掉。这种项目适合炫技，不适合沉淀。</div>
-    <div class="time-tag">12:06</div>
-  </div>
-</div>
-<div class="msg-row me">
-  <div class="avatar guyue">古</div>
-  <div>
-    <div class="name-tag">古月<span class="role">工程师</span></div>
-    <div class="bubble">收个尾吧——今天五个项目，archify 和 GPT-Image2 是典型的 AI 热潮产物，涨得快跌得也快；Nitter 是时代的眼泪；GoogleTest 是永远的基建；gods-eye-view 是个漂亮的玩具。我的建议是，想干活用 GoogleTest，想玩看 gods-eye-view，想投资，都别碰。</div>
-    <div class="time-tag">12:09</div>
   </div>
 </div>
 </div>
