@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年09月07日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年09月07日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>mattpocock/skills 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 2,207 star，总 star 254,812，主要语言 Shell，创建于 2026-02-03，当前 open issue 469 个。它的定位：Skills for Real Engineers. Straight from my .agents directory.。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这个 star 数有点吓人，25 万。但“Skills for Real Engineers”这个标题让我有点警惕——它到底是在卖方法论，还是真的给了可执行的东西？</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我看了一眼，核心就是把他的 .agents 目录打包了，里面全是 shell 脚本和 prompt。文档还行，但依赖有点隐晦，他默认你用的是 Claude Code 或者 Codex 的特定版本。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页，30 秒内没看到任何截图或者 demo。我一个普通工程师，为什么要装你的个人配置？这给我的感觉是“看看我的 dotfiles”，而不是一个产品。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我觉得它的价值不在于代码，而在于“如何组织 agent 的长期记忆和技能”这个模式。但模式不是新东西，2023 年的 Agent 框架就在做这个。它赢在作者本人的影响力，不是技术突破。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，工程上就是一堆 markdown 和 shell。真正的问题是升级路径——我 fork 了之后，他更新了，我怎么合并？我看 issues 里 469 个没关，很多都是在问这个。部署文档写了吗？</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它更像是一本“付费博客”，而不是一个工具。用户真正需要的不是他的技能，而是他解决问题的判断力。但 GitHub 不是干这个的地方。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>DietrichGebert/ponytail 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 1,539 star，总 star 129,583，主要语言 JavaScript，创建于 2026-06-12，当前 open issue 225 个。它的定位：Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/DietrichGebert/ponytail" target="_blank">DietrichGebert/ponytail →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个名字起得好，但“laziest senior dev”这个卖点太抽象了。我看完 README 第一段，还是没懂它怎么让 AI 变懒。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">核心思路其实是给 agent 加了一层“最小改动优先”的约束，通过 prompt 注入和输出解析来强制它不去重写代码。有意思，但这不是新东西——像 “minimal diff” 这种约束在代码生成论文里很常见，2022 年就有。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要这个吗？我理解那个痛点——AI 一上来就重构你整个类。但你把它做成了一个框架，我是不是还得学你的配置语法？我宁可它是个 IDE 插件，一个 toggle 就完事。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">而且它是 JavaScript 写的，依赖了 agent 的输出格式。我用的是 Cursor 的最新版，它的输出格式变了，这个工具可能就失效了。这种脆耦合，我作为运维看着就头疼。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的亮点是“懒惰”这个定义本身——它把“少写代码”量化成了 token 节省和文件改动数。这个评估维度有点意思，但严谨性不够，我看它没有给出任何基准测试结果。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，没有 benchmark，全是 anecdote。我先看看它的 issue——225 个，其中一半是“在我的 agent 上不工作”。这玩意儿太吃环境了。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>BraveOPotato/FckSignups 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 436 star，总 star 3,367，主要语言 TypeScript，创建于 2026-05-07，当前 open issue 474 个。它的定位：A list of tools that are open-source, in-browser, and require no-signups!。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/BraveOPotato/FckSignups" target="_blank">BraveOPotato/FckSignups →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">这个好，我一眼就懂。它就是一个列表，收集那些不需要注册、直接在浏览器里用的开源工具。这个对设计师太友好了，我经常要找个工具做素材，结果先要注册一个账号。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这项目是个 TypeScript 写的静态页面？我看它 star 才三千多，但 issues 有 474 个——这说明列表维护不过来，很多人提“加这个工具”，但没人 merge。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上毫无创新，就是一个 JSON 文件加一个前端渲染。但这东西的价值在于“策展”本身。它本质上是一个反“signup wall”的宣言，虽然技术含量低，但社会工程学上的意义比那两个 25 万 star 的项目都大。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那问题来了，它怎么保证列表质量？我点进去两个工具，一个是纯前端 demo，一个是需要本地 build 的。它的筛选标准是什么？我看 README 里没写清楚。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">作为用户，我其实不在乎它是不是完美。我打开这个页面，快速找到一个“图片压缩，不需上传”的工具，我就满足了。但 474 个 open issues 说明维护者快放弃了——这让我有点担心它的长期可用性。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它最大的对手是那些“Awesome lists”。但那些列表太长了，这个项目赢在“精选”和“愤世嫉俗”的定位上。有意思的是，它居然用 TypeScript 写，杀鸡用牛刀。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>affaan-m/ECC 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 1,485 star，总 star 251,522，主要语言 JavaScript，创建于 2026-01-18，当前 open issue 172 个。它的定位：The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development f。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个 ECC 我得泼盆冷水。名字叫“性能优化系统”，但我看它的代码结构，里面塞了 skills、instincts、memory、security——什么都想干，最后什么都干不深。依赖地狱估计很精彩。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它想做一个跨平台的 agent 配置层，把 Claude Code、Cursor、Codex 的差异抹平。这个愿景我理解，但技术上基本是“适配器套适配器”。核心思路是好的——agent 的 memory 和 tools 应该分离——但实现方式太暴力了。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我作为用户，看到“beyond”这个词就头疼。你支持这么多平台，就意味着每个平台的更新都会弄坏你的东西。我花半小时配置完，下个月 Cursor 一更新，我的整套 skills 全废了。这风险谁承担？</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">而且我看它总 star 25 万，创建才一个月？这个增速要么是机器人刷的，要么是营销做得好。我打开它的 issue，172 个，里面好几个是“配置了完全不生效”，作者回复“请提供日志”——这不像一个成熟的系统。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我同意古月，增速可疑。但抛开这点，它其实触及了一个真问题：现在 agent 的记忆是碎片化的，每个工具存一份。ECC 想做一个统一的 memory 层，这个是值得做的方向，但它现在就是个半成品。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它是个“概念车”？我见过太多这类项目——PPT 做得漂亮，star 涨得快，但用户真的需要的是一个能解决“我会话一关，AI 就失忆”问题的工具。ECC 现在连这个基本场景的配置文档都没写清楚。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>blader/humanizer 是今天 GitHub Trending 上值得讨论的项目之一，今日新增 748 star，总 star 44,386，主要语言 Python，创建于 2026-01-18，当前 open issue 5 个。它的定位：Agent skill that removes signs of AI-generated writing from text。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/blader/humanizer" target="_blank">blader/humanizer →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这个最直接——把 AI 味去掉。技术上就是用一个语言模型来改写另一个语言模型的输出。核心思路不新，DeepL Write 和各种 paraphraser 早就干这个了。但它的卖点是“针对 AI 检测器优化”，这就有点灰色了。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我看它是个 Python 包，依赖倒是不多，就一个 transformers。但问题是，它需要本地跑一个模型，我估计至少得 4GB 显存。普通用户哪有这个环境？这实际上是个 API 服务的活，却做成了本地工具。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">哈，这个我太有需求了。我经常帮客户写产品文案，用 AI 起草后，一读就是一股“首先、其次、最后”的味儿。但我不需要它帮我骗过检测器，我需要它写得更像“我”。它这个定位有点把用户当贼了。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，这个“反检测”的定位很危险。如果它真的能有效降低 perplexity 的波动，那确实能骗过某些检测器，但这会引发学术诚信问题。我看它 open issues 只有 5 个，说明用户很少，这反而说明问题——真需要它的人不敢公开讨论。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程上，它就是个 prompt 封装。我看了它的代码，核心就是调用一个本地模型，加了一段“请把文字改得像人类写的”的指令。这活儿我花 20 分钟也能写一个，收这么多 star 纯粹是因为戳中了大家的焦虑。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要这个吗？我觉得两拨人需要：一是内容农场要批量生产伪原创，二是学生要写作业。这两个群体都不是什么健康的用户画像。我觉得它最后会被 GitHub 下架，或者被滥用后转向地下。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">行了，今天这几个项目看下来，除了那个 FckSignups 是个实在的列表，其他都是围着 AI agent 在造概念。star 数现在真的不能说明什么了，大家还是多看看 issue 区和 commit 频率吧。收工。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
