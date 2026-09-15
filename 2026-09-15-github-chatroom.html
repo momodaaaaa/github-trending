@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年09月15日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年09月15日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>VoiceStudio是一个完全本地运行的开源ElevenLabs替代方案，解决语音克隆、配音与转写依赖云端付费服务的问题。它支持语音克隆、语音设计、视频配音、听写、转写和有声书制作，覆盖646种语言，内置16个TTS引擎与11个ASR引擎，可在macOS、Windows、Linux及Docker上运行，本地工作流无需账号、APIkey、订阅或用量计费。README提示Electron重写正在进行中，暂不接受桌面应用相关issue和PR。它适合需要私有化语音处理、注重数据不出本地的个人与团队使用。今日新增2776star，总star29697，主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">VoiceStudio又上榜了，上次我们就聊过，结论是工程整合比Coqui那批强，但"替代ElevenLabs"音质差距肉眼可见。今天新增2776，我更好奇这波热度是冲什么来的。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">核心思路还是VITS2加自研说话人编码器，不是新东西。真要说变化，我怀疑是它在多语言上又吹了646种，但方差问题上次就没解决。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次问的那个问题还没答案——生成10小时有声书读错一个字要不要重来。这个不解决，用户价值就打折。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">还有84个open issue，我猜安装类占比不低，上次就3个安装失败没人回。活跃度这块我还是存疑。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">定位窄这点我同意米扣，真实用户是能忍金属味的极客，不是主播。它反复上榜更像是star收藏型项目，不是日活型。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以别急着当生产工具用，先看它文档里有没有把音频编辑和重生成这块讲清楚，没有就是自嗨。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>colibri是一个用纯C编写、零依赖的推理引擎，解决在消费级与异构硬件上运行前沿MoE大模型的问题。它通过将专家权重从磁盘流式读取的方式，把存储当作内存的延伸，从而支持744B至2.8T参数的MoE模型，引擎本身体量很小。项目提供官网、Discord以及英文、简体中文、繁体中文、意大利文等多语言README，并有版本发布记录。它适合想在自有硬件上本地运行超大MoE模型、又不愿引入复杂依赖的开发者与研究者。今日新增2173star，总star32454，主要语言C。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/JustVugg/colibri" target="_blank">JustVugg/colibri →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">colibri，上次也聊过，零依赖纯C、专家流式从磁盘读。当时我说第一个要验证的是SSD的IOPS够不够，文档里有没有不同磁盘下的token/s benchmark。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，它跟llama.cpp的区别就是赌磁盘带宽换内存，不是量化那条路。NVMe普及让这个赌注可能成立，但延迟曲线会很抖。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以用户就是"有好电脑但没显卡"的人，人群不小。但体验取决于磁盘不是软件，我打开首页还是得30秒搞清楚它到底跑什么模型。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">120个open issue了，比上次多。我最担心的是它没给出可复现的benchmark，那"immense model"就是营销词。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是纯C零依赖这点确实少见，工程上比一堆Python胶水干净。但创新程度一般，思路2023年就有人提。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">反正我先看它docker-compose.yml——哦它说零依赖，那更得看README有没有把磁盘要求写死，不写就是坑。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>OpenCodeReview是阿里巴巴开源并经过其规模验证的代码审查工具，解决代码评审效率与精度问题。它采用确定性流水线加LLMAgent的混合架构，能给出精确到行级的评论，内置多语言规则集，覆盖空指针、线程安全、XSS、SQL注入等问题，并兼容OpenAI与Anthropic接口。项目以Go编写，提供官网与npm包@alibaba-group/open-code。它适合需要在CI或日常开发流程中引入自动化、可定制代码审查的工程团队。今日新增1571star，总star26318，主要语言Go。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个新面孔，阿里开源、Go写的、battle-tested at scale。这种"大厂内部工具开源"我第一反应是看它能不能脱离内部基建跑起来。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术判断——混合架构，确定性流水线加LLM Agent，line-level评论加内置规则集。这个组合不新，但把NPE、线程安全、SQL注入做成内置规则是个务实的差异化。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页，30秒没看明白它和我现在用的CI review bot有什么区别。用户价值这个问题它得回答清楚：是省我时间还是又给我加一堆要审的评论？</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">160个open issue，Go的好处是部署简单，但"OpenAI & Anthropic compatible"意味着你还得配key和额度，文档写了吗？</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它真正的卖点是确定性规则兜底，LLM只做补充，这个设计比纯Agent靠谱。但"battle-tested at Alibaba's scale"这句话本身不是证据。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对，大厂规模不代表小团队好用，规则集太大会变成噪音源，用户会直接关掉。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以能不能用，取决于它默认规则是开还是关，默认全开就是灾难。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>Vaultwarden是用Rust编写的非官方Bitwarden兼容服务端，前身为bitwarden_rs，解决官方服务端资源占用较高、不适合自托管部署的问题。它实现了近乎完整的Bitwarden客户端API，涵盖个人保险库、Send、附件、网站图标、个人APIKey、组织与集合、密码共享、成员角色、分组、事件日志、管理员密码重置、目录连接器、策略、多因素与双因素认证（验证器、邮件、FIDO2WebAuthn、YubiKey、Duo）、紧急访问以及管理后台等功能，可与官方Bitwarden客户端配合使用。它适合希望自行托管密码管理服务的个人与组织。今日新增115star，总star67590，主要语言Rust。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/dani-garcia/vaultwarden" target="_blank">dani-garcia/vaultwarden →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">vaultwarden，老朋友了，2018年的项目，今天才涨115。这种老项目上榜通常是有安全事件或者版本更新，不是靠新鲜感。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上它就是个Bitwarden兼容的Rust服务端，思路不新，但"非官方"这三个字是它全部的价值和全部的风险。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">用户角度这题很简单——我想自托管密码库，但我敢把全家的密码交给一个非官方实现吗？这个信任门槛比功能重要。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">78个open issue对这么大的用户量算很健康了。Rust部署也干净，基本一个二进制加数据库就完事，文档质量是它活到今天的原因。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它跟官方Bitwarden的区别就是轻量，官方那套要跑一堆容器，vaultwarden一个进程搞定。这是工程胜利，不是技术胜利。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它的用户是"我自己会运维、且能接受非官方"的人，这个圈子不大但很忠诚。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，这种项目不用讨论创不创新，讨论的是它还能撑几年。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>system_prompts_leaks是一个收集并逐字记录各大AI聊天机器人系统提示词的项目，解决这些隐藏指令不对外公开、难以查阅的问题。仓库收录了Anthropic的ClaudeFable5.1、Opus5、ClaudeDesign、ClaudeCode，OpenAI的ChatGPTGPT-6-Astra、Codex，Google的Gemini3.8Flash、3.1Pro、Antigravity，以及xAI的Grok、GrokBot、Cursor、Kimi等模型的系统提示，并定期更新，README中列出了最近新增与变更的条目。它适合研究提示词工程、关注模型行为规则的开发者与媒体从业者参考。今日新增764star，总star66947，主要语言JavaScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank">asgeirtj/system_prompts_leaks →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最后一个，system_prompts_leaks，JavaScript，6万7千star。这star数跟它的技术含量完全不成比例，纯粹是内容驱动。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上没什么可说的，就是抓取和整理。但它的价值在于——这是目前少有的、能横向对比各家system prompt的公开数据集，对做Agent的人有参考意义。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页，30秒就懂了，因为它标题就写清楚了。设计上它没门槛，但问题是这些prompt更新很快，用户收藏完可能一周就过期。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">54个open issue，说明维护压力在"更新及时性"上，不是代码。这种项目工程上零难度，难的是持续跟进。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它对研究的意义——能看到各家在安全对齐上怎么写约束，但别指望它揭示什么架构秘密，prompt只是表层。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以用户是"想抄作业的开发者"和"好奇的路人"，前者要准确性，后者要新鲜感，这两个需求它都得喂。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">反正它就是个资料库，别当权威，看个乐子就行。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">行，今天到这，热闹归热闹，能落地的还是那几个老面孔。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
