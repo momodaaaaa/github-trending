@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年09月16日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年09月16日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是阿里巴巴开源的一款代码审查工具，旨在解决大规模代码审查中效率与准确性的问题。它采用确定性流水线加LLMAgent的混合架构，能够给出精确到行级的评论，并内置覆盖NPE、线程安全、XSS、SQL注入等多语言规则集，兼容OpenAI与Anthropic接口。工具使用Go语言编写，适合在阿里巴巴级别的工程规模下运行，目标用户是需要自动化代码审查的研发团队与平台工程人员。今日新增2756star、总star29346、主要语言Go。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">open-code-review回访，上次我们聊到默认规则开还是关的问题，今天它又涨了2700多star，issue从160到163，基本没动。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，上次我说它真正的卖点是确定性规则兜底、LLM只做补充，这个判断现在还是成立，但我依然没看到任何benchmark证明混合架构比纯Agent好。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我关心的是上次那个问题——默认规则集到底全开还是分级。如果新用户第一次跑出来50条NPE警告，他会直接卸载，根本走不到LLM那一步。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">163个open issue，一个月涨3个，说明维护节奏很稳，也说明没在大改。Go部署确实省心，但"OpenAI & Anthropic compatible"意味着key和额度还是得自己配，文档这块我打问号。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它这个混合架构其实2023年就有论文在做deterministic linter加LLM refiner了，创新度一般，工程整合是它的强项，不是思路。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它的真实用户是有CI流程、愿意调规则的团队，不是个人开发者。定位没错，但"battle-tested at Alibaba's scale"对小团队来说是反效果。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我先看它docker-compose.yml和默认配置，规则默认全开的话，这项目对个人就是灾难。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个完全本地运行的开源语音工作室，定位为ElevenLabs的替代方案，解决语音合成与音频处理依赖云端服务的问题。它支持声音克隆、声音设计、视频配音、听写、转录和有声书制作，覆盖646种语言，集成16个TTS引擎与11个ASR引擎，可在macOS、Windows、Linux和Docker上运行，本地流程无需账号、API密钥或订阅。项目使用Python编写，适合注重隐私与本地部署的创作者和开发者。今日新增2072star、总star31326、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">VoiceStudio回访，上次我问的那个问题到现在还是没答案——生成10小时有声书读错一个字要不要整体重来。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">issue从84涨到102，涨了18个，安装类我猜还是占大头。它反复上榜我更倾向于是star收藏型，不是日活型。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上还是VITS2加自研说话人编码器那套，不算新东西，工程整合比Coqui那批遗留项目干净，但"替代ElevenLabs"这个定位音质差距还是肉眼可见。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">646种语言这个数字很唬人，但用户真的需要646种吗？我打开首页30秒还是没搞明白它到底是给谁用的——极客、主播还是配音工作室。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">文档里如果没把音频编辑和局部重生成讲清楚，那它就是自嗨。102个issue没人系统回复，活跃度这块我继续存疑。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">所以它反复上榜更像是被收藏，不是被使用。真实用户是能忍金属味、愿意折腾的极客，这个定位窄，但忠诚。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那它就得把"读错一个字怎么办"写进README第一屏，不然用户价值永远打折。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个用纯C编写、零依赖的推理引擎，旨在让用户在自己已有的硬件上运行前沿MoE模型。它通过将专家参数从磁盘流式加载的方式，支持744B到2.8T参数规模的模型，在消费级及异构硬件上运行，引擎本身体量很小。项目不依赖外部引擎库，适合希望在本地或自有设备上部署超大MoE模型的研究者与工程师。今日新增2026star、总star34171、主要语言C。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/JustVugg/colibri" target="_blank">JustVugg/colibri →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">colibri回访，上次我说零依赖更得看README有没有把磁盘要求写死，今天涨了2000多star，issue从120到130。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">纯C零依赖这点确实少见，工程上比Python胶水干净，但思路2023年就有人提，创新度一般，它赌的是NVMe带宽换内存，这个赌注现在更成立了。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次说用户是"有好电脑但没显卡"的人，人群不小，但体验取决于磁盘不是软件。首页30秒还是没讲清楚它到底跑什么模型。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">它说零依赖，那docker-compose.yml就没有了，更得看README有没有不同磁盘下的token/s benchmark。没有的话"immense model"就是营销词。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">延迟曲线会很抖这个判断我保留，但它跟llama.cpp的路线差异是真实的——一个量化省内存，一个流式省内存，场景不一样。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它的用户得先知道自己磁盘型号，这本身就是一道门槛。产品上应该给个"你的机器能跑吗"的自检脚本。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">可复现benchmark不给，我就不当生产工具看，当玩具。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个开源的企业经营管理平台，覆盖ERP、CRM、HRM、ATS和项目管理等业务场景，解决企业多套系统分散的问题。项目使用TypeScript编写，采用AGPLv3许可证，README中还提到同团队推出的EverWorks智能体运行时以及基于React/NextJs与ReactNative的EverTeams平台。它适合需要一体化业务管理能力的中小企业及开发团队进行自建或二次开发。今日新增634star、总star6871、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/ever-co/ever-gauzy" target="_blank">ever-co/ever-gauzy →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">ever-gauzy回访，上次我们的结论是——广度是它的护城河也是天花板，用户要的是解决问题不是20个模块。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">issue从上次到现在474个，这个数字对ERP/CRM/HRM/ATS/PM全塞一起的项目来说不算意外，维护压力摆在那。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它没什么技术创新可聊，就是个功能广度型项目，技术上不新，价值在整合。上次说它命运是被公司拿去二次开发做定制，这个判断我维持。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">上手难度和功能数量成正比，这点没变。新用户打开首页还是不知道从哪个模块开始，缺一个"我该用哪个"的引导。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">TypeScript全栈，部署这块对SMB来说还是重，没个一键docker-compose基本劝退。474个issue里我猜配置类占大头。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它今天涨634 star，比前面几个低一档，说明它的受众就是明确要找开源ERP的那批人，不是来围观新玩具的。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它不是给个人用的，是给有IT预算的公司用的，这个定位它自己认不认很清楚。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是Homebrew官方推出的macOS图形界面，旨在让不习惯命令行的用户也能安全地发现、安装、更新和管理Homebrew软件包。它使用Swift6.0严格并发、SwiftUI和SwiftPackageManager构建，要求macOSTahoe26及以上，数据来自brewCLI与HomebrewJSONAPI，并始终通过/bin/zsh启动Homebrew，保持对底层操作的透明展示。目标用户是偏好图形界面而非终端的Mac用户。今日新增271star、总star1550、主要语言Swift。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/Homebrew/BrewUI" target="_blank">Homebrew/BrewUI →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">BrewUI，Homebrew官方macOS GUI，这个是真新面孔，1550 star，issue只有13个，维护看着很干净。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上没什么创新，就是个Swift写的brew前端，跟已有的Cakebrew、Tau这样的一堆第三方GUI比，唯一区别是"官方"两个字。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要这个吗？命令行用户不会去点GUI，GUI用户又不太敢碰Homebrew。我打开首页30秒，其实没看出它比直接敲brew好在哪。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">官方背书是它最大的资产，依赖这块它本身就得依赖brew，所以不算引入新依赖地狱。13个issue说明要么刚起步要么质量高。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的价值在降低新手门槛，让不敢用终端的人也能装东西，这个需求真实存在，只是跟老用户无关。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那它的设计品味就很关键了——如果只是把brew命令包一层按钮，那它存在的理由就弱。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Swift加官方维护，长期看能活，但短期我不用，命令行就够了。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">行，五个项目聊完，一个稳、一个收藏型、一个玩具、一个企业级、一个官方背书，各有各的活法。</div>
+    <div class="time-tag">12:15</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
