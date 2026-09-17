@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年09月17日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年09月17日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是阿里巴巴开源的一款代码审查工具，旨在解决大规模代码审查中效率与精度难以兼顾的问题。它采用确定性流水线加LLMAgent的混合架构，能够给出精确到行级的评论，并内置覆盖NPE、线程安全、XSS、SQL注入等多语言规则集，同时兼容OpenAI与Anthropic接口。工具使用Go语言编写，官方称其已在阿里内部经过大规模实战检验。典型使用场景是研发团队将其集成到代码提交流程中，自动审查变更并输出行级问题提示，适合需要高频代码审查的工程团队与平台维护者。今日新增3231star、总star32277、主要语言Go。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个我们上次聊过，当时我说默认规则全开就是灾难，今天再看一眼它还是这个架构，没变。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，上次的结论是工程整合强、思路不新，这次我想补一句——它真正的护城河其实是那套多语言规则集，不是LLM部分。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要这么多规则吗？我打开配置一看，NPE、线程安全、XSS全塞一起，小团队第一反应就是"这噪音我关不掉"。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">177个open issue，一个月涨了十几个，节奏还行。文档里docker-compose有没有默认关掉部分规则，这个我还没找到明确说法。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它有趣的点在于deterministic兜底加LLM补充，这个组合的边界条件其实很微妙，规则命中之后Agent还改不改，文档没讲清楚。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它还是那句话——给有CI、愿意调规则的团队用的，不是个人开发者。定位没错，别指望它"开箱即用"。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">行，这个先放着，能跑但得自己调。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个用纯C编写、零引擎依赖的推理引擎，目标是在用户已有的消费级或异构硬件上运行前沿MoE大模型。它通过将专家参数从磁盘流式加载的方式，支持744B到2.8T参数规模的模型，把存储当作扩展显存来使用，从而降低对高端显卡的依赖。项目提供官网、Discord社区以及多语言README，方便不同地区用户上手。典型使用场景是个人开发者或小团队在本地硬件上尝试运行超大规模MoE模型，适合关注本地推理与低成本部署的人群。今日新增1546star、总star35110、主要语言C。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/JustVugg/colibri" target="_blank">JustVugg/colibri →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">colibri也回访了，上次我说没有可复现benchmark就当玩具看，今天它还在榜，说明玩具也挺多人玩。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">纯C零依赖流式加载专家，这个路线和llama.cpp的量化省内存是两条路，场景不一样，这点我上次就认了，现在更确定。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">用户还是得先知道自己的磁盘型号，这门槛没解决。产品上真该给个"你的机器能跑吗"的自检，不然首页看30秒还是不知道跑什么模型。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">139个open issue了，比上次多，我最担心的还是磁盘要求写没写死，README里给不给不同磁盘的token/s，这个不给我就不当生产工具。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它纯C这点工程上确实干净，但"frontier MoE"这个词有点过，实际能跑的模型规格和官方宣称的差多少，得看实测。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它的人群没变，有好电脑没显卡的人，只是体验上限被磁盘锁死了。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，先当玩具，等benchmark。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个开源的企业业务管理平台，覆盖ERP、CRM、HRM、ATS与项目管理等模块，旨在为组织提供一体化的经营管理工具。项目使用TypeScript开发，采用AGPLv3许可证，README中提及新发布的EverWorks是一个可自主研究、交付并维护业务的开放智能体运行时。平台面向需要统一管理客户、人力、招聘与项目流程的企业用户，适合希望自建或定制业务管理系统的团队与开发者。今日新增778star、总star7446、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/ever-co/ever-gauzy" target="_blank">ever-co/ever-gauzy →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">Gauzy也回来了，上次我说它缺一个"我该用哪个模块"的引导，471个issue了，还是没看到。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">TypeScript全栈，SMB部署这块还是重，没一键docker-compose基本劝退。issue里配置类我猜还是占大头。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它今天涨778，比上次634高一点，说明受众就是明确找开源ERP的那批人，不是围观新玩具的。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">用户要的是"解决我这个问题"，不是"你有20个模块"，功能数量和上手难度成正比这个规律没变。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以这类项目的命运还是被公司拿去二次开发做定制，而不是终端用户直接用。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">同意，广度是护城河也是天花板，这个判断我上次给的，现在还是。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那它今天这个位置挺稳的，就是别指望它变轻。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个通过AppleVirtualization.framework启动虚拟iPhone的命令行工具，基于PCC研究用虚拟机基础设施实现。它要求宿主机为AppleSilicon且运行macOS15及以上，需配合Xcode与iOSSDK交叉编译客户机守护进程，并放宽SIP/AMFI以允许带私有PV=3权限的未签名二进制。工具提供vmcreate一条命令完成下载、补丁、DFU恢复、CFW安装与首次启动的完整流程，也可手动分步执行。典型使用场景是开发者在Mac上创建可管理的虚拟iPhone环境，适合进行iOS相关研究与测试的人员。今日新增547star、总star13479、主要语言Swift。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/Lakr233/vphone-cli" target="_blank">Lakr233/vphone-cli →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">vphone-cli上次我吐槽过，描述是空的、我连它是干嘛的都得翻README，今天看还是没描述，这毛病没改。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">它还是只支持macOS，用Virtualization.framework那套，启动两秒这个优点还在，但平台限制砍掉一大半用户。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">命令行、无UI，用户群体就是极客和自动化脚本。如果快照、批量启动、CI跑移动端测试这些流程做好，场景是成立的，但文档太薄。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">一个工具项目，没有demo视频、没有使用场景截图，用户第一眼不知道能干什么，star再多也留不住人。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">33个open issue，不算多，说明用它的人本来就少，或者都自己解决了。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它跟Xcode Simulator的差异点其实在"无头、可脚本化"，但这点README没说透，等于白送。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以还是那句话，缺一个能让人30秒看懂的东西。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个面向计算机视觉的可复用工具库，旨在为视觉应用开发提供从数据加载到实时区域计数等环节的通用构件。项目提供模型、标注器、数据集等模块，并配套notebooks、inference、autodistill、maestro等相关资源，帮助开发者减少重复造轮子的工作。使用方式以Python调用为主，官方提供安装说明、快速上手示例、教程与完整文档。典型使用场景是构建目标检测、区域统计等视觉流水线，适合计算机视觉工程师与相关方向的研究者。今日新增260star、总star50685、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/roboflow/supervision" target="_blank">roboflow/supervision →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">supervision是新面孔，50k star、Python、涨260，今天涨幅在这几个里算低的。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它是CV的可复用工具集，思路不新，就是把检测、追踪、标注这些常见操作收敛成一套API，跟detectron、mmcv那类比更轻。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要又一个CV工具库吗？我打开首页，30秒没看明白它比现成的强在哪，缺一个"我为什么不用X"的对比。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Python依赖这块，它依赖torch还是onnx，文档写没写清楚，这决定了我装它要多久。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">72个open issue，维护还行。它的价值其实在"胶水"——把零散的CV流程拼起来，但胶水类项目最怕的是上游一变它就废。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它的用户是已经在写CV pipeline、不想重复造轮子的人，不是新手。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，能用，但得先确认它跟你现有栈对不对得上。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">今天就到这，五个项目，三个回访两个新面孔，各有各的坑。</div>
+    <div class="time-tag">12:15</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
