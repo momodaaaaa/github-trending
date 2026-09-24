@@ -29,7 +29,9 @@ h1{font-size:28px;line-height:1.2;margin-bottom:10px}
 .score strong{font-size:25px;color:var(--green)}
 .score span{color:var(--muted);font-size:11px}
 .potential{display:block;margin-top:4px;color:var(--accent);font-size:11px}
-.why{margin:13px 0;color:#d9dee5;font-size:14px;line-height:1.7}
+.details{margin:13px 0 9px;color:#e4e8ed;font-size:14px;line-height:1.8}
+.why{margin:0 0 13px;color:var(--accent);font-size:13px;line-height:1.7}
+.why b{font-weight:600}
 .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;padding-top:12px;border-top:1px solid var(--line)}
 .info-grid div{display:flex;flex-direction:column;gap:3px}
 .info-grid b{font-size:11px;color:var(--accent);font-weight:600}
@@ -55,19 +57,20 @@ footer a{color:var(--accent);text-decoration:none}
         <a class="project-link" href="https://github.com/microsoft/markitdown" target="_blank" rel="noopener">microsoft/markitdown</a>
         <div class="meta">Python · 186,680 stars · 半月上榜 2 次 · 最近 2026-09-09</div>
       </div>
-      <div class="score"><strong>87</strong><span>/100</span></div>
+      <div class="score"><strong>79</strong><span>/100</span></div>
     </div>
-    <p class="why">文档转Markdown，稳定免费可私有化</p>
+    <p class="details">MarkItDown是一个轻量级Python工具，用于把各类文件和Office文档转换成Markdown，供LLM和文本分析流程使用。它重点保留文档结构，包括标题、列表、表格和链接等内容，输出偏向给文本分析工具消费而非追求排版美观。它适合需要在本地批量处理文档、为下游agent或分析管道准备文本的开发者，使用时需注意输入来源的可信度。</p>
+    <p class="why"><b>为什么值得试：</b>文档转Markdown，免费私有化好用</p>
     <div class="info-grid">
       <div><b>适合谁</b><span>需批量转换文档的用户</span></div>
       <div><b>上手难度</b><span>低</span></div>
       <div><b>注意事项</b><span>复杂表格PDF效果差，非知识库方案</span></div>
-      <div><b>第一步</b><span>pip安装转一个docx试试</span></div>
+      <div><b>第一步</b><span>pip安装后转一个docx试试</span></div>
     </div>
     <div class="score-detail">
-      <span>实用 26/30</span>
-      <span>易用 24/25</span>
-      <span>成熟 18/20</span>
+      <span>实用 24/30</span>
+      <span>易用 20/25</span>
+      <span>成熟 16/20</span>
       <span>差异 10/15</span>
       <span>热度 9/10</span>
     </div>
@@ -78,69 +81,18 @@ footer a{color:var(--accent);text-decoration:none}
   <div class="pick-body">
     <div class="pick-top">
       <div>
-        <a class="project-link" href="https://github.com/viarotel-org/escrcpy" target="_blank" rel="noopener">viarotel-org/escrcpy</a>
-        <div class="meta">JavaScript · 11,886 stars · 本期首次上榜 · 最近 2026-09-09</div>
-      </div>
-      <div class="score"><strong>74</strong><span>/100</span></div>
-    </div>
-    <p class="why">scrcpy图形界面，称职翻译器易上手</p>
-    <div class="info-grid">
-      <div><b>适合谁</b><span>偶尔控制安卓设备的用户</span></div>
-      <div><b>上手难度</b><span>低</span></div>
-      <div><b>注意事项</b><span>无差异化设计，不适合CI自动化</span></div>
-      <div><b>第一步</b><span>装后连一台安卓设备</span></div>
-    </div>
-    <div class="score-detail">
-      <span>实用 22/30</span>
-      <span>易用 22/25</span>
-      <span>成熟 16/20</span>
-      <span>差异 8/15</span>
-      <span>热度 6/10</span>
-    </div>
-  </div>
-</article>
-<article class="pick">
-  <div class="rank">#3</div>
-  <div class="pick-body">
-    <div class="pick-top">
-      <div>
-        <a class="project-link" href="https://github.com/THU-MAIC/OpenMAIC" target="_blank" rel="noopener">THU-MAIC/OpenMAIC</a>
-        <div class="meta">TypeScript · 38,818 stars · 半月上榜 2 次 · 最近 2026-09-02</div>
-      </div>
-      <div class="score"><strong>71</strong><span>/100</span></div>
-    </div>
-    <p class="why">多代理互动课堂，教学法编码有诚意</p>
-    <div class="info-grid">
-      <div><b>适合谁</b><span>对AI教学感兴趣的用户</span></div>
-      <div><b>上手难度</b><span>低</span></div>
-      <div><b>注意事项</b><span>方向待打磨，实际教学效果未验证</span></div>
-      <div><b>第一步</b><span>一键启动体验一节课</span></div>
-    </div>
-    <div class="score-detail">
-      <span>实用 18/30</span>
-      <span>易用 18/25</span>
-      <span>成熟 14/20</span>
-      <span>差异 12/15</span>
-      <span>热度 9/10</span>
-    </div>
-  </div>
-</article>
-<article class="pick">
-  <div class="rank">#4</div>
-  <div class="pick-body">
-    <div class="pick-top">
-      <div>
         <a class="project-link" href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener">debpalash/VoiceStudio</a>
-        <div class="meta">Python · 34,967 stars · 半月上榜 4 次 · 最近 2026-09-15</div>
+        <div class="meta">Python · 34,971 stars · 半月上榜 4 次 · 最近 2026-09-15</div>
       </div>
       <div class="score"><strong>70</strong><span>/100</span></div>
     </div>
-    <p class="why">本地语音克隆配音，功能全但偏极客向</p>
+    <p class="details">VoiceStudio是一个完全本地运行的开源ElevenLabs替代方案，用于解决语音克隆、配音和转写依赖云端付费服务的问题。它支持语音克隆、语音设计、视频配音、听写、转写和有声书制作，覆盖646种语言，内置16个TTS引擎与11个ASR引擎，可在macOS、Windows、Linux及Docker上运行，无需账号、APIkey或订阅计费。它适合注重数据不出本地、需要私有化语音处理的个人与团队。</p>
+    <p class="why"><b>为什么值得试：</b>本地语音克隆配音，隐私友好但偏极客</p>
     <div class="info-grid">
       <div><b>适合谁</b><span>注重隐私的语音处理用户</span></div>
-      <div><b>上手难度</b><span>高</span></div>
-      <div><b>注意事项</b><span>Electron重写中，桌面端暂不接受issue</span></div>
-      <div><b>第一步</b><span>用Docker跑一次转写或配音</span></div>
+      <div><b>上手难度</b><span>中</span></div>
+      <div><b>注意事项</b><span>Electron重写中，桌面端暂不支持</span></div>
+      <div><b>第一步</b><span>按README跑本地TTS转写demo</span></div>
     </div>
     <div class="score-detail">
       <span>实用 20/30</span>
@@ -152,27 +104,82 @@ footer a{color:var(--accent);text-decoration:none}
   </div>
 </article>
 <article class="pick">
+  <div class="rank">#3</div>
+  <div class="pick-body">
+    <div class="pick-top">
+      <div>
+        <a class="project-link" href="https://github.com/viarotel-org/escrcpy" target="_blank" rel="noopener">viarotel-org/escrcpy</a>
+        <div class="meta">JavaScript · 11,886 stars · 本期首次上榜 · 最近 2026-09-09</div>
+      </div>
+      <div class="score"><strong>70</strong><span>/100</span></div>
+    </div>
+    <p class="details">Escrcpy是一个用图形界面显示和控制Android设备的工具，底层基于scrcpy。它提供嵌入式镜像窗口、键盘映射和多设备控制等功能，把原本命令行的操作搬到界面上，部分高级功能来自付费的私有扩展仓库EscrcpyX。它适合希望用图形界面而非命令行来操作Android设备的用户，但若用于CI自动化测试仍需回到命令行。</p>
+    <p class="why"><b>为什么值得试：</b>scrcpy图形界面，偶尔用一次很顺手</p>
+    <div class="info-grid">
+      <div><b>适合谁</b><span>偶尔控制安卓设备的用户</span></div>
+      <div><b>上手难度</b><span>低</span></div>
+      <div><b>注意事项</b><span>只是翻译器，不适合CI自动化</span></div>
+      <div><b>第一步</b><span>装后连一台安卓设备试试</span></div>
+    </div>
+    <div class="score-detail">
+      <span>实用 20/30</span>
+      <span>易用 20/25</span>
+      <span>成熟 16/20</span>
+      <span>差异 8/15</span>
+      <span>热度 6/10</span>
+    </div>
+  </div>
+</article>
+<article class="pick">
+  <div class="rank">#4</div>
+  <div class="pick-body">
+    <div class="pick-top">
+      <div>
+        <a class="project-link" href="https://github.com/alibaba/open-code-review" target="_blank" rel="noopener">alibaba/open-code-review</a>
+        <div class="meta">Go · 40,297 stars · 本期首次上榜 · 最近 2026-09-15</div>
+      </div>
+      <div class="score"><strong>68</strong><span>/100</span><span class="potential">潜力候选</span></div>
+    </div>
+    <p class="details">OpenCodeReview是阿里巴巴开源并经过其规模验证的代码审查工具，用于提升代码评审的效率与精度。它采用确定性流水线加LLMAgent的混合架构，能给出精确到行级的评论，内置覆盖空指针、线程安全、XSS、SQL注入等问题的多语言规则集，并兼容OpenAI与Anthropic接口，以Go编写并提供npm包。它适合希望在CI或日常开发流程中引入自动化、可定制代码审查的工程团队。</p>
+    <p class="why"><b>为什么值得试：</b>大厂验证的代码审查工具，规则可定制</p>
+    <div class="info-grid">
+      <div><b>适合谁</b><span>需自动化审查的工程团队</span></div>
+      <div><b>上手难度</b><span>中</span></div>
+      <div><b>注意事项</b><span>规则集大易成噪音，默认全开是灾难</span></div>
+      <div><b>第一步</b><span>npm装后跑一次审查看噪音量</span></div>
+    </div>
+    <div class="score-detail">
+      <span>实用 18/30</span>
+      <span>易用 14/25</span>
+      <span>成熟 16/20</span>
+      <span>差异 12/15</span>
+      <span>热度 8/10</span>
+    </div>
+  </div>
+</article>
+<article class="pick">
   <div class="rank">#5</div>
   <div class="pick-body">
     <div class="pick-top">
       <div>
-        <a class="project-link" href="https://github.com/tt-a1i/archify" target="_blank" rel="noopener">tt-a1i/archify</a>
-        <div class="meta">JavaScript · 70,738 stars · 本期首次上榜 · 最近 2026-09-01</div>
+        <a class="project-link" href="https://github.com/THU-MAIC/OpenMAIC" target="_blank" rel="noopener">THU-MAIC/OpenMAIC</a>
+        <div class="meta">TypeScript · 38,819 stars · 半月上榜 2 次 · 最近 2026-09-02</div>
       </div>
-      <div class="score"><strong>70</strong><span>/100</span></div>
+      <div class="score"><strong>67</strong><span>/100</span><span class="potential">潜力候选</span></div>
     </div>
-    <p class="why">代理生成架构图，让非工程师读懂系统</p>
+    <p class="details">OpenMAIC是一个多智能体互动课堂项目，目标是让用户一键获得沉浸式的多智能体学习体验。它把教学法编码进Agent的提示词中，例如苏格拉底式提问和同伴互评，相比通用聊天机器人更有教学场景感，并引入了“数字同学”这类角色。它适合K12或大学等教学场景的尝试与使用。</p>
+    <p class="why"><b>为什么值得试：</b>多代理互动课堂，教学法编码有诚意</p>
     <div class="info-grid">
-      <div><b>适合谁</b><span>需给客户讲架构的开发者</span></div>
+      <div><b>适合谁</b><span>K12或大学生学习者</span></div>
       <div><b>上手难度</b><span>低</span></div>
-      <div><b>注意事项</b><span>担心重视觉轻算法，需确认能否导出PNG</span></div>
-      <div><b>第一步</b><span>让代理生成一张架构图</span></div>
+      <div><b>注意事项</b><span>方向待打磨，定位偏教学场景</span></div>
+      <div><b>第一步</b><span>一键启动体验一节课</span></div>
     </div>
     <div class="score-detail">
-      <span>实用 18/30</span>
-      <span>易用 18/25</span>
+      <span>实用 16/30</span>
+      <span>易用 16/25</span>
       <span>成熟 14/20</span>
-      <span>差异 11/15</span>
+      <span>差异 12/15</span>
       <span>热度 9/10</span>
     </div>
   </div>
