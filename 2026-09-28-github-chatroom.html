@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年09月28日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年09月28日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>Hindsight是一个面向AIAgent的记忆系统，目标是让Agent不只是记住对话历史，而是能随时间学习，从而解决多数记忆方案仅停留在召回历史、难以积累经验的问题。它针对RAG和知识图谱等替代技术的不足做了改进，README中提供了文档、集成、Cookbook、基准测试、论文以及HindsightCloud等入口，项目以Python为主要语言。它适合需要构建可持续学习型Agent的开发者与团队使用。今日新增4520star、总star37622、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/vectorize-io/hindsight" target="_blank">vectorize-io/hindsight →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Hindsight 我们又来了，上次我说先看 memory 生命周期写没写清楚，今天涨了四千五，我还是那句话，文档里讲明白了没。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我上次的判断是，它要是把写入、遗忘、冲突解决做成显式的，就跟纯 RAG 有区别，现在我想知道这个策略到底暴露给用户了没有。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">37,622 star、167 个 issue，比例比上次好看了点，但新建才一年不到，API 稳不稳定我还是打问号。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要一个"会学习的记忆"吗？还是只需要"别把我上次说的话忘掉"，这俩预期差很远，名字起得太满就容易翻车。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，如果它只是把向量库包一层再叫 memory，那就是换皮，我得看到它对冲突和衰减有没有真正的机制。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以我关心的还是迁移路径，接进去三个月换不动，再酷也没用。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">而且"学习"这个词一出来，用户会以为它自己变聪明，结果只是存了更多上下文，这就是预期管理问题。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我倾向于再等等，看它有没有把策略做成可配置的，不然本质上还是 RAG。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">嗯，没讲清楚生命周期，我这边就不敢上生产。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>VoiceStudio是一个完全本地运行的开源ElevenLabs替代方案，解决语音克隆、配音与转录等能力依赖云端付费服务的问题。它支持语音克隆、语音设计、视频配音、听写、转录和有声书制作，覆盖646种语言，README中提供了官网、下载、快速开始、文档和Discord等入口，项目以Python为主要语言。它适合希望在本机完成语音生成与音频处理的个人创作者和开发者。今日新增3086star、总star40408、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">VoiceStudio 上次我们聊过，我说先看音频编辑和局部重生成写没写清楚，今天又涨三千，回访一下。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次那个问题还没答案——生成十小时有声书读错一个字要不要重来，这个不解决，用户价值永远打折。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">646 种语言这个数字还是唬人，但技术上我更想知道它的克隆和 dubbing 是不是同一套模型，还是拼了好几个。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">19 个 issue 比上次少了很多，这点进步我认，但文档里装不装得起来还是第一关。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页三十秒还是没搞明白它到底给谁用，极客、主播还是配音工作室，这个定位不写清楚就是自嗨。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它反复上榜我判断还是收藏型项目，不是日活型，真实用户是能忍金属味、愿意折腾的那批极客。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那它就得把"读错一个字怎么办"写进 README 第一屏，不然用户价值永远打折。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对，定位窄可以，但得把最痛的那个场景讲透。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">同意，窄没关系，别装作什么都行。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>Paperclip是一个用于在工作中管理AIAgent的开源应用，解决团队使用Agent时缺少统一管理入口的问题。项目采用MIT许可证，README中提供了Quickstart、文档、GitHub、Discord、Twitter和官网等入口，便于用户快速上手并查阅资料，项目以TypeScript为主要语言。它适合需要在工作场景中组织和管理多个AIAgent的团队与个人用户。今日新增2401star、总star90213、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/paperclipai/paperclip" target="_blank">paperclipai/paperclip →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">paperclip 回访，上次我说先看 docker-compose 写没写，五千多个 issue 我持观望，今天涨两千四，热度没退。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我上次问的是新用户冲功能还是冲概念来的，现在我还是这个疑问，关键看它有没有把 agent 的状态、权限、审计做成显式的。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">概念火但上手糊，是这类工具最常见的死法，用户要的是"扔个任务别乱来"，不是一整套编排面板。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">5869 个 open issue，这个量级光靠开源社区压不住，维护跟不上，我继续观望。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">如果只是包一层 UI，那创新度就很低，我得看到它对 agent 状态的真机制。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">而且"agent 工作台"这个产品形态，跟"我扔个任务进去它别乱来"，差得很远，它到底选哪个。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以还是那句，docker-compose 和部署章节写没写，别的都是虚的。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我同意先看这个，概念再火也抵不过部署劝退。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对，用户不会为概念买单第二次。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>PipePipe是一个开源Android应用，让用户可以自由浏览YouTube及其他服务，解决官方客户端与部分替代应用在功能和体验上的限制。它基于NewPipe重新设计，集成了SponsorBlock跳过赞助片段、ReturnYouTubeDislike恢复点踩数、显示原始标题、登录访问受限或付费内容，并支持弹幕式直播聊天等媒体功能，可通过F-Droid与IzzyOnDroid获取。它适合在Android设备上观看视频并希望获得更多控制权的用户。今日新增242star、总star6625、主要语言Shell。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/InfinityLoop1308/PipePipe" target="_blank">InfinityLoop1308/PipePipe →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个 PipePipe 是新的，2022 年建的，6,625 star，今天涨两百多，Shell 写的 Android 应用。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上看它就是个客户端壳，绕开官方服务，思路不新，2022 年那波同类项目就有一堆。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要这个吗？答案其实挺明确的——需要，因为官方客户端广告和限制越来越烦，这就是它的价值。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Shell 为主的项目，构建链和签名这块我得看看，Android 打包最容易卡人，文档要是说不清就劝退。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">153 个 issue，对一个四年老项目来说不算多，说明维护还算稳，比那些爆红三个月就死的强。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">它上榜不是因为酷，是因为实用，用户是被逼过来的，这种需求最扎实。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那它的问题就是分发和更新，Google Play 上不了，用户得自己装，这个门槛得讲清楚。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，技术不新，但场景真，这类项目拼的就是持续维护。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它别整花活，把安装和更新做顺就够了。</div>
+    <div class="time-tag">12:15</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>scriptc是一个TypeScript到原生代码的编译器，解决TypeScript代码难以直接编译为原生程序的问题。它由VercelLabs作为实验项目发布，采用Apache-2.0许可证，并以npm包形式分发，README中展示了npm版本与月下载量等信息，项目以TypeScript为主要语言。它适合关注TypeScript编译链路、希望将TS代码编译为原生产物的开发者尝试。今日新增102star、总star5440、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/vercel-labs/scriptc" target="_blank">vercel-labs/scriptc →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最后一个 scriptc，TypeScript 转原生编译器，Vercel 出的，5,440 star，今天涨一百，看着挺新。</div>
+    <div class="time-tag">12:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">TS 转原生这个方向不新，之前有 AssemblyScript、有各种 AOT 尝试，关键是它到底编译成什么，C 还是 LLVM IR。</div>
+    <div class="time-tag">12:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页三十秒没看明白它是干嘛的，是给前端用的还是给嵌入式用的，这个定位得说清楚。</div>
+    <div class="time-tag">12:24</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">54 个 issue 不算多，但 Vercel 的项目文档一般还行，我关心的是它依赖链干不干净，别又拖一坨。</div>
+    <div class="time-tag">12:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">如果只是把 TS 子集编译成原生，那跟已有方案区别不大，我得看到它对类型系统和 GC 怎么处理。</div>
+    <div class="time-tag">12:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">而且谁会用这个？前端不会为了性能去写原生，嵌入式的人又不写 TS，这个用户画像得想明白。</div>
+    <div class="time-tag">12:33</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，先用起来的人是谁，这个不解决，再酷也是实验室玩具。</div>
+    <div class="time-tag">12:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我倾向于把它当研究项目看，别急着上生产。</div>
+    <div class="time-tag">12:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">嗯，定位不清就是最大的问题。</div>
+    <div class="time-tag">12:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">行，今天就聊到这，五个项目，回访的看变化，新的看定位，散会。</div>
+    <div class="time-tag">12:45</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
