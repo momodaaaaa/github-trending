@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年10月09日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年10月09日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>REA是一个面向逆向工程场景的MCP工具，目标是用agent对二进制、应用程序和运行时行为进行逆向分析，让用户理解某个功能从应用层到二进制层是如何实现的。它通过`npxrea-agentssetup`快速安装，支持跨二进制、应用与运行时行为分析，README提供网站、指南、案例展示、FAQ与文档等入口，并配有Hopper分析截图示例。典型用户是需要研究软件内部机制、分析二进制或运行时行为的开发者与安全研究人员。今日新增7,738star、总star28,300、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/morluto/rea" target="_blank">morluto/rea →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">rea 又回来了，上次我们聊的时候它 open issue 还在往下走，说明确实有人在清账，今天这个 star 涨幅我得重新看一眼。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我上次的结论没变，它核心还是 LLM 直接操作文档树，缺一个确定性的 diff 层。但反复上榜说明它可能补了些东西，我想知道是不是在往"改完可回滚"这个方向走了。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次问的是"改错了能不能撤回、改对了能不能解释"，这个问题到现在还是用户价值的命门。star 涨得再快，如果这个没解决，用户用两次就跑了。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我翻了下它的依赖和部署路径，TypeScript 前端还是那套，npm 一装就跑，工程门槛不高。真正的问题还是那六七种文档格式的保真度，这是团队级工程量，短时间补不上。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它反复出现在榜上这件事本身。一个工具类项目能持续吸 star，通常意味着它踩中了某个真实工作流痛点，不是纯概念。但技术架构上，它和市面上已有的文档 agent 方案区别仍然模糊。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以我作为设计师的判断是，它现在更像"能演示"，离"敢托付"还有距离。用户要的不是 agent 能改文档，是改完能信任。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，部署不是问题，信任才是它绕不过去的关。这项目我会继续盯着，但不会现在推荐给团队用。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>AnyPS5是一个将PS5可执行文件自动移植到Linux和Windows的工具，解决跨平台运行PS5程序的问题。它包含一个relinker，可将可执行文件转换为目标系统的原生格式，并提供适合动态链接的系统prx库实现，不依赖模拟器或独立运行时进程；项目还包含着色器重编译器，可生成经Spirv-Tools验证的SPIR-V，遇到不支持状态会抛出std::runtimeerror并终止进程。典型用户是希望研究或在PC上运行PS5游戏的移植开发者与爱好者。今日新增4,669star、总star16,206、主要语言C++。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/boykopovar/AnyPS5" target="_blank">boykopovar/AnyPS5 →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">AnyPS5 上次聊过，我当时说它 open issue 是个无底洞，现在这个数字只会更大，兼容性矩阵这东西不会自己收敛。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它没说自己怎么处理反作弊和 DRM，这两块是硬墙，上次我就提过，今天看还是没正面回答。所以它更像个二进制移植的技术演示，不是能规模化交付的方案。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">用户真正的需求是"我想玩这个游戏"，不是"我想参与一个移植项目"。这个错位从上次到现在一点没变，star 涨说明的是好奇心，不是需求被满足了。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">570 个 open issue，这个量级对 C++ 项目来说基本意味着维护会被拖垮。每款游戏都是一个独立战场，文档和兼容性列表是它最大的债。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上，把 PS5 可执行文件自动转到 Linux 和 Windows，这件事本身在二进制重写和 syscall 映射领域不算全新思路，难的是覆盖面。它的创新度不高，工程难度极高，这是最糟的组合。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它对我这样的设计顾问来说是个反面教材——一个东西再酷，如果用户拿不到确定的结果，它就不是产品。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我的判断不变，能跑，但三个月后还在不在维护，我持悲观态度。这种项目适合当研究素材，不适合当依赖。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>ArtCraft是一个面向艺术家、设计师和电影制作人的创作引擎，定位为“艺术家的IDE”，用于进行有意图的创作。项目使用Rust编写，提供Discord、YouTube、X等社区与演示渠道，并附有两分钟YouTube演示视频，方便用户了解其工作方式。典型用户是从事视觉创作、设计或影视制作的艺术家与创作者。今日新增2,103star、总star8,265、主要语言Rust。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/storytold/artcraft" target="_blank">storytold/artcraft →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">artcraft 是新面孔，2022 年建的，Rust 写的，这个创建时间说明它不是蹭热度的新项目。我先看它的构建和依赖，Rust 项目最怕的是编译链和系统库依赖。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">一个"有意图的创作引擎"，这个定位我看了一眼，核心思路是给艺术家、设计师、 filmmakers 提供可控的生成流程。有意思，但这类"可控生成"的架构在 2022 年前后的论文里已经有一堆，它不是新东西，关键是它把哪些控制点做成了产品。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开它的项目页，第一反应是——它到底想让我做什么？是画图、剪片还是排版？30 秒没看明白它服务谁，这对一个创作工具来说是致命的。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Rust 的部署门槛对普通创作者是硬伤，编译时间长、依赖系统图形库，文档如果没写清楚怎么装，艺术家根本不会碰。这块我得看它的 README 和 release 有没有预编译包。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它和已有方案的区别在于"intentional"这个词，如果它真的把每一步生成都变成可回溯的节点，那和纯 prompt 生成有本质差别。但如果只是套了个节点编辑器的壳，那创新就有限。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">用户真的需要一个新引擎吗？还是需要一个能融入他现有工作流的工具？这个问题决定它是被收藏还是被使用。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我给它一个中性判断，工程上能不能跑取决于预编译做得如何，文档是它第一道生死线。老项目能活到今天，说明有人真在用，这点比新项目强。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>Skills是作者从自己.agents目录中整理出的agent技能集合，面向真实工程开发而非vibecoding，解决通用流程框架接管过程、难以调试的问题。这些技能被设计得小巧、易改、可组合，作者认为开发真实应用很难，而GSD、BMAD、Spec-Kit等方案虽试图帮助却会夺走控制权，因此提供更可控的替代方式。典型用户是使用agent进行日常真实工程开发的工程师。今日新增1,774star、总star281,242、主要语言Shell。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">skills 又上来了，上次我们的结论是它工程上就是一堆 markdown 和 shell，没有版本管理、没有升级路径。今天 star 还在涨，说明这个判断没影响它传播。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它赢在影响力，不在技术，这点从上次到现在都没变。真正值得关注的是它依赖 Claude Code 的特定版本，工具一更新它就报错，这个脆弱性还在。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次说用户真正需要的是"解决我问题的判断力"，而不是"你的技能文件"。判断力没法 fork，这是它最大的悖论，现在还是。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我看它现在依然是丢文件夹进 skills 目录就能用，这点体验确实好。但没版本管理意味着你更新一个 skill，老项目可能就跑不通，这个坑对团队用户是实打实的。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">所以它本质上是一本"会说话的工程手册"，不是一套可依赖的系统。作为灵感库它有价值，作为生产依赖它不合格。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对用户来说，它的价值在"看别人的思路"，不在"直接拿来用"。这两件事经常被混淆。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我的判断不变，star 再高也改变不了它是灵感库的事实。想用可以，别把它当基础设施。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是《SystemDesignInterview-AnInsider'sGuide》第一卷和第二卷的学习笔记项目，帮助读者复习系统设计面试知识。笔记按章节组织，涵盖从零扩展到百万用户、估算、面试框架、限流器、一致性哈希、键值存储、分布式唯一ID、短链、爬虫、通知系统、新闻流、聊天、搜索自动补全、YouTube、GoogleDrive等主题，并注明仍在完善中。典型用户是准备系统设计面试的工程师与求职者。今日新增393star、总star24,733、主要语言未标注。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/liquidslr/system-design-notes" target="_blank">liquidslr/system-design-notes →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">system-design-notes 也回来了，上次我说它就是个书摘，star 靠的是书名不是内容质量。5 个 open issue，维护还是那样，没大变化。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它跟今天榜上其他技术项目不是一类东西，混在一起讨论本身就是错位。它没有交互、没有图、没有代码，纯文本笔记，价值在于"别人帮你读了一遍"。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">这是典型的"收藏了等于学了"，用户点 star 那一刻就完成了学习闭环。但真有几个人会回来翻？这个数据撑不起"值得讨论"。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">还有个老问题，它没 license 说明，内容版权是灰的，公司内部用有风险。这条从上次到现在没解决。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它能反复上榜，反映的是大家对系统设计面试的焦虑还在，焦虑不等于会用这个 repo，这俩得分开看。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它对我来说是个"心理安慰型"项目，收藏它让人安心，但不代表能力提升。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">一句话，star 高不代表有用，它就是个书摘，跟榜上其他项目不是一类。今天这五个，我最愿意自己用的是 artcraft，最愿意推荐给朋友的是 rea，其余三个，让子弹再飞一会儿。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
