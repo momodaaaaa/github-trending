@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年10月22日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年10月22日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>Ponytail是一个让AI编码代理模仿“最懒的资深开发者”思维方式的工具，核心理念是“最好的代码是你从未写过的代码”，旨在抑制AI代理过度生成代码的倾向。它通过约束代理行为，使其倾向于用最少、最简洁的代码解决问题，而非堆砌冗余实现。项目以JavaScript编写，README中以“他不说话，只写一行，就能跑”概括其风格。典型使用场景是希望AI代理在编码任务中减少代码量、避免过度工程化的开发者。今日新增2079star、总star171853、主要语言JavaScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/DietrichGebert/ponytail" target="_blank">DietrichGebert/ponytail →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">ponytail 又上榜了，上次聊完我说没 benchmark 全是 anecdote，今天先看它动了没。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我接着上次的结论说，它核心还是 prompt 模板加约束函数，轻是优点，但“懒惰”的判定边界还是模糊。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次问它到底给谁用，现在还是没答清——想要不写代码的 agent，还是想要能解释为什么不该写的 agent。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">issue 从 52 涨到 69 了，又回去了点，我想知道新开的是不是还是“在我的 agent 上不工作”。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是 star 冲到十七万了，但技术上它没给出可复现的规则，还是靠模型感觉判断该不该写。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">而且我担心它变成甩锅工具，它得能明确输出“为什么不需要”，不然这个价值就存疑。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，部署文档里有没有把“什么算可以不写”的默认参数写清，不写清就是行为不可预测。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>security-audit-skill是Cloudflare推出的编码代理技能，用于执行多阶段安全审计，产出经过独立验证、机器可读的发现结果。它将代理编排为六个阶段：侦察（梳理架构、信任边界、输入面并生成架构文档与覆盖台账）、基于覆盖的狩猎、候选验证、结构化输出、独立记录验证和目标中立报告。该技能源自Cloudflare漏洞发现工具链的初始版本，是其单仓库起点。适合安全团队和开发者用代理对代码库进行系统化漏洞排查。今日新增2012star、总star36780、主要语言JavaScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/cloudflare/security-audit-skill" target="_blank">cloudflare/security-audit-skill →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">security-audit-skill 也回来了，上次我们卡在“independently verified”到底是自己验自己还是真独立。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我上次的结论没变，它越涨我越不敢往 CI 放，得看它崩的时候会不会静默失败。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开仓库还是那个问题——得先猜它跑在哪个 agent 上、配什么 key，30 秒看不懂入口。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">多阶段审计本身不新，2022 年就有分阶段静态加动态的论文，关键在验证层能不能复现。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">issue 从 72 到 78，如果还是集中在宿主依赖和静默失败，那我继续观望。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">定位还是没解——它是 CI 里的一道卡口，还是给人看的报告？这两个用户要的东西完全不一样。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>Orca是一个用于管理“代理舰队”的工作平台，可同时运行GrokBot、ClaudeCode等多种编码代理，并支持使用用户自己的订阅。它提供桌面端、移动端和远程运行时，让用户在一个统一环境中调度和操作多个代理。项目以TypeScript编写，采用MIT许可证，并提供Discord和X社区渠道。典型使用场景是需要在多代理协作下完成编码任务、并希望跨设备管理代理的开发者与团队。今日新增1541star、总star101479、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/stablyai/orca" target="_blank">stablyai/orca →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">orca 又来了，我上次说打开首页 30 秒没搞明白它是替代 Cursor 还是替代终端，这话我今天还想说。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我上次盯着那八千多个 issue，现在冲到八千六百多了，这两条线一起涨说明用的人多踩坑的人更多。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的赌注还在“订阅复用”绕开 API 计费，合规和稳定性都是问号，调度不难，难的是会话和状态隔离。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">多入口不等于多价值，用户要的是装上就能干活，不是先读一堆配置。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我想看它有没有把“跑通第一个 agent”的路径压到最短，不然再火也不敢碰。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">star 十万、issue 八千六，这不像成熟项目，像在高速上换轮胎。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>Graphify是一个把任意代码库连同文档、SQLschema、配置和PDF转成可查询知识图谱的工具，以/graphify技能形式供ClaudeCode、Cursor、Codex和GeminiCLI使用。它采用本地确定性AST解析，每条边都有解释，且不使用向量存储。用户可在上述编码代理中调用该技能，将项目资料结构化为图谱后进行查询。适合需要跨代码与文档理解大型代码库的开发者。今日新增1433star、总star131786、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/Graphify-Labs/graphify" target="_blank">Graphify-Labs/graphify →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">graphify 是新的吧，第一次聊。它说把代码库、文档、SQL、PDF 变成可查询的知识图谱，我先看它怎么部署。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">定性判断——把 AST 解析做成本地确定性、每条边可解释、不用向量库，这个方向比 RAG 那套花活干净，但“知识图谱”这个词本身不新。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但我打开首页会先问，用户真的需要一张图吗？还是只想要“这个函数在哪被调用”这种具体答案。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">一千六百多个 issue，开源才两个月，我得看它的依赖和本地解析在大型仓库上跑不跑得动。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它强调 no vector store，这是和已有方案的区别点，但得看它检索质量能不能撑住，不然图再漂亮也没用。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">上手难度是关键，如果我要先学它的查询语法才能问问题，那我宁可 grep。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>freehire是一个面向求职者的开源搜索引擎，直接从公司招聘页面抓取IT职位，聚合超过330万个实时岗位，剔除招聘中介、转载和失效链接。项目提供在线站点、API和“添加来源”等机制，用户可按来源检索职位，开发者也可贡献新的招聘页面来源。它以Go语言编写，强调“每个IT职位，直取源头”。典型用户是寻找IT工作的求职者，以及希望接入或扩展职位数据源的开源贡献者。今日新增360star、总star2473、主要语言Go。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/strelov1/freehire" target="_blank">strelov1/freehire →</a></p>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">freehire 也是新的，开源求职搜索引擎，我第一个问题就是——用户真的需要一个新搜索引擎吗，还是只想要一个不骗人的职位列表。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Go 写的，star 才两千四，issue 只有 6 个，这个体量反而让我想看看它 docker-compose 长什么样，部署轻不轻。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上搜索本身不新，区别在于它怎么抓、怎么去重、怎么排序，如果只是爬虫加关键词匹配，那创新度有限。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">求职者最痛的是假职位和过期信息，它得回答“信息从哪来、多久更新”，不然体验再好也是空壳。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">六个 issue 说明还没被大规模用，文档质量现在看还早，但我关心它抓取源是否合规、会不会明天就挂。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它值得盯的是数据管道而不是搜索界面，这个方向要做扎实，比再做一个 UI 难得多。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">行，这期就到这，五个项目里我还是最想先看 graphify 的 docker-compose。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
