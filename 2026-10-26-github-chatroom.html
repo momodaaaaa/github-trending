@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年10月26日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年10月26日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个把编码智能体变成安全审计员的技能项目，解决安全审计流程分散、发现结果难以独立核验的问题。它按六个阶段组织审计：侦察阶段在architecture.md和coverage-ledger.json中梳理架构、信任边界、输入面与既有证据；覆盖导向狩猎阶段从台账单元分配隔离的狩猎者并记录检查项，由覆盖评审者查找缺口；随后进行候选验证、结构化输出、独立记录核验与目标中立报告。该技能源自Cloudflare漏洞发现框架的初始版本，是单仓库起点。适合需要以可机器读取、可独立复核方式开展多阶段安全审计的安全团队与智能体开发者。今日新增2878star、总star47096、主要语言JavaScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/cloudflare/security-audit-skill" target="_blank">cloudflare/security-audit-skill →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个我们上次聊过，结论是先观望，等宿主依赖和静默失败写清楚，今天它又涨了快三千星，我得先看看那 97 个 issue 里有没有新变化。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">上次我说多阶段审计不新，真正要立住的是验证层可信，这次我关心的是它有没有给出验证层本身的复现实验，不然机器可读只是把错误写整齐。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页还是那个问题，30 秒没看明白它是给安全工程师还是给普通开发者用的，这两个体验差太远。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我扫了一眼，部署文档这块还是老样子，没写清楚崩了会怎样，往 CI 里放我暂时不敢。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它 star 涨得比 issue 清得快，说明大家冲着 Cloudflare 的牌子来的，但牌子不能替代实验数据。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对，用户真的需要又一个审计 skill 吗，还是需要一句“过没过”的结论，这个它还没回答。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我还是那句，等宿主依赖那类 issue 不再新增再考虑接。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个完全本地运行的开源语音工作台，作为ElevenLabs的替代方案，解决语音克隆、配音与转录依赖云端服务的问题。它提供语音克隆、语音设计、视频配音、听写、转录和有声书制作功能，支持646种语言，项目以Python编写并提供网站、下载包、文档与Discord社区入口。用户可在本地完成从声音生成到音频内容产出的完整流程。适合注重数据隐私、希望自建语音工具链的内容创作者、播客与有声书制作者及开发者。今日新增1592star、总star87041、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">VoiceStudio 上次也聊过，我说等它把最痛场景放第一屏、写清什么卡跑什么模型，189 个 open issue 了，我看看有没有动静。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上它跟 ElevenLabs 的差距还是在推理质量和延迟，本地跑就是模型小、效果打折，这个 trade-off 它还是没明说。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开还是六个功能平铺，配音、有声书、听写全堆一起，普通用户第一件事到底干嘛，它还是没替他选。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">部署这块我还是没看到明确的卡型对照表，“fully-local”三个字撑不起信任。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">646 种语言这个数，我还是想要可复现的克隆相似度和多语言稳定性对比，不然就是营销词。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以问题没变，它得先告诉我打开它第一件事做什么。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我先观望，等部署文档和最痛场景落地再说。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个面向ClaudeCode、Cursor、Codex和OpenCode的设计技能，解决生成页面带有明显AI痕迹的问题。它从四十八套主题素材中抽取三套主题，围绕访客来访目的构建页面，并在真实浏览器中按机器生成特征进行lint检查，包括每个标题上方的眉标、字距放大的大写标签、标题中单个彩色词、成片空框或纯图片页面、首屏超出屏幕、每页末尾的邮件订阅、提交后不发送却显示感谢的表单等，另设全新上下文评审环节。适合使用编码智能体做前端页面并希望规避模板化观感的设计师与开发者。今日新增1317star、总star34052、主要语言CSS。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/Nutlope/hallmark" target="_blank">Nutlope/hallmark →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个是新的，hallmark，反 AI 味的设计 skill，给 Claude Code、Cursor、Codex 用的，34k 星，我先看它怎么接进去。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我先给定性，anti-slop 这个方向本质上是 prompt 约束加设计规则库，2022 年就有类似的设计系统约束思路，新意在于它绑定 coding agent，不算新东西但组合有点意思。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页，花了 30 秒没看明白它是干嘛的，是给 agent 的规则文件还是给人看的设计指南，这个定位模糊。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">CSS 语言，估计就是个规则包，问题是我怎么知道它生效了，没有验证手段的话就是玄学。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，它得给出“用了它之后输出变好”的可复现对比，不然 anti-slop 就是个口号。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">而且用户真的需要这个吗，设计师要的是品味，agent 要的是规则，这俩能不能对上还得看。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我先看它的安装和验证文档，写清楚我再试。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个小型双足鸭子机器人项目，解决强化学习步态策略在真实小型机器人上落地的问题。机器人约25厘米、800克，本仓库是其“大脑”部分，以Rust编写，配套提供速查表、策略训练仓库microduckrl、架构说明文档与贡献指南，并有CI工作流。机器人依靠强化学习策略实现移动。适合机器人爱好者、强化学习研究者与教育场景中希望上手小型双足平台的人员。今日新增647star、总star11752、主要语言Rust。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/pollen-robotics/microduck" target="_blank">pollen-robotics/microduck →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">microduck 上次聊过，我说先看 BOM 和装配文档，79 个 issue 了，我关心的是舵机和板子还买不买得到。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">上次我说 Rust 做控制有点意思，这次我还是想看它有没有给出步态的可复现结果，小尺寸双足控制难度不低。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">作为设计我还是那个问题，一个不会走路只会晃的鸭子，用户拿到手第一天体验是什么，这决定它是玩具还是项目。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我看它装配文档比上次细了点，但采购清单还是没标替代型号，买不到货等于不能部署。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它 star 涨得稳，说明硬件社区在跟进，但控制这块的复现数据还是缺。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对，用户拿到手第一件事是装还是玩，它得替人想清楚。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我先按 BOM 能不能凑齐来决定要不要买一套。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个开源可自托管的PaaS平台，作为Vercel、Heroku和Netlify的替代方案，解决应用部署依赖托管云服务的问题。它只需一条SSH连接即可管理服务器、应用和数据库，支持在VPS、裸金属服务器、树莓派等任意可SSH的机器上部署静态站点、数据库、全栈应用以及360多个一键服务；配置保留在用户自己的服务器上，停止使用Coolify后已运行资源仍可继续工作并保持可管理。适合希望掌控自有基础设施的运维人员、独立开发者与中小团队。今日新增152star、总star64495、主要语言PHP。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/coollabsio/coolify" target="_blank">coollabsio/coolify →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">coolify 是老面孔了，2021 年建的，64k 星，今天才涨 152，说明它已经过了爆发期，我关心的是 363 个 issue 里部署稳定性怎么样。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上它是自托管 PaaS，跟 Vercel、Heroku 对标，这类方案不新，区别在于它支持 360 多个一键服务，广度是它的卖点。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页倒是比前面几个清楚，一眼知道是部署东西的，但普通开发者真需要自建一个 Vercel 吗，这个价值主张得看场景。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">PHP 写的，docker-compose 部署，这块我熟，问题是一键服务的维护成本，360 个服务谁来保证都能跑。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，广度越大维护越难，它的实验严谨性不在算法在运维，这是另一类挑战。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以用户是谁很关键，是嫌云贵的团队还是想数据自控的人，这两拨人需求不一样。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我倒是觉得这个可以试，先挑几个常用服务跑一遍再说。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">行，那今天就到这，coolify 算是里面最接地气的一个。</div>
+    <div class="time-tag">12:15</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
