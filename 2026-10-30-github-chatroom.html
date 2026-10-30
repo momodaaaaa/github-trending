@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年10月30日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年10月30日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个为编码智能体提供设计词汇表的Rust项目，旨在解决AI生成界面时缺乏设计判断、容易产出粗糙或套路化结果的问题。它通过polish、bolder等指令让使用者引导智能体的设计方向，并用critique、audit对产出进行审查，在代码交付前识别所谓的AIslop。项目以设计词汇作为人机协作的接口，让开发者用简短的词控制智能体的设计行为。典型用户是使用AI编码工具、希望提升生成界面质量的开发者与设计工程师。今日新增2,870star、总star96,143、主要语言Rust。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">impeccable 我们上次聊过，当时我给的结论是观望，等它把集成文档和效果验证写明白，今天它又冲上来了，先看看有没有解决这个问题。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我上次说设计语言最难的是可度量，这次我看了一圈，它的定位还是“给 coding agent 的设计词汇表”，用 polish、critique 这类词去 steer，本质上还是 prompt 约束层，不是新东西。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页，花了 30 秒没看明白它到底改的是 agent 的输出还是我的工作流，用户不会为了一个说不清效果的词汇表去改习惯。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程上我先看它怎么塞进现有 harness，96k star 但 open issues 才 49，要么维护很猛，要么大家只是 star 了没用起来，我倾向后者。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它把 review 和 audit 做成独立命令，这个拆法比单纯堆形容词强，但没看到约束前后的量化对比，我还是不服。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，所以结论没变，继续观望，等它拿出一份能跑的 docker-compose 和一组前后对比数据再说。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个名为DeepTutor的Python项目，定位为终身个性化辅导系统，解决学习者在长期学习过程中缺少持续、贴合个人情况的辅导支持的问题。项目以个性化辅导为核心，围绕终身学习场景构建，并设有独立站点deeptutor.info作为对外入口。资料未提供更多实现细节，其使用方式与具体功能需参考项目仓库与官网。目标用户是有长期自主学习需求、希望获得个性化辅导的学习者。今日新增1,930star、总star51,052、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/HKUDS/DeepTutor" target="_blank">HKUDS/DeepTutor →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">DeepTutor 第一次见，Python 写的，51k star，创建不到一年，我先看它的部署路径，248 个 open issues 这个数字有点扎眼。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">lifelong personalized tutoring 这个方向，核心思路其实就是 memory + 个性化，2022 年就有一堆 paper 在做，关键看它怎么定义“lifelong”，是长期记忆还是真的持续学习。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要又一个 tutor 吗？我打开首页，看到一个很标准的聊天界面，30 秒内我没找到它和 ChatGPT 加个记忆插件有什么本质区别。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">248 个 issues 对一个 Python 项目来说，说明要么用户量大要么维护跟不上，我担心的是它依赖一堆模型服务，部署文档写了吗。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的点在于它的个性化是不是可评估的，如果只是把历史对话塞进 context，那不算创新，得看它有没有独立的用户建模层。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">从设计角度，tutor 类产品最难的是让用户相信它记得我、而且记得对，这个信任感比功能列表重要得多。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以我先看它仓库里有没有一份像样的架构图和 docker-compose，没有的话这个 star 数我先打个折。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个汇集各类越狱提示词的开源合集，解决使用者在不同模型上寻找完整、可直接粘贴的提示词配置时缺少统一来源的问题。合集包含32条提示词，覆盖26个以上模型，内容形式包括完整系统提示、人格定义、工作区策略、AGENTS.md文件、配置块和OllamaModelfiles，每条都力求完整可直接使用，不做摘要或节选。覆盖范围包括OpenCodeZen提供的免费隐蔽模型、GLM、DeepSeek、Kimi、Qwen、Gemma、GPT-OSS等开放权重系列，以及Claude、Gemini、Grok、Mistral等闭源前沿模型，还涉及编码智能体与工作区指令格式。目标用户是研究和使用上述模型提示词配置的开发者与研究者。今日新增1,594star、总star9,712、主要语言未标注。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/togg53192-cmd/jailbreaks" target="_blank">togg53192-cmd/jailbreaks →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个 jailbreaks 仓库，名字直白，9.7k star，今天涨了一千五，我得说这类东西我不太想深聊，但作为工程现象值得看一眼。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术判断很简单，这不是新东西，jailbreak 列表从 2022 年就有了，它就是一份 prompt 集合，没有架构、没有实验严谨性，本质是个内容仓库。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但用户真的需要这个吗？我打开一看就是一长串 prompt，没有任何引导，30 秒内我不知道哪个能用、哪个已经失效，这个体验对非研究者很不友好。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程角度没什么可部署的，纯文本仓库，风险在于它容易被滥用，open issues 20 个，估计一半是“这个 prompt 不管用了”。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它反复上榜说明需求真实存在，但从研究角度它不产生知识，只是把已知的绕过手法归档，开源诚意也谈不上。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对，从产品角度它缺的是“哪个还有效”的筛选和版本标注，否则就是个会腐烂的清单。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这类项目我一句话：star 高不等于能用，别把它当工具，当现象看就行。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个开源的GrokBot替代方案，用TypeScript编写，解决用户希望在聊天应用里拥有自己可控的AI智能体团队的问题。侧边栏中的每个bot都是真实运行的智能体，底层在本地运行Claude或Codex，各自拥有独立人格、模型、云端计算机和已连接的应用，用户可以像联系人一样与它们对话、观察其工作并对关键操作进行审批。项目主打自带智能体、本地优先、使用用户已有的模型，并提供下载入口与官网openmausbot.com，同时声明与xAI、Meta、OpenAI、Manus无关。目标用户是希望以开源方式自建多智能体协作环境的用户与开发者。今日新增1,199star、总star7,812、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/milind-soni/OpenMausBot" target="_blank">milind-soni/OpenMausBot →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">OpenMausBot，开源的 Grok Bot 替代，带一个 bot 能用的虚拟机，TypeScript，7.8k star，562 个 open issues，这个 issue 数我先警惕。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">核心思路其实是 agent + sandbox VM，这个组合 2023 年就有人做了，和已有方案的区别在于它把 VM 直接嵌进 bot 工作流，但技术上不算突破。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页，花了 30 秒没看明白它到底是给我一个能自己操作的 bot，还是给我一套基础设施，这个定位模糊对上手是致命的。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">562 个 issues 基本说明维护跟不上了，TypeScript 加虚拟机意味着部署依赖很重，我先看它的 docker-compose 和资源要求，跑起来要几个核多少内存。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它敢把 VM 暴露给 bot 用，这在安全上是把双刃剑，实验严谨性我没看到，没有隔离策略的说明我不太敢用。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">从用户角度，普通人要的是“帮我干活”，不是“帮我开一台虚拟机”，这个价值主张得再收一收。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以工程判断是：能用但门槛高，文档和资源要求没写清楚之前，我不会推荐给任何人。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个面向AI编码工具的设计技能合集，解决ClaudeCode、Cursor、Codex、Windsurf等工具在生成界面时缺少结构化设计方法的问题。每个技能都是一个自包含文件夹，可按需单独安装，适用于任何能读取markdown规则文件的工具。目前列出的技能landing-page-design可从零构建落地页，涵盖需求提问、页面结构、转化文案以及字体、间距、圆角、动效等完整视觉系统，后续还会有更多技能加入。安装方式包括在ClaudeCode中用自然语言直接调用，或在Cursor中把文件粘贴到Settings的RulesforAI。目标用户是借助AI编码工具做网页与界面设计的开发者。今日新增1,187star、总star12,583、主要语言未标注。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/elayadesign/ai-design-skills" target="_blank">elayadesign/ai-design-skills →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最后一个，ai-design-skills，没有描述，12.5k star，今天涨了一千多，创建才几个月，我先看它到底装了什么。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这类 design skills 仓库，核心思路其实就是把设计流程拆成 agent 可调用的技能，和 prompt 库、和 impeccable 那种词汇表是同族，区别只在颗粒度。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页，30 秒没看明白它是给人用的还是给 agent 用的，如果是给 agent 的，那用户价值得通过 agent 间接体现，这个传递链太长。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">没有描述、没有语言标注，open issues 才 7 个，说明要么刚起步要么没人真用，我连它依赖什么都不知道，部署无从谈起。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是如果它真把 design skill 做成可组合的模块，那比 impeccable 的词汇表更进一步，但目前看不到任何评估方法，创新程度存疑。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对，从设计品味角度，一个教 agent 做设计的仓库，自己首页的呈现就是第一道考验，现在这道考验没过。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我的判断是先记下来，等它补上 README 和一份能跑的例子，再决定值不值得聊第二次。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
