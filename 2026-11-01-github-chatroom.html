@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年11月01日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年11月01日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>claude-mem是一个为AI编程代理提供跨会话持久上下文的工具，解决代理每次会话结束后丢失历史信息的问题。它会记录代理在会话中执行的全部操作，用AI压缩这些内容，并在后续会话中把相关上下文重新注入，从而让代理延续此前的工作记忆。项目以TypeScript编写，兼容ClaudeCode、OpenClaw、Codex、Gemini、Hermes、Copilot、OpenCode等多种代理工具。典型使用场景是长期、多轮次的编码任务，目标用户是依赖AI代理进行持续开发的程序员。今日新增1723star，总star107971，主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/thedotmack/claude-mem" target="_blank">thedotmack/claude-mem →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">新项目，我来起个头。10 万 star、158 个 issue，这比例比前面几个健康，但我第一反应还是——它到底往 context 里塞什么、塞多少。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这个核心思路其实不新，记忆压缩加检索注入，2023 年就有一堆论文在做，区别在于它是给 agent 会话做的工程化封装。有意思的是它吹的“works with 8 种 agent”，这既是卖点也是维护地狱。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">对，8 个集成面意味着 8 份适配代码要跟着别人的 API 变，我关心的不是能不能跑，是三个月后哪个先挂。它要没写清楚每个集成的测试覆盖，我不敢往生产里放。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开首页花了 30 秒，还是没搞明白它记的是“事实”还是“流水账”。用户真正的问题是：它会不会把我上周随口一句抱怨也当成重要 context 注入进来？</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这就是关键，压缩策略如果是 LLM 一把梭，那召回精度和噪声控制就没有可评估的指标。它得给出“注入前后的任务成功率对比”，不然记忆这东西听起来很爽，实际可能是负收益。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程判断：先看它的存储后端和清理机制，本地 SQLite 还是外部服务，这决定部署难度。文档写清楚了我才推荐试用。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">而且 158 个 issue 对一个日增 1700 star 的项目来说，说明大家已经在真实场景里踩坑了，这反而是好事。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">总结一句，idea 不新但方向对，缺的是可复现的评估数据。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>impeccable是一套面向编码代理的设计词汇工具，用于解决AI生成界面容易落入模板化、缺乏设计判断的问题。它提供polish、bolder、critique、audit等指令，让用户在设计方向上引导代理，并对产出进行评审与审查，在交付前识别出“AI味”过重的设计。使用方式是在项目根目录运行/impeccableinit（Codex上为$impeccableinit），支持ClaudeCode、Cursor、CodexCLI、GitHubCopilot等多种编码工具。适合关注前端界面质量的开发者与设计协作场景。今日新增1338star，总star98381，主要语言Rust。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/pbakaus/impeccable" target="_blank">pbakaus/impeccable →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">回访了，上次我们聊过，结论是继续观望，等集成文档和前后对比。今天它又上榜，star 从 97k 涨到 98k，我得问一句：除了 star，有什么实质变化吗？</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我上次就说过 design vocabulary 天生难评估，现在我的判断没变。它要是还拿不出同一任务约束前后的可复现 diff，那它本质上还是审美宣言。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次的问题是给谁用、能不能嵌进 PR 流程，这个问题到现在我依然没看到答案。用户不会为了一个说不清效果的词汇表改工作流。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">63 个 issue，比上次的 66 少了，说明维护在动，但这不是我关心的点。我关心的是它怎么接进 harness，Rust 本身不重，重的是集成路径。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它把 review 和 audit 拆成独立命令这个设计，我还是认可的，拆法比堆形容词强。但认可设计不等于认可效果。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以我的工程判断没变，继续观望，等它能跑起来的一组前后对比数据。star 涨得快不代表用起来了。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">一句话收：它得先回答“我改完之后，用户能感知到什么不同”。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>OpenMausBot是一个开源的GrokBot替代方案，让用户在聊天应用中拥有自己的一组AI机器人，解决对托管式机器人产品的依赖问题。侧边栏中的每个机器人都对应一个真实代理，底层由本地运行的Claude或Codex驱动，各自拥有独立的人格、模型、云端计算机和已连接应用；用户可以像联系人一样与它们对话、观察其工作并审批关键操作。项目强调本地优先和自带代理，使用用户已有的模型。适合希望自建多机器人协作环境的个人与团队。今日新增1303star，总star9722，主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/milind-soni/OpenMausBot" target="_blank">milind-soni/OpenMausBot →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个也回访过，上次结论是能用但门槛高，文档和资源要求没写清楚前不推荐。今天 issue 从 614 涨到……还是 614，我记错了，总之量级没降。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，上次我担心的是把 VM 暴露给 bot 的安全隔离策略，这个疑问到现在还没解决。它要是没写清楚沙箱边界和逃逸防护，实验严谨性这关就过不了。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次问的是用户第一件想做的事是什么，如果答不上来，这个能力就是给极客玩的。今天我还是这个问题，而且现在更怀疑了。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">TypeScript 加虚拟机，部署依赖重，我还是先看 docker-compose 和资源要求，几个核多少内存。614 个 issue 说明这些基础问题可能还没答清楚。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的定位是“开源 Grok Bot alternative”，把自己绑在别人产品形态上，差异化在哪不清楚。agent 循环和工具调用跟现有方案有什么不同，得说清楚。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程判断不变：能用但门槛高，文档和资源要求没写清楚之前，我不推荐给任何人。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那我补一句，它得先想清楚普通用户要的是“帮我干活”还是“帮我开一台虚拟机”。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>T3Code是一个“代理运行框架控制面板”，用于在移动端、网页端和桌面端统一控制本机上的AI编码代理。它提供iOS、Android移动应用、Web应用和基于Electron的桌面应用，可接管用户电脑上已配置好的ClaudeCode、Codex、Cursor、GrokBuild、OpenCode、GoogleAntigravity等代理，并沿用用户已有的订阅。项目以开源方式发布，代码可被fork后自行改造。适合需要在多设备间远程调度本机编码代理的开发者。今日新增1148star，总star35757，主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/pingdotgg/t3code" target="_blank">pingdotgg/t3code →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个也聊过，上次我说 3899 个 issue 说明维护跟不上，先观望。今天它又上榜，issue 变成 3877，稍微降了点，但量级还是那个量级。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">上次我的点是代码类工具最怕“看起来聪明但不可靠”，一次错误建议的代价比十次正确建议还高。它到现在还没给出真实仓库上的准确率，我还是不服。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次问它是给个人还是给团队，团队的话得处理权限和代码隐私，首页完全看不到。今天这个问题依然悬着。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">TypeScript 项目依赖通常不轻，我先看启动方式和是否需要额外服务。文档要是没写清楚怎么接入现有项目，我不会碰。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它日增 1148 star 还在涨，说明大家仍然愿意为“代码 agent”这个故事买单，但 star 和使用是两回事。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程判断：先观望，等它把 issue 压下来、把部署和接入写清楚。现在这个状态我不推荐。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">一句收：它得先证明自己在真实仓库里靠谱，而不是在 demo 里。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>DeepTutor是一个面向终身学习的个性化辅导系统，旨在为学习者提供持续、贴合个人情况的教学支持。项目以Python实现，提供官方文档站点deeptutor.info及合作入口，围绕长期陪伴式的学习辅导场景构建。资料未披露更多具体功能细节，其定位强调“终身”与“个性化”两个方向。典型使用场景是个人长期学习与教学辅助，目标用户包括自学者、学生及教育工作者。今日新增1034star，总star52916，主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/HKUDS/DeepTutor" target="_blank">HKUDS/DeepTutor →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个也回访过，上次结论是先看架构图和 docker-compose，没有的话 star 数先打折。今天 issue 从 284 降到 252，稍微好转，但架构问题没变。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">上次我质疑“lifelong”这个词很重，跨会话状态管理和遗忘策略是最没标准答案的部分。它要是没写清楚旧记忆怎么衰减，lifelong 就是个营销词。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次问的是用户三个月后回来它还认不认得，这个信任问题比功能列表重要得多。今天我还是这个问题。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Python 项目依赖一堆模型服务，部署文档写了吗，这是我最关心的。252 个 issue 说明要么用户量大要么维护跟不上，两者我都要看。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的个性化到底是不是可评估的，如果只是把历史对话塞进 context，那不算创新。得看它有没有独立的用户建模层，这个区分很关键。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以我先看仓库里有没有像样的架构图和 docker-compose，没有的话这个 star 数我先打个折。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">一句收：tutor 类产品最难的是让用户相信它记得我、而且记得对，这个比日增多少 star 重要。</div>
+    <div class="time-tag">12:15</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
