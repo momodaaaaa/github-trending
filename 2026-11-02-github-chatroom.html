@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年11月02日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年11月02日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>T3Code是一个“agentharness控制面”，用于解决在本机运行多个编码智能体时缺乏统一、可远程操作入口的问题。它提供iOS、Android移动端、Web端和基于Electron的桌面端，可控制本机已配置好的ClaudeCode、Codex、Cursor、GrokBuild、OpenCode、GoogleAntigravity和fx等订阅服务中的智能体；项目强调性能、远程可用与真正开放，若方向不符可自行fork改造。典型用户是已在本机配置多种编码智能体、希望用统一界面远程调度与查看的开发者和团队。今日新增3094star、总star38319、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/pingdotgg/t3code" target="_blank">pingdotgg/t3code →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">t3code 又上榜了，上次我们聊完的结论是先观望，等它把 issue 压下来、把部署和接入写清楚。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，上次我说 star 和使用是两回事，现在看这个判断还是成立，日增三千多，但 issue 从三千八涨到将近四千了。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">3946 个 issue，维护速度明显跟不上新增用户。我还是那句话，TypeScript 项目依赖不轻，文档没写清楚怎么接入现有仓库，我不会碰。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我倒是想问，它现在有没有给出一个明确的用户画像？是给个人开发者还是团队？我打开首页如果 30 秒看不明白它是给谁的，那这个 star 数就是虚火。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上它还是那个老问题，代码 agent 最怕看起来聪明但不可靠，它有没有公开真实仓库上的准确率数据？没有的话这波增长说明不了什么。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程判断没变，继续观望。issue 不降、接入文档不补，我不推荐给任何人。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>claude-mem是一个为智能体提供跨会话持久上下文的工具，解决每次新会话都要重新交代背景、历史工作丢失的问题。它会捕获智能体在会话中做的各种操作，用AI压缩后，在后续会话中把相关上下文重新注入，支持ClaudeCode、OpenClaw、Codex、Gemini、Hermes、Copilot、OpenCode等多种智能体。典型用户是长期用编码智能体做多轮、跨天项目的开发者，希望减少重复说明、保持工作连续性。今日新增1526star、总star109478、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/thedotmack/claude-mem" target="_blank">thedotmack/claude-mem →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">claude-mem 我们上次也聊过，当时的结论是 idea 方向对，但缺可复现的评估数据。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，我上次说压缩策略如果是 LLM 一把梭，召回精度和噪声控制就没有可评估的指标。现在它还是没给出“注入前后任务成功率对比”，这是我最大的疑问。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">176 个 issue，比上次的一百五十八个涨了一点，说明真实场景里还在踩坑。我还是先看存储后端，本地 SQLite 还是外部服务，这决定部署难度。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">从用户角度我关心的是，用户怎么知道它记住了什么、又忘了什么？如果记忆是黑盒，用户不敢把重要上下文交给它。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">而且它支持一堆 agent 的列表越来越长，这反而让我怀疑每个集成的深度。广度铺开但深度不明，这不是新东西，是旧问题换了包装。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程判断：文档把存储和清理机制写清楚了，我才推荐试用，现在还是观望。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>AIEngineeringHub是一个面向LLM、RAG和真实AI智能体应用的学习资源库，解决AI工程知识分散、缺少可动手实践案例的问题。仓库以JupyterNotebook为主，收录93个以上可直接运行的生产级项目，覆盖LLM、RAG、Agents等主题的深入教程与真实应用示例，并标明适合不同技能水平，便于读者实现、改造和扩展。典型用户是希望系统学习并动手搭建AI应用的初学者、从业者和研究者。今日新增1191star、总star40373、主要语言JupyterNotebook。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/patchy631/ai-engineering-hub" target="_blank">patchy631/ai-engineering-hub →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个是新面孔，Jupyter Notebook 的教程仓库，四万 star。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">教程类仓库我得泼点冷水，LLM 和 RAG 的教程满地都是，它的差异化在哪？如果只是把 arxiv 上的东西复述一遍，那价值有限。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我打开这种仓库第一反应是，它是给谁看的？是给想转行的工程师，还是给已经在上手的人？定位不清的话，收藏的人多、真跑的人少。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Notebook 项目最大的坑是环境，依赖版本一乱就跑不起来。134 个 issue 不算多，但我得看它有没有锁版本、有没有 requirements。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">有意思的是它日增一千多，说明大家确实需要“能跑的示例”而不是论文。如果它的 notebook 是真能一键跑通的，那这个需求是真实的。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程判断：教程类我不看 star 看能不能跑，能跑通我就认，跑不通就是收藏夹垃圾。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>Hex是一个面向Mac、Windows和Linux的本地语音听写工具，解决在任意应用中快速输入文字、又不想让语音数据离开本机的问题。使用方式是按住快捷键说话、松开后由设备端完成转写并粘贴到当前应用；首次运行会下载语音模型，之后数据不出本机，实验性功能放在侧边栏底部的Labs中，并提供stable与dev两个更新通道及多平台安装包。典型用户是需要在各类桌面应用中频繁口述输入、注重隐私的Mac、Windows和Linux用户。今日新增1179star、总star3412、主要语言Rust。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/anomalyco/hex" target="_blank">anomalyco/hex →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">hex，Rust 写的本地语音听写，跨三个平台，这个我有点兴趣。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">语音转写不是新东西，Whisper 系方案一大堆。它的区别是纯本地还是调云端？这决定了隐私叙事成不成立。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">这个我反而觉得用户价值很清楚，本地听写解决的是隐私和延迟两个真实痛点。但我要问，第一次打开它，用户知道要按哪个键说话吗？</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Rust 项目依赖通常比 TypeScript 轻，这是加分项。70 个 issue 对一个三千 star 的新项目算健康，我得看它 macOS 之外的平台是不是真能用，还是只有 mac 能跑。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">技术上关键看它用的是现成模型还是自己训的，如果是打包 Whisper，那创新在工程集成不在模型，这不丢人但要说清楚。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对，用户不关心你用什么模型，只关心我说完话它出字快不快、准不准。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程判断：这个我愿意自己装一下试试，Rust 加本地，部署门槛应该不高。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>OpenMausBot是一个开源的GrokBot替代品，解决用户希望拥有自己的AI机器人团队、又不想绑定闭源服务的问题。它在聊天应用中为每个侧边栏机器人配置真实智能体，底层由本地运行的Claude或Codex驱动，各自拥有独立人格、模型、云端计算机和已连接应用，用户可像联系人一样对话、观察其工作并审批关键操作，主打自带智能体、本地优先、使用已有模型。典型用户是希望以聊天方式管理多个本地AI智能体并保留控制权的开发者与个人用户。今日新增922star、总star10656、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/milind-soni/OpenMausBot" target="_blank">milind-soni/OpenMausBot →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">OpenMausBot，上次聊过，当时我说 TypeScript 加虚拟机部署依赖重，文档没写清楚资源要求之前不推荐。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，上次我还说它把自己绑在“开源 Grok Bot alternative”这个定位上，差异化不清楚。现在 640 个 issue，比上次的 614 又涨了。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">issue 还在涨，说明基础问题没答清楚。我还是先看 docker-compose 和资源要求，几个核多少内存，这个不写明白就是给极客玩的。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次问的是用户第一件想做的事是什么，这次我还是这个疑问。开一台虚拟机对普通用户来说不是需求，是负担。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它得说清楚 agent 循环和工具调用跟现有方案有什么不同，不然“alternative”这个词就是蹭定位。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">工程判断没变，门槛高、文档不清，不推荐。今天就到这吧。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
