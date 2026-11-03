@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年11月03日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年11月03日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>T3Code能让你在手机、网页或桌面应用上统一操控电脑里已装好的各种编程助手。适合同时订阅了多个编程助手、希望随时远程查看和调度它们工作的人。它本身不提供模型服务，而是作为这些助手的控制入口，支持iOS、Android、Web和Electron桌面端，前提是相应助手已在本机配置好。项目以TypeScript编写，强调性能、远程可用和开放，若方向不合意可自行fork改造。今日新增3229star、总star42180、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/pingdotgg/t3code" target="_blank">pingdotgg/t3code →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">t3code 我们上次聊过，当时我卡在接入文档和 issue 增长上，今天它日增三千多，我想先确认的还是那件事——它到底怎么接进你现有的开发环境。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这次资料里它自称是“agent harness 控制面”，说白了就是给你电脑上已经装好的 Claude Code、Codex、Cursor 这些 agent 套一层统一遥控器，手机、网页、桌面都能操作。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以它卖的不是新 agent，是“一个入口管所有 agent”。对同时开了好几个订阅、又想在手机上盯进度的人，这个目标挺具体；但如果只用一家 agent，价值就弱很多。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景就是你在外面用手机看一眼本机正在跑的 Codex 任务、切个 agent 继续干。最小尝试我建议先在一台机器上装好它支持的某个 agent，只验证“能否连上并下发一次任务”，别急着全量接。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">边界在 README 那句警告：它目前只支持列表里部分 agent，而且“在你机器上已配好才能控制”是前提。它宣称 best-in-class，但没给可靠性数据，我不会把宣称当事实。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能容忍的人是愿意自己折腾配置、且确实多 agent 并用的开发者；只想开箱即用或者单 agent 的人，现在这 4391 个 issue 和不明朗的接入文档，值得先跳过。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我这次态度松一点，但结论还是先小范围试连，跑通再谈推荐。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>agent-desktop让AI助手能够读取并操作电脑上的桌面应用。适合想让AI代劳点击、填写、切换桌面软件等操作，而不只停留在浏览器里的开发者。它通过操作系统的无障碍树来识别界面元素并执行操作，以命令行工具形式提供，可通过npm安装，采用Apache-2.0许可，由VercelLabs出品。今日新增2275star、总star10126、主要语言Rust。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/vercel-labs/agent-desktop" target="_blank">vercel-labs/agent-desktop →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">下一个是 vercel-labs 的 agent-desktop，Rust 写的，一句话是让 AI agent 通过操作系统的无障碍树去读和操作桌面应用。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">无障碍树就是系统给读屏软件用的那套界面结构，agent 顺着它找按钮、填框，比纯截图点击更结构化。这是资料明确说的机制，但具体识别准确率没写。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">应用场景很直观：让 agent 帮你操作一个没有 API 的老桌面软件，比如整理某个内部工具里的表格。对不想写自动化脚本的人，这个门槛看着比 RPA 低。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最小尝试我会先挑一个结构简单的桌面应用，只让它完成“读出一个窗口里的字段”这种只读任务，确认它真能拿到界面结构，再考虑让它点东西。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">边界要分清：它读的是无障碍树，那些没做好无障碍支持的应用可能根本暴露不出控件，这不是它的问题但会限制可用范围。资料没提支持哪些平台，这点得自己核实。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合愿意在受控环境里试自动化、且能接受“某些应用就是读不到”的人；如果你要的是稳定跑生产流程，现在信息不够，别拿它顶。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">先只读、先小应用，跑通再谈写操作。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>claude-mem能让AI助手记住你之前会话里做过的事，下次接着用。适合长期用编程助手做项目、苦于每次都要重新交代背景的人。它在会话期间记录助手的操作，用AI压缩后，在后续会话中把相关内容重新注入，从而保持上下文连贯，支持ClaudeCode、Codex、Gemini、Copilot、OpenCode等多种助手。今日新增1803star、总star110847、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/thedotmack/claude-mem" target="_blank">thedotmack/claude-mem →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">claude-mem 也是回访，上次我盯的是存储后端和清理机制，今天它日增一千八，支持列表还更长了，我想看看这两个问题有没有进展。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的定位是给各种 agent 做跨会话记忆：抓会话内容、用 AI 压缩、下回再把相关片段注入。方向我上次就说对，但压缩和召回的质量仍然没有可复现的评估数据。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">用户最关心的还是上次那句——我怎么知道它记住了什么、忘了什么。如果记忆是黑盒，把重要上下文交给它就不放心。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用是你在一个项目上断续干好几天，新开会话时它能自动带上之前的决定。最小尝试我建议先在一个不敏感的玩具项目上跑几轮，看它注入的内容对不对，别一上来就接正式仓库。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">边界在于“压缩”这一步：资料说是 AI 压缩，但没说用什么模型、在哪跑、失败怎么办。这不是缺点，是待核实项，得看文档写没写清楚。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合能接受记忆不完全可控、且愿意定期检查的人；把关键上下文当唯一真相来源的人，现在该跳过，至少等它把记忆可见性讲明白。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我还是那句，存储和清理写清楚了再推荐，但可以先在玩具项目上验证。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>Hyprland是一款外观精致、可高度定制的Linux桌面窗口管理器。适合追求炫酷动画与灵活布局、愿意动手配置的Linux用户。它基于Wayland，采用动态平铺布局，提供渐变边框、多种模糊、发光、阴影和动画等效果，支持自定义贝塞尔与弹簧曲线，并具备插件系统和便捷的进程间通信。它完全独立实现，不依赖wlroots、libweston、kwin或mutter。今日新增509star、总star39987、主要语言C++。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/hyprwm/Hyprland" target="_blank">hyprwm/Hyprland →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Hyprland 是老面孔了，Linux 圈用了很多年，今天又上榜。它是独立的动态平铺 Wayland 合成器，简单说就是替代你桌面环境那一层，窗口自动排布还带一堆视觉效果。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料强调它 100% 独立，不基于 wlroots、mutter 这些现成底座，自己实现 Wayland 特性。好处是可控，代价是生态兼容得自己扛，这点资料没细说。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合谁很清楚：愿意花时间调配置、喜欢平铺和动画的 Linux 用户。不适合想要装完就用、或者依赖某些特定桌面功能的人。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景是多窗口开发时窗口自动铺满不重叠，配合它强大的插件和 IPC。最小尝试我建议先在虚拟机或备用机器上装，跑一遍默认配置，确认你的显卡和常用软件没问题再换主力。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">边界是它的自定义和插件很强，但配置成本和学习曲线是真实门槛，资料只讲了能力没讲上手难度，这得自己评估。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能容忍折腾、并且把桌面当爱好的人很合适；把电脑当纯工具、不想维护配置的人，用现成桌面环境更省心。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">老项目了，稳定性有积累，但换桌面这种事，先虚拟机试。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这个项目把一次ClaudeCode会话变成一支完整的游戏开发团队。适合想借助AI独立推进游戏开发、又希望流程像真实工作室一样分工协作的人。它内置49个AI角色、74项工作流技能，以及15个钩子和14条规则，用一套协调机制模拟真实工作室的层级与分工。项目以Shell编写，基于ClaudeCode，采用MIT许可。今日新增1379star、总star33676、主要语言Shell。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/Donchitos/Claude-Code-Game-Studios" target="_blank">Donchitos/Claude-Code-Game-Studios →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最后这个是 Claude-Code-Game-Studios，把 Claude Code 包装成一个“游戏工作室”，号称 49 个 agent、74 个 skill 加一套协作系统。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">本质是一堆预写的 agent 定义、技能和规则文件，让一个 Claude Code 会话里模拟出策划、程序、美术等分工。这是编排层的活，不是模型能力本身变强。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">目标人群挺明确：想用 AI 辅助做小游戏、又愿意按它的工作室流程走的人。但“49 个 agent”听着唬人，实际协作效果资料没给，得自己判断。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用是让它按角色分工推进一个小游戏原型。最小尝试我建议先拿一个很小的玩法 demo，只启用其中几个角色跑通一轮，看产出是否真比单 agent 好，别一上来就全开。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">边界在于这是 Shell 加配置文件，依赖 Claude Code 本身；多 agent 编排常见的协调开销和互相干扰，资料没提怎么处理，这是待验证的问题，不是已证实的缺陷。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合愿意按它那套流程走、把小项目当练手的人；如果你要的是确定能交付的商业项目，这种编排目前证据不足，先别押。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">先小 demo、少角色，验证编排有没有实际增益，再决定要不要深入。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
