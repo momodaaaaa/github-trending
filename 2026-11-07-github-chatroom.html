@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年11月07日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年11月07日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一套帮程序员在日常开发中更稳地使用AI编程助手的技能配置，让AI按可控的小步骤配合干活，而不是大包大揽替你写代码。适合已经在用AI辅助写代码、但觉得现有流程难以掌控或出错后不好排查的工程师。这些技能来自作者自己每天使用的.agents目录，设计上刻意保持小巧、易改、可自由组合，避免像一些全流程托管方案那样夺走开发者对过程的控制权。项目以Shell为主，今日新增2070star，总star316820，主要语言Shell。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个 skills 仓库我们上次聊过，当时我说它连 README 和能跑的例子都没有，部署无从谈起，今天它挂在榜上，我先想核实一件事：描述和 README 现在到底把每个 skill 要什么、怎么用讲清楚了没有。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料里作者明确说了自己的立场，嫌 GSD、BMAD、Spec-Kit 那类“替你管流程”的做法夺走控制权，所以他做的是小而可组合的 skill，这个定位比上次清楚多了，但每个 skill 到底靠什么保证质量，资料还是没给。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对普通工程师来说，可组合听着自由，实际意味着你得自己拼、自己担责任，适合那些本来就有自己工作流、愿意动手改的人，想要开箱即用一套完整流程的，这方向正好相反。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景我想到的是把日常重复的工程动作，比如提交前检查、改一处代码顺手补测试，做成 agent 能调的小块，最小尝试我建议先只挑一个 skill，在自己的一个真实小任务上跑一遍，看它给的步骤你是不是看得懂、敢照着做。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这里得区分作者宣称和自己验证，他说这些是“每天用来做真实工程”的，但资料里没有评估方法，也没说依赖哪个 agent 环境，这些得自己核实。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能容忍“每个 skill 要自己拼、没有统一质量背书”的人可以试一个，想要一装就放心用全套的，先别碰。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那就还是老规矩，先拿一个 skill 在一个真实任务上试，别一次全铺开。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>它帮AI助手在查数据前先弄清企业里数据放在哪、每个指标是什么意思、该不该用，从而减少答得快但答错的情况。适合要让AI做业务数据分析、又对结果准确性有要求的企业开发团队。这个Python框架从企业元数据出发生成本体，打通已有的语义模型和知识图谱，并统一不同系统间互相矛盾的定义，再通过MCP、命令行和API提供给各类AI助手使用，同时支持对生成结果做校验。今日新增2015star，总star9167，主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/NVIDIA/auto-ontology" target="_blank">NVIDIA/auto-ontology →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">auto-ontology 我们上次也聊过，当时我给的方案是一个指标、两个来源，看它能不能把定义冲突暴露出来，今天我想核实的是它那套 Discover、Ground、Validate 到底有没有把“怎么接你的数据源”说清楚。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料这次把定位讲得更实在了，它是在你已有语义模型之上补一层上下文，告诉 agent 数据在哪、什么意思、该不该用、从哪来，通过 MCP、CLI、API 暴露出去，但支持哪些数据源、MCP 具体怎么接，资料还是没写。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合的是已经被“同一个指标两个数”坑过、手里有元数据治理、愿意先做对齐的团队，如果你只是想让 agent 查个表，这层就是过度设计。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景还是营收那个例子，财务和销售两个系统定义不一样，最小尝试我维持上次的思路但更具体：挑一个指标、两个来源，先跑 Discover 看生成的图里这两个定义长什么样，再跑 Validate 看它报不报冲突。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">补充一个核实动作，63 个 issue 只是线索，翻一眼有没有跟你数据源类型相关的，尤其“连不上某类元数据”这种，比看总数有用。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能接受先在一个指标上试错、并且有人维护语义模型的人可以上，要开箱即用的团队先跳过。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那就还是那句，一个指标两个来源，先看它报不报冲突。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一款打开就能快速写代码的编辑器，还能让多人同时在一个项目里协作编辑。适合嫌现有编辑器不够快、或需要和同伴实时一起改代码的开发者。它由Atom和Tree-sitter的作者打造，用Rust编写以追求高性能，支持macOS、Linux和Windows，可直接下载或通过系统包管理器安装，网页版尚未推出；源码以GPL-3.0-or-later为主，部分组件采用Apache-2.0。今日新增306star，总star93711，主要语言Rust。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/zed-industries/zed" target="_blank">zed-industries/zed →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">zed 是第一次聊，Rust 写的高性能多人协作编辑器，出自 Atom 和 Tree-sitter 那批人，这个背景值得说一句。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料里明确的是 macOS、Linux、Windows 都能装，网页版还在讨论中没上，这是有依据的限制，别的地方没提的能力我不替它补。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对普通开发者来说，多人协作编辑这个点是真的能改变协作方式的，比如结对改同一份代码，但前提是你和同事都得迁到 zed，这个迁移成本得自己权衡。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景我想到的是远程结对，两个人同时在一个文件里改，省掉屏幕共享来回念，最小尝试我建议先在一台机器上装好、打开一个现有项目，确认你常用的语言和插件能不能撑住日常编辑，再谈协作。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它开源主要是 GPL-3.0，部分是 Apache-2.0，这个对想拿它做二次分发的人是有实际影响的，得看自己场景。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合愿意为编辑体验换工具、并且团队能一起迁的人，如果你的工作流深度绑在现有编辑器插件上，先别急着换。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">先装一台、跑通自己日常项目，再考虑拉同事进来。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个免费开源的代码编辑器，写代码、找文件、调试程序都能在同一个窗口里完成。适合从初学者到专业开发者、以及想基于它做二次开发的团队。该仓库是微软与社区共同开发VisualStudioCode的Code-OSS项目，除了代码和问题追踪，还公开路线图、每月迭代计划和收尾计划；正式版在此基础上加入微软定制内容，以微软产品许可发布，而仓库源码采用MIT许可。今日新增301star，总star195046，主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/microsoft/vscode" target="_blank">microsoft/vscode →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">vscode 上次我们聊过，当时我说它上榜不是新闻，能一直稳在榜上才是本事，今天它又回来了，我想核实的是它这次上榜有没有新东西，还是纯惯性。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料这次只给了仓库介绍，Code - OSS 是微软和社区一起开发的地方，产品是在它基础上加微软定制的发行版，MIT 许可，这些是事实，但今天新增三百多 star 背后是什么，资料没说。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对普通用户来说，它的价值一直是生态和插件多、上手门槛低，这个没变，问题是插件一多就容易乱，补全弹窗、抢焦点这些老毛病还在不在，得自己试。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景就是日常写代码，编辑、导航、调试一条龙，最小尝试我建议别折腾配置，先按默认装好，用一周看它在你主力语言上顺不顺手，再决定要不要往里加插件。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">两万多个 open issue 只是线索，不代表维护跟不上，微软养得起，但对你个人来说，关心的是你遇到的那个问题有没有人在处理。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合想要生态成熟、愿意接受一定配置复杂度的人，如果你追求极简、不想被插件绑架，可以看看别的。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以它上榜不稀奇，稳不稳还得看你自己用一周的感受。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>它是一套用来搭建网页和手机应用界面的工具库，开发者描述界面该长什么样，数据变化时界面会自动更新。适合要做网页或跨平台应用前端、希望代码结构清晰易维护的开发者和团队。它采用声明式写法让界面随状态变化自动渲染，以组件为单位封装各自的状态再组合成复杂界面，组件逻辑用JavaScript编写而非模板，因此便于传递数据；同时不限定技术栈，可在服务端用Node渲染，也能用于移动应用。今日新增248star，总star252278，主要语言JavaScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/react/react" target="_blank">react/react →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">react 也是第一次聊，前端老牌库了，声明式、组件化、一套代码多端渲染，这三点是它 README 里自己讲的。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料里明确的是它不假设你技术栈的其余部分，所以能在不改现有代码的前提下加新功能，服务端用 Node 渲染、移动端走 React Native，这些是它宣称的能力，具体项目里顺不顺得看你的场景。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对普通开发者来说，生态大、招人好招、资料多，这是实打实的好处，代价是概念不少，状态管理、渲染这些新手得花时间，不是装上就能写。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景就是做一个有交互的界面，状态一变它帮你更新对应的组件，最小尝试我建议别一上来搭大项目，先用它做一个只有一两个组件的小页面，把数据变、界面跟着变这条链路跑通。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">二十五万 star 是积累出来的，不代表它适合所有人，如果你的页面很简单、几乎没交互，可能用不上它这套。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合要做中大型交互界面、并且团队愿意投入学习的人，只想做个静态展示页的，先别为它上这套。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那就先做个小页面跑通数据到界面这条链路，再谈要不要深用。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
