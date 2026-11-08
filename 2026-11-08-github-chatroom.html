@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年11月08日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年11月08日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这个项目能让你的编程助手兼职当安全审计员，按固定流程把代码里的安全隐患查一遍。适合需要定期做安全检查、又想让AI帮忙分担重复工作的开发团队。它把审计拆成六个阶段：先摸清架构、信任边界和输入入口，生成架构说明和覆盖清单；再按清单派独立的检查员逐项排查，并设评审角色找漏；接着对候选问题做验证，输出结构化、机器可读的结论，再由独立环节核对记录，最后给出不绑定具体目标的报告。它源自Cloudflare漏洞发现工具链的早期版本，是那套多阶段系统的单仓库起点。今日新增2085star、总star65849、主要语言JavaScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/cloudflare/security-audit-skill" target="_blank">cloudflare/security-audit-skill →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个我们上次聊过，当时我卡在宿主依赖和“崩了会怎样”没写清，今天它又冲到榜上，我想先看这轮有没有补上这些。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我注意到它 README 这次把六阶段流程写得更具体了，侦察、覆盖式排查、候选验证、结构化输出、独立记录核验都在，但这仍是作者自述的流程，验证层本身准不准资料里没有评估数据。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">上次我问“用户到底要细节还是要一句过没过”，这次描述里“target-neutral reporting”听着像在回应，但普通开发者打开还是不知道第一步该干嘛。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景我想到的是接 CI，让 agent 按覆盖账本跑一遍、产出机器可读的问题清单；最小尝试我建议先在一个小仓库手动跑一次，看 coverage-ledger.json 长什么样、报告你能不能读懂，别一上来就挂流水线。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，它宣称“independently verified”，但独立核验是怎么做的、误报率多少，资料没给，这得自己拿已知有漏洞的样本试。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">我先手动跑通一个小仓库再说，崩溃行为和宿主依赖那块还是没看到，往 CI 里放我继续观望。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这个项目让你在聊天软件里拥有一队自己的AI助手，每个都能干活、能操作一台云端电脑。适合想自建AI助手团队、又希望数据留在本地的人。侧边栏里每个助手都是真实运行的智能体，底层是本地跑的Claude或Codex，各自有独立人格、模型、云端电脑和已连接的应用；你可以像联系人一样和它们对话、看它们工作、对关键操作做审批。项目主打自带智能体、本地优先、使用你已有的模型，是GrokBot的开源替代品，与xAI、Meta、OpenAI、Manus均无关联。今日新增1955star、总star17113、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/milind-soni/OpenMausBot" target="_blank">milind-soni/OpenMausBot →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">OpenMausBot 也是回访，上次我说 issue 在涨、资源要求没写清，这次新增快两千 star，但我还是先找 docker-compose 和几个核多少内存。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它这次的定位话术更长，把自己和 Grok Bot、Meta Muse、OpenAI dots 都对比了一遍，还说每个 bot 是本地跑的 Claude 或 Codex，但 agent 循环跟现有方案差在哪，资料还是没讲。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次问普通用户第一件想做的事是什么，这次描述说“像联系人一样跟它们聊、看它们干活、批准要紧的事”，这算回答了交互，但“每台虚拟机”对普通人还是负担。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景是给每个 bot 配独立虚拟机和自己的应用，适合想让多个 agent 分头干活的团队；最小尝试我建议先在一台开发机上装好、只开一个 bot 跑个简单任务，确认资源占用和审批流程你能接受。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它说 bring-your-own-agent、本地优先、用你已有的模型，这个方向有实用价值，但“local-first”到底哪些数据不出本机，资料没细说，得自己核实。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">愿意自己配环境、能接受每个 bot 一套虚拟机的极客可以试；想开箱即用、只想让 AI 帮干一件小事的，先跳过。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那就先单机单 bot 试，资源要求还是没写明白，我不推荐给不折腾的人。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这个工具能用一个用户名去各大社交网站搜索，查这个人注册了哪些账号。适合做开源情报调查、账号排查或想确认自己网络足迹的人。它覆盖400多个社交网络，用Python编写，按官网说明安装后从命令行运行，输入用户名即可批量查询各站点是否存在对应账号。项目2018年创建，长期维护，官网提供安装、用法和参与贡献的文档。今日新增1766star、总star100688、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/sherlock-project/sherlock" target="_blank">sherlock-project/sherlock →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Sherlock 是老项目了，2018 年建的，按用户名在 400 多个社交网络里查账号，这用途很直白。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它本质是逐个站点请求、看返回判断账号存不存在，所以能力边界就在“公开可查的用户名”上，私密账号、需要登录的站点它碰不到，这个从描述能推出来。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">具体场景我想到的是自己的用户名被人冒用，想快速看看散落在哪些平台；或者做品牌的人查自家名字有没有被占。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最小尝试我建议先装好，只拿自己的一个用户名跑一次，看它列出来的站点和结果准不准，别一上来就批量扫别人。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">得提醒一点，各站点反爬和限流策略会变，结果可能有漏报或误报，资料没给准确率，得自己抽查；另外拿它查他人账号涉及合规，这个得自己把握。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能容忍“结果要自己复核、部分站点可能失效”的人可以用；想拿它做自动化监控或者要百分百准确的，不适合。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">先拿自己名字试一次，看清它给什么、漏什么，再谈怎么用。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一款速度很快的代码编辑器，还支持多人同时协作编辑。适合嫌现有编辑器卡顿、或需要和同事一起写代码的开发者。它由Atom和Tree-sitter的作者打造，用Rust编写，可在macOS、Linux、Windows上直接下载或通过包管理器安装，网页版尚未推出。源码主要以GPL-3.0-or-later许可发布，部分组件为Apache-2.0，第三方依赖的许可信息由cargo-about自动校验，缺失会导致CI失败。今日新增1114star、总star94312、主要语言Rust。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/zed-industries/zed" target="_blank">zed-industries/zed →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Zed 我们上次聊过，当时我建议先在一台机器装好、跑通自己日常项目再谈协作，今天它又上榜，我想知道这轮有什么新东西值得跟进。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料里还是那几条：Rust 写的高性能多人编辑器，Atom 和 Tree-sitter 作者做的，GPL-3.0 为主、部分 Apache-2.0，这个许可证对想二次分发的人仍有实际影响。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次说深度绑现有编辑器插件工作流的人别急着换，这个判断没变，多人协作是它的卖点，但团队一起迁的成本还是那道坎。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景还是远程结对，两个人同时改一个文件，省掉屏幕共享来回念；最小尝试我建议先装一台、打开你正在做的真实项目，确认常用语言和插件撑得住，再拉一个同事试协作。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">多人协作具体怎么同步、冲突怎么处理，资料没细讲，这个得实际两个人改同一处试试才知道。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">愿意为编辑体验换工具、团队能一起迁的人适合；工作流离不开现有插件生态的，先别动。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">还是老规矩，先一个人跑通日常项目，再考虑拉人。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这个仓库收集了作者每天实际使用的AI助手技能，帮人踏踏实实做工程而不是随手糊代码。适合正在用AI编程助手、又不想被固定流程绑住手脚的工程师。作者认为GSD、BMAD、Spec-Kit这类方法虽然接管了流程，却也夺走了控制权，出问题难以排查；因此这些技能被设计得小巧、易改、可组合，直接来自他的.agents目录。仓库主要用Shell编写，并提供配套的邮件订阅。今日新增1100star、总star317797、主要语言Shell。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个也回访，上次我建议只挑一个 skill 在真实小任务上跑一遍，看步骤敢不敢照着做，今天它 star 冲到三十多万，我想看这轮有没有补上评估方法。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它这次 README 把定位讲清楚了：小、易改、可组合，针对 GSD、BMAD、Spec-Kit 那种“接管整个流程”的方案提出反过来，但依赖哪个 agent 环境、怎么算有效，资料还是没给。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次说想要一装就放心用全套的人先别碰，这个没变；它自己讲“不是 vibe coding、是做真实工程”，但首页没给一个能直接跑的例子。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景是把提交前检查、改代码顺手补测试这类重复动作做成 agent 能调的小块；最小尝试我建议先只挑一个 skill，在你一个真实小任务上跑，看它给的步骤你看不看得懂、敢不敢照做。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">作者宣称这些是他每天用的，但这是自述，没有对照实验，得自己在一个任务上验证效果，别把“日常在用”当成质量背书。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能接受每个 skill 自己拼、没有统一质量背书的人可以试一个；想整套开箱即用的，先跳过。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那就还是先拿一个 skill 试一个真任务，别一次全铺开，今天就到这吧。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
