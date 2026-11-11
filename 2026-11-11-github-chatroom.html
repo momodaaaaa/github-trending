@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年11月11日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年11月11日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个帮人快速搭出统一界面外观的开源设计系统，让网页应用长得整齐、用起来顺手。适合正在做React网页产品、又不想从零设计按钮和表单的团队。它源自Meta内部八年的积累，已支撑公司内13000多个应用，提供150多个无障碍组件、品牌主题、深色模式和现成模板，并附带命令行工具；基于React19+和StyleX，直接引入预构建CSS即可使用，无需额外构建插件或样式库。今日新增3108star、总star23137、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/meta/astryx" target="_blank">meta/astryx →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">astryx 我们上次聊过，当时说的是先拿小页面引两三个组件试，今天它又上榜了，我想跟进一下那个“agent ready”到底有没有更具体的说法。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，上次的疑问还在，README 这次还是只说“by people and the agents working alongside them”，没展开 agent 具体怎么接入，这个得自己去文档里找答案，不能凭标题判断。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">它说在 Meta 内部用了八年、撑起 13000+ 应用，这个背景比上次我们聊的时候更有分量，但对外开源还是 Beta，适合愿意盯版本变化的人。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用还是小团队统一风格界面，最小尝试不变：一个页面只引 CSS 加两三个组件，顺便把 agent 相关的文档翻一遍看有没有真东西。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">还有个具体限制，它绑 React 19+ 和 StyleX，你的项目跟不跟得上这个栈得自己评估，资料没说迁移成本。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能接受 Beta、愿意自己验证 agent 部分的可以试；要长期稳定依赖、又不想被特定 React 版本绑住的，还是先等等。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那就还是小页面两三个组件起步，别整套换。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>只要输入一个用户名，它就能帮你查出这个人在哪些社交网站上注册过账号。适合需要核实网络身份、做公开信息排查或安全研究的人。工具用Python编写，覆盖400多个社交网络，逐个站点检测该用户名是否存在并汇总结果，可通过命令行运行，官网提供安装与使用说明。今日新增2393star、总star109127、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/sherlock-project/sherlock" target="_blank">sherlock-project/sherlock →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">sherlock 也是回访，上次我们说先拿自己名字跑一遍看它给什么漏什么，今天又涨了两千多 star，我想知道站点失效那类老问题有没有变化。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它号称覆盖 400+ 社交网络，但覆盖广不等于每条结果准，误报和漏报都得自己逐条核对；open issues 四百多只是线索，值得翻翻站点失效类反馈，不能直接说维护差。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合的还是愿意自己核对、只做一次性排查的人；想拿它当自动化监控或者要百分百准确名单的，还是跳过。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景还是查自己品牌名有没有被抢注，最小尝试就是装好只跑自己的用户名，逐条看哪些站点给了明确结果、哪些直接报错。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">另外拿它查别人账号涉及合规，资料不会替你判断，这个边界得自己把握。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能容忍结果需要人工复核的人可以用；要的是开箱即用的确定结论，就别指望它。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那就还是先自己名字跑一遍，看清它给什么漏什么再谈怎么用。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一批教AI助手按固定步骤完成专门任务的说明书和配套脚本，让它在特定工作上做得更稳。适合想让Claude按公司规范写文档、跑内部流程或做自动化的人参考。每个技能就是一个文件夹，里面装着指令、脚本和资源，Claude会在需要时动态加载；仓库里既有艺术、音乐、设计等创意类示例，也有测试网页应用等技术任务示例，并附有技能标准的说明入口。今日新增1679star、总star192426、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/anthropics/skills" target="_blank">anthropics/skills →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">skills 也聊过两次了，上次说挑一个 skill 在真任务上跑，今天又上榜，我关心的是它跟 agentskills.io 那个标准到底是不是一回事。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，这仓库是 Anthropic 自己的实现，标准在 agentskills.io，两者是否完全一致、自定义 skill 怎么兼容，资料没给结论，得自己对照文档确认。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合愿意自己筛、自己验证单个 skill 的人；指望装上一套就放心用的，还是先别碰。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用还是把提交前检查、补测试这类重复动作做成 agent 能调的小块，最小尝试就是只挑一个 skill，在一个真实小任务上跑，看它给的步骤你敢不敢照做。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它说 skill 是 instructions、scripts、resources 的文件夹、Claude 动态加载，但加载时机和冲突怎么处理资料没细说，得自己观察。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能接受每个 skill 自己拼、没有统一质量背书的人可以试一个；想要整套开箱即用的，跳过。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那就还是先拿一个 skill 试一个真任务，别一次全铺开。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个用Rust语言写网页应用的成套工具，把前端到后端需要的东西打包在一起，省去自己拼装。适合已经会用Rust、想用它直接开发完整网站的人。项目定位为Rust的全栈框架，由tokio-rs组织维护，采用MIT许可证，代码托管在crates.io和docs.rs上，配有持续集成流程。今日新增192star、总star6879、主要语言Rust。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/tokio-rs/topcoat" target="_blank">tokio-rs/topcoat →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">topcoat 是第一次见，tokio 团队出的 Rust 全栈框架，号称“batteries-included”，我第一反应是它到底把哪些东西打包进来了。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料只给了“full full-stack framework for Rust”和 crates、docs 徽章，具体包含哪些层、跟 axum 这类现有方案怎么分工，README 片段没展开，这些得看文档确认，不能凭“全栈”两个字想象。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对普通人的门槛其实不低，Rust 本身就不是上手快的语言，它更适合已经在 Rust 生态里、想少拼几个轮子的人。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用我想到的是内部小工具或 API 服务，用一套框架把路由、模板、数据库这些串起来；最小尝试就是照文档起一个最小 demo，只跑通一个页面加一个接口，看它默认替你做了哪些决定。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">还有个限制是它创建时间很新，open issues 五十多只是线索，社区规模和长期维护情况资料不足，得自己看提交活跃度和文档完整度。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能接受新框架、愿意自己踩坑的 Rust 团队可以试；要成熟生态和大量现成教程的，先观望。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那就先起个最小 demo 跑通一页一接口，再决定要不要深入。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一款帮人管好个人钱财的应用，能看清收支、净资产和花销去向。适合想自己掌握账本、又希望有AI助手帮忙解读储蓄情况的人。界面包含现金流、净资产、支出等面板，旁边配有AI助手回答理财问题，支持深色模式，README提供多语言版本，项目用Ruby编写。今日新增159star、总star12072、主要语言Ruby。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/we-promise/sure" target="_blank">we-promise/sure →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">sure 上次聊过，当时我担心它链接腐烂和 issue 数字，今天它又上榜，我想跟进的是它那个 AI 助手到底接的是什么、数据怎么处理。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料里截图提到 AI assistant 回答储蓄问题，但没说是本地模型还是云端、数据传不传出去，这个对个人财务应用很关键，得自己去文档确认，不能猜。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">个人财务应用的核心是信任，界面看着挺清爽，但 892 个 open issues 说明用的人多、反馈也多，值得翻翻看是功能请求还是数据准确性问题。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用就是自己记账、看现金流和净资产，最小尝试我建议先用它自带的示例数据或只导入一小部分账单跑一遍，看分类和报表对不对得上预期，别一上来全量导入。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它用 Ruby 写、多语言 README 说明面向国际用户，但自托管还是托管服务、数据存哪里，资料片段没讲清，部署前得核实。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">愿意自己部署、能接受 AI 部分需要自己验证数据流向的人可以试；要把全部账户直接托付出去、又不想搞清楚数据去哪的，先别急。</div>
+    <div class="time-tag">12:09</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那就先用小部分数据跑一遍看报表准不准，再谈要不要全量用。</div>
+    <div class="time-tag">12:12</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
