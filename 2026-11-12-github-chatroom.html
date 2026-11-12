@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年11月12日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年11月12日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一套开箱即用的界面设计系统，让开发者不用从零搭按钮、表单等基础组件就能快速做出风格统一的网页应用。适合需要统一品牌外观、同时兼顾无障碍与深色模式的产品团队，尤其是用React开发前端的人。它源自Meta内部八年打磨、支撑过一万三千多个应用的实践，现以开源Beta形式发布，提供150多个无障碍组件、品牌级主题定制、现成模板和命令行工具；基于React19+与StyleX，直接引入预构建CSS并使用带类型的组件即可，无需额外构建插件或样式库。今日新增2776star、总star25191、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/meta/astryx" target="_blank">meta/astryx →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Astryx 上次我们聊过，那会儿还说小页面引 CSS 加两三个组件试，今天它又上榜了，我想跟进一下这个最小尝试还成不成立。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">上次的疑问还是那个，“agent ready”到底怎么个 ready 法，资料里还是没展开；另外它明说 Currently in Beta、绑 React 19+ 和 StyleX，这两条是硬限制。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能接受 Beta、项目本身就在 React 19 上的团队可以试；要长期稳定依赖、又不想被特定 React 版本绑住的，还是先跳过。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那我建议还是老办法，一个页面只引预构建 CSS 加两三个组件，顺便把 agent 相关文档翻一遍看有没有真东西，别整套换。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，导入预构建 CSS、用带类型的 React 组件，不用加构建插件，这点资料是写明的；但 150+ 组件里哪些在 Beta 下稳，资料没说，得自己挑着验。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以适合的是愿意自己盯版本变化的小团队，不适合把设计系统当基础设施、指望它几年不动的人。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一款帮人打理个人财务的应用，把收支、净资产和消费情况集中展示，还能向内置助手提问自己的储蓄状况。适合想自己掌控记账与理财、又希望数据留在自己手里的人使用。它以Ruby开发，界面提供明暗两种主题，仪表盘分栏呈现现金流、净资产、支出与资金流出，并配有可对话的AI助手；项目由社区共同参与建设，文档提供多语言版本。今日新增1078star、总star13046、主要语言Ruby。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/we-promise/sure" target="_blank">we-promise/sure →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Sure 也是回访，上次我建议先用示例数据或一小部分账单跑一遍看报表准不准，今天它又涨了一千多 star，我想知道这个起步方式还合不合适。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">上次没解决的问题还在：自托管还是托管服务、数据存哪里，这段资料依旧没讲清，部署前必须核实，尤其涉及财务数据。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">愿意自己部署、能接受 AI 助手部分要自己确认数据流向的人可以试；想把全部账户直接交出去、又懒得搞清楚数据去哪的，先别急。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最小尝试不变，先用自带示例数据或只导入一小部分账单，看分类、现金流和净资产报表对不对得上预期，别一上来全量导入。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它 README 有多语言版本，说明面向国际用户，但多语言不等于本地银行对接就全，这个也得自己查。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对，适合能接受自己折腾部署的人，不适合想要开箱即用记账 App 的普通用户。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一套给AI编程助手用的工作方法包，让助手按资深工程师的习惯一步步写代码，而不是随意生成。适合已经在用AI辅助开发、希望产出更规范可靠的人。它把需求定义、任务规划、增量构建等开发阶段固化成技能，并提供9个对应开发生命周期的斜杠命令，每个命令会自动启用相应技能，强调先写规格再写代码、任务拆小、一次只做一小块等原则，使助手在各阶段保持一致做法。今日新增787star、总star116022、主要语言JavaScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">agent-skills 上次我们聊过，当时我说可以关注但别急着塞进生产管线，等它把 validation 那块写清楚，今天它又上榜了。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这次资料里能看到它把 9 个 slash 命令映射到开发流程，比如 /spec 先写规格、/plan 拆小任务、/build 一次做一个切片，这个结构比上次看到的更具体。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">但 116,022 个 star 和 136 个 open issue 只是线索，说明关注度高，不能直接推出质量稳不稳，还是得看它实际跑起来效果。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最小尝试我建议挑一个自己的小需求，走一遍 /spec 到 /build，看它产出的规格和任务拆分是不是真能用，别一上来接整个项目。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它说的是把资深工程师的工作流和质量关卡打包成 agent 能遵循的技能，但“生产级”是作者宣称，实际可靠性得用自己的任务验。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合已经在用 AI 编码、想要点流程约束的人；如果只是偶尔让 AI 写个小脚本，这套命令反而重。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一套给AI编程助手补网页开发知识的技能包，帮它避开过时写法，改用现代浏览器已经支持的做法。适合用AI写网页、又担心它生成老旧代码的开发者。它把网页平台的专业知识、最佳实践和浏览器兼容数据直接嵌入编程助手，引导助手采用现代网页平台的能力；本仓库是其源码库，包含内容的编写、校准与评估代码和文档，项目由Chrome、Edge、Firefox与MDN团队及社区共同维护。今日新增159star、总star1855、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank">GoogleChrome/modern-web-guidance-src →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个是新的，之前没聊过。看名字是 GoogleChrome 下的仓库，但注意它是 modern-web-guidance 的源码仓，不是成品本身。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，它是一套技能，把 Web 平台知识、最佳实践和浏览器兼容数据嵌进编码 agent，目的是让 agent 别老用旧写法，多用现代 Web 能力。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我关心的是它适合谁——已经在用编码 agent 写前端、又常被旧模式坑的人；不用 agent 的人基本用不上。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用我想的是，让 agent 写前端时少产出过时的写法。最小尝试可以先看它的 Eval Dashboard 和文档，再挑一个自己熟悉的前端小任务试。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它由 Chrome、Edge、Firefox 和 MDN 团队共同维护，这个背书是资料写明的；但效果如何，资料给的是评估面板，不是结论，得自己看。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能接受“先读文档再看评估、再自己验”这个门槛的人可以试；想直接装了就万事大吉的，期望可能要放低。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个用Java语言实现各种经典算法的代码合集，方便人边看边跑、边改边学。适合正在学算法或准备面试、想对照Java代码理解原理的学生和开发者。所有实现以教学为目的，因此效率可能不如Java标准库；仓库目录列出全部已实现的算法，读者可通过Gitpod在线环境一键运行和修改代码，贡献前需先阅读贡献指南。今日新增51star、总star67076、主要语言Java。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/TheAlgorithms/Java" target="_blank">TheAlgorithms/Java →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最后一个也是新的，TheAlgorithms/Java，2016 年就创建的老仓库了，67,000 多 star，今天还涨了 51。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它定位很清楚，各种算法用 Java 实现，README 自己写明是 educational purposes，可能比 Java 标准库效率低，这点作者没藏着。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以适合谁很明确——学算法、看实现思路的学生和想复习的人；要写生产代码的，直接该用标准库。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用就是拿它当算法参考书，最小尝试我建议挑一个你正在学的算法，比如排序或图，找到对应实现跑一遍，再跟标准库对比看差别。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料说可以用 Gitpod 一键在线跑，这对不想配环境的人友好；但仓库里具体某个实现能不能跑通，还是得自己验。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能接受“学习用途、效率未必最优”这个前提的人随便看；指望它当生产依赖的，直接跳过。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">那今天就到这，老项目看变化、新项目看门槛，各自挑着试就行。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
