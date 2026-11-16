@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年11月16日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年11月16日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>它能让帮你写代码的AI助手随时掌握最新的网页开发最佳做法，不至于给出过时的写法。适合正在用AI编程助手开发网站、又担心建议落后的开发者。项目以TypeScript编写，内容围绕网页开发规范与最佳实践，供编码助手参考使用，帮助其在生成代码时对齐较新的Web标准。今日新增1219star、总star7297、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/GoogleChrome/modern-web-guidance-src" target="_blank">GoogleChrome/modern-web-guidance-src →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个我们上次聊过，今天又涨了一千多 star，我想先确认一下上次那个疑问——它到底怎么接进不同 agent，资料里有没有比之前更明确的说法。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">我看到的还是“skills”这个定位，让编码 agent 写前端时多参考现代浏览器做法；但它支持哪些 agent、接进去之后效果怎么衡量，README 片段没细说，得自己查文档和评估面板。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以还是那句话，它服务的是已经在用 agent 写前端的人，普通人拿它没什么直接用处；反复上榜说明关注度高，但跟“对我有用”是两件事。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用我想到的还是让 agent 少写老写法，比如做个小表单时对比它给的方案；最小尝试可以先翻文档和 Eval Dashboard，再挑一个自己熟的小任务让 agent 做一遍。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">要注意边界，评估面板给的是参考而不是结论，效果好不好得用你自己的任务验；四百多个 open issue 只能当线索，不能直接推维护有问题。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">能接受“先读文档、再看评估、再自己验”这个门槛的人可以试；想装完就万事大吉的，期望得放低。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>它让你在自己的产品里加入类似办公套件的编辑、计算、协作和文件处理能力，人和AI助手都能用。适合想把表格、文档等办公功能嵌入自家应用的开发团队。项目基于可扩展的开源核心构建，提供UniverOfficeSDK，将编辑、计算、协作与文件处理整合进产品，支持面向人和AI助手的使用场景。今日新增988star、总star26333、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/dream-num/univer" target="_blank">dream-num/univer →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Univer 我们上次聊过，当时说它是想当 agent 的办公底座；今天它又上榜了，我关心的是“能读写”和“改完不破坏格式”这个差距有没有更清楚的说法。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料里还是编辑、计算、协作、文件处理这套，定位是给产品嵌进去的 SDK；至于 agent 改完格式会不会乱，这属于硬骨头，资料没给结论，得自己拿目标文档类型试。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我作为设计师还是想问，agent 改了我的表格，我能不能一眼看出改了哪、为什么改；这个不解决，普通用户很难放心用。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用比如在自己的产品里嵌一个表格编辑，让 agent 帮忙填数；最小尝试可以先 npm 装起来跑个 demo，拿一种文档类型试读写，别一上来就铺六七种。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它从 2022 年活到现在还在更新，这点比很多短命项目靠谱；但一百多个 open issue 只是线索，要核实的是你关心的文档类型有没有已知坑。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合已经有产品、愿意投入团队工程量的人；如果只是想找个开箱即用的办公套件，目标就不对，应该跳过。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>它提供一个工作空间，让你随时掌握多个AI助手的进展，并把意见一键反馈给它们。适合需要同时跟进多个编程助手、还要和团队一起审阅代码的人。在这里可以梳理思路、做决定、制定计划、添加标注、审查代码并与团队共享，所有反馈能一次性发送给助手，减少来回沟通。今日新增866star、总star11939、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/backnotprop/plannotator" target="_blank">backnotprop/plannotator →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个是新面孔，plannotator，看描述是给 agent 工作流做标注、评审、把反馈一键发回给 agent 的工作区；我先想知道它到底卡在流程的哪一环。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">从描述看它是让人在 agent 干活时保持“在环”，可以塑形、决策、规划、批注、审代码、分享给团队；但具体怎么接 agent、支持哪些，资料没细说，这是要核实的。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对普通用户来说门槛可能在于你得先有一套 agent 工作流，它才有用武之地；如果你还没在用 agent 写代码，它大概帮不上忙。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景比如 agent 改完一段代码，你在它界面里圈出问题、写批注，再一键回传；最小尝试可以先拿一个小仓库接上，走一遍“批注—回传”看顺不顺。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">要提醒的是它创建时间不长，star 涨得快只说明关注度；一百九十多个 open issue 是线索不是结论，真正要看的是它跟你用的 agent 兼不兼容。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合已经在用 agent、又嫌反馈来回粘贴麻烦的人；如果你的目标是零配置上手，这个限制大概容忍不了，可以先跳过。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>它把Chrome浏览器的开发者工具交给写代码的AI助手使用，让助手能直接查看和调试网页。适合用AI助手做前端开发、需要排查页面问题的人。项目以TypeScript实现，为编码助手提供调用ChromeDevTools能力的接口，使其在开发过程中可以检查和调试网页。今日新增717star、总star57066、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank">ChromeDevTools/chrome-devtools-mcp →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">chrome-devtools-mcp 上次我们聊过，当时说让 agent 自己开页面、抓请求、看控制台；今天它还是榜首附近，我想跟进的是 MCP 和 CLI 两种方式怎么选这件事有没有更清楚。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">它的能力方向没变，就是把 DevTools 的能力交给编码 agent 用；但支持哪些 agent、两种接入方式各自适合什么场景，资料片段还是没细说，得自己查。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">愿意折腾 MCP 配置的人可以试；想开箱即用的，期望还是得放低，这点我上次的判断没变。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用比如让 agent 打开本地页面、截图、读控制台报错做调试；最小尝试可以先接一个 MCP server，让它打开一个本地页面，看能不能截图和读控制台。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">一百三十多个 open issue 只能当线索，要核实的是里面有没有你关心的坑；另外它 star 很高，但高 star 不等于你的场景就顺。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合做前端调试、能接受 agent 偶尔不听话的人；如果你的目标只是让 agent 写代码、不需要它自己看页面，那这个可以跳过。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>它为炒股和投资的人准备了一组给ClaudeCode用的技能，覆盖看行情、画技术图、查经济日历、筛选股票和开发交易策略。适合用AI辅助做股票研究与交易分析的投资者。项目以Python编写，把这些分析能力做成可调用的技能，方便在ClaudeCode中完成市场分析、技术图表、经济日历、选股筛选和交易策略开发等工作。今日新增706star、总star5645、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/tradermonty/claude-trading-skills" target="_blank">tradermonty/claude-trading-skills →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最后这个是 claude-trading-skills，给股票投资者和交易员用的 Claude Code 技能，覆盖行情分析、技术图表、经济日历、筛选器和策略开发；我先想知道它具体帮人做什么。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">从描述看它是一组技能包，让 Claude Code 在投研流程里多干几步；但每个技能实际能力边界、数据从哪来，资料没细说，这是要核实的重点。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">这类东西对普通人的门槛在于你得先有投研需求、又在用 Claude Code；而且涉及交易，期望得放低，别把它当投资建议。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景比如让它整理一份经济日历、跑个技术图表；最小尝试可以先挑一个技能，用历史数据跑一遍，看输出靠不靠谱，别直接上真金白银。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">要提醒的是行情和策略类工具很依赖数据源和时效，资料没给这些细节；五千多 star 只是关注度，不能当质量证明，得自己验。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合本来就在做投研、愿意自己核对数据的人；如果目标是让 AI 替你做交易决策，这个限制容忍不了，应该跳过。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">行，今天就到这儿，新项目先看边界，老项目看新变化，别被 star 数带着走。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
