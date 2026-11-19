@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年11月19日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年11月19日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这个项目能把你手头零散的研究想法和实验记录，自动整理成一篇格式完整、可以直接投稿的论文。适合有实验结果但没时间逐段写论文、画图、查文献的研究人员和学生。它由多个分工不同的智能体协作完成：先生成提纲，再做文献综述，然后逐节撰写和打磨内容，并生成图表与概念示意图，最终输出LaTeX稿件。输入是不受格式限制的写作前材料，输出是接近投稿状态的论文。今日新增1524star、总star4372、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/google-research/paper-orchestra" target="_blank">google-research/paper-orchestra →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">今天第一个是谷歌云 AI 研究院出的 PaperOrchestra，把想法和实验日志变成投稿级 LaTeX 稿，多个 agent 分工写大纲、查文献、写正文、画图。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">这个定位我得说清楚，它宣称的是“从原始材料到可投初稿”，但“submission-ready”是作者的说法，不等于能过审稿。文献综合和图表生成是真做还是模板拼，README 片段没给细节。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对科研的人来说，痛点是真的——写论文最烦的是格式、文献和画图这种体力活，不是想法本身。但谁会信一个自动生成的文献综述？查重和引用准确性得自己兜。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用我想到的是把一堆实验记录整理成初稿框架，省掉排版和画图的时间。最小尝试别拿真论文试，先丢一份已经发表的论文的原始日志进去，看它能不能复现出像样的结构。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料里只看到多 agent 分工的描述，没说文献来源是哪个库、引用怎么校验，这两点不核实就没法判断它会不会编造参考文献。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合已经有完整实验数据、只卡在写作和排版的人；如果你连研究方向都没定，指望它替你“做研究”，目标就不对，该跳过。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">所以我建议先看它文档里对引用验证和图表数据来源怎么处理，这两块过了再谈用不用。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这个项目用来优化你日常使用的编程助手，让它在技能调用、记忆和安全性上表现更稳定。适合同时使用多个编程助手、希望统一管理其行为与开发流程的开发者。它围绕技能、直觉、记忆、安全和“研究先行”的开发方式提供一套配置与优化机制，可配合ClaudeCode、Codex、Opencode、Cursor等工具使用。项目以JavaScript实现，仓库中提供英文等多语言说明。今日新增1108star、总star306604、主要语言JavaScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">ECC 又上榜了，上次我们聊过，当时我的结论是继续观望，等它拿出能跑起来的前后对比数据，这次资料还是没给这个。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">上次我认可它把 review 和 audit 拆成独立命令的设计，这次描述变成“agent harness 性能优化系统”，还加了 skills、instincts、memory、security，范围比上次更大了，反而让我更想知道每个模块到底怎么落地。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我还是那个问题——我改完之后用户能感知到什么不同？现在关键词堆了一串，但 README 片段里没看到一条“装上前 vs 装上后”的具体例子。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">三十万 star、一百七十多个 issue，这个量级只能说明关注度高，不能说明大家真用起来了。我关心的集成路径这次也没更清楚。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，而且“security”这个词很重，它到底是沙箱隔离还是权限声明，资料没说，这个不核实我不敢往真实项目里接。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合愿意折腾 harness、自己会读源码的人去试；如果你只想让日常编码顺一点，这套东西的门槛可能比你想象的高，先别当第一选择。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最小尝试我还是那句，挑一个它文档里最明确的功能，单独跑一遍，看有没有可量化的差别，没有就先放着。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这个项目让写网页界面变得更简单，你按声明式方式描述界面，它会编译成高效的JavaScript代码。适合做前端开发、希望减少手动操作页面元素的开发者。它的核心是一个编译器，把声明式组件转换成能精准更新页面局部的JavaScript，而不是在运行时整体重绘。项目采用MIT许可，开发主要由志愿者推动，可通过OpenCollective支持。今日新增692star、总star89648、主要语言JavaScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/sveltejs/svelte" target="_blank">sveltejs/svelte →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Svelte 也回访了，上次我们聊的是编译式写法和小生态的取舍，这次还是那句“把声明式组件编译成高效 JS、外科手术式更新 DOM”，没变。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">上次米扣提的生态比 React 小一圈，这次资料里也没新证据推翻或补充，所以这个判断我还是保留，但它是取舍不是缺陷。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我补一点，对新手友好这点我上次说过，今天再看还是成立；只是团队选型时，“写起来轻快”和“招人好招、库多”是两笔账，得分开算。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用还是中小型交互页面或内部工具。最小尝试照旧，官网教程建个 demo，把列表渲染和更新跑通，感受一下编译式写法再决定。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">八万九千 star、一千三百多 open issue，用户多讨论多，issue 数不能直接读成维护跟不上，得看具体 issue 的活跃度，这点我上次说过，这次没变。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合愿意拿小生态换写起来轻快的人；如果团队已经重度押在某个大框架生态上，迁移成本要自己掂量，这个目标下就别硬换。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这个项目提供一个界面，让人更轻松地管理自己电脑或服务器上的Docker容器。适合自建服务、跑容器但不想天天敲命令行的个人用户和小团队。项目用Go编写，当前主分支为v3版本，2.x旧版本保留在release/2.x.x分支；功能建议已迁移到Discussions收集和投票，issues只用于报告缺陷。界面支持多语言本地化。今日新增547star、总star9856、主要语言Go。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/getarcaneapp/arcane" target="_blank">getarcaneapp/arcane →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Arcane 也聊过，上次我说拿它连一台已有 Docker 环境先试，别急着上生产，这次资料多了个信息：主分支是 v3，2.x 在另一个分支。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">对，这个分支切换本身值得注意，说明它在做大版本演进，但 README 片段还是没讲权限模型和多用户隔离，上次我提的这一点这次依然没答案。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">那句“Designed for Everyone”我态度没变，还是得懂点容器概念才用得顺；给完全不懂技术的家人用，界面和权限能不能兜住，得先确认。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用还是家用 NAS 或小服务器上管一堆容器，看状态、启停、看日志。最小尝试就是连一台已有的 Docker 环境，别碰生产。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">资料里能确认的还是多语言翻译、Go 包文档、BSD 许可这些，v3 到底改了什么、要不要迁移，README 片段没写，得翻发布说明核实。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合自建服务、愿意折腾一点的人；如果目标是给家人零门槛用，先确认权限隔离，兜不住就换方案。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这个项目收集了一批可直接装进Cursor编辑器使用的插件，帮你把常见开发工作交给助手处理。适合使用Cursor并想扩展其能力、复用现成工作流的开发者。仓库根目录下每个插件都是独立目录，各自带有.cursor-plugin/plugin.json清单文件；官方插件覆盖教学辅助、持续学习、团队协作流程、分支审查等类别，并列出插件作者与分类信息。今日新增314star、总star17258、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/cursor/plugins" target="_blank">cursor/plugins →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最后是 Cursor 官方插件仓库，也回访了，上次我说先挑一个最小可用插件跑起来看顺不顺，再谈生态，这次还是这个思路。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">上次我提的是六百多个 open issue 只能说明反馈多，不能推质量，得看官方响应速度；这次资料里插件列表更长了，但响应速度这块还是没法从数字直接判断。</div>
+    <div class="time-tag">11:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我上次的问题是“用户真的需要这个吗”，插件得给我一句跟模型直接说做不到的事；比如那个给 AGENTS.md 做增量记忆的，就比泛泛的工具更像有明确用途。</div>
+    <div class="time-tag">11:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用就是团队 CI、代码审查、记忆更新这些工作流。最小尝试先装一个跟你日常最贴的插件，跑一周看它有没有真省事。</div>
+    <div class="time-tag">11:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">官方出品的好处是文档大概率不会烂尾，坏处是绑死在自己的产品里，这个取舍上次说过，这次也没变，安装说明还是得先看。</div>
+    <div class="time-tag">12:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合已经在 Cursor 里干活、愿意试插件的人；如果你要的是脱离具体工具的通方案，这个目标就不对，先跳过。</div>
+    <div class="time-tag">12:03</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">行，五个都聊完了，一句话收场——回访下来，几个老问题还是那几个，等它们把“第一次用的人能不能跑通、跑通后有没有可感知的差别”说清楚。</div>
+    <div class="time-tag">12:06</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
