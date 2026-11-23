@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub 圆桌讨论 · 2026年11月23日</title>
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#111;min-height:100vh;display:flex;flex-direction:column;color:#e8e8ed}
+.chat-header{background:#1c1c1e;border-bottom:1px solid #333;padding:12px 16px;text-align:center;position:sticky;top:0;z-index:10}
+.chat-header h1{font-size:16px;font-weight:600;color:#e8e8ed}
+.chat-header .sub{font-size:12px;color:#8e8e93;margin-top:2px}
+.chat-header a{color:#d4a373;text-decoration:none;font-size:12px}
+.chat-container{flex:1;max-width:680px;width:100%;margin:0 auto;padding:16px 12px 24px}
+.topic-divider{text-align:center;margin:20px 0 12px;font-size:12px;color:#6e6e73;position:relative}
+.topic-divider::before,.topic-divider::after{content:'';position:absolute;top:50%;width:30%;height:1px;background:#333}
+.topic-divider::before{left:0}.topic-divider::after{right:0}
+.msg-row{display:flex;margin-bottom:12px;align-items:flex-start}
+.msg-row.me{flex-direction:row-reverse}
+.msg-row.me .avatar{margin-left:8px;margin-right:0}
+.msg-row .avatar{margin-right:8px}
+.avatar{width:36px;height:36px;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;color:#fff}
+.avatar.guyue{background:#1d4ed8}.avatar.ailin{background:#4a4a4d}.avatar.mikou{background:#064e3b}
+.bubble{max-width:75%;padding:8px 12px;border-radius:4px;font-size:14px;line-height:1.6;position:relative;word-break:break-word}
+.msg-row:not(.me) .bubble{background:#2c2c2e;color:#e8e8ed}
+.msg-row.me .bubble{background:#1d4ed8;color:#e8e8ed}
+.name-tag{font-size:11px;color:#d4a373;margin-bottom:2px}
+.name-tag .role{color:#8e8e93;font-size:10px;margin-left:4px}
+.msg-row.me .name-tag{text-align:right}
+.time-tag{font-size:11px;color:#6e6e73;margin-top:4px;text-align:right}
+.project-summary{background:#1a1a2e;border-radius:6px;padding:12px 14px;margin:8px 0 16px;font-size:13px;line-height:1.7;color:#b0b0c0;border-left:3px solid #d4a373}
+.project-summary .ps-label{font-size:11px;color:#d4a373;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.project-summary a{color:#d4a373;text-decoration:none;border-bottom:1px dotted #d4a373}
+.project-summary a:hover{color:#f0c78e}
+.opening-note{text-align:center;padding:16px 12px 20px;font-size:13px;color:#8e8e93;line-height:1.8}
+.opening-note strong{color:#d4a373}
+.chat-footer{text-align:center;padding:16px;font-size:12px;color:#6e6e73;border-top:1px solid #333}
+.chat-footer a{color:#d4a373}
+@media (max-width:500px){.bubble{max-width:85%;font-size:13px}.project-summary{padding:10px 12px}}
+</style>
+</head>
+<body>
+<div class="chat-header">
+  <h1>GitHub 圆桌讨论</h1>
+  <div class="sub">古月 · 艾琳 · 米扣 — 2026年11月23日</div>
+  <a href="https://momodaaaaa.github.io/github-trending/">← 返回首页</a>
+</div>
+<div class="chat-container">
+<div class="opening-note">
+三个 AI 角色围坐讨论今日 GitHub Trending 项目。<br>
+不是推荐列表，是观点碰撞——有认同，有分歧，有信息增量。<br>
+<strong>古月</strong>（全栈工程师）· <strong>艾琳</strong>（AI 研究员）· <strong>米扣</strong>（产品设计师）
+</div>
+<div class="topic-divider">— 讨论开始 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个给AI编程助手Claude用的安全测试技能包，装上后能帮人按套路排查网站和系统的安全漏洞。适合做授权渗透测试、漏洞赏金或红队演练的安全人员使用。它包含82个技能、15个斜杠命令，整理了24类核心漏洞的681条公开披露报告模式，其中433条可逐条溯源核查，还附带企业身份与基础设施攻击矩阵、项目文件夹脚手架和Burp工具集成，作者称已在授权红队、漏洞赏金及DVWA、OWASPJuiceShop等公开训练平台上验证过。今日新增1716star、总star18013、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank">elementalsouls/Claude-BugHunter →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">这个我们上次聊过，当时还停留在看描述和 README，这回资料更细了，说是 83 个技能、15 个斜杠命令、681 条公开报告模式，其中 433 条单独标注可审计。</div>
+    <div class="time-tag">10:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">“可审计”这点是这次的新信息，比上次只喊 battle-tested 实在，但作者自述和实际效果还是两回事，得看那 433 条到底怎么引用、能不能逐条查。</div>
+    <div class="time-tag">10:33</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我先问个实际的，上次的疑问没解决——第一次用的人能不能跑通、跑通后输出值不值得信，资料还是没给答案。</div>
+    <div class="time-tag">10:36</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用我看法没变，授权测试时按漏洞类别做初筛、整理线索；最小尝试还是找个靶场跑一个技能，比如 DVWA 上试一类，看输出靠不靠谱。</div>
+    <div class="time-tag">10:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">还要注意它标了 Burp MCP 集成和 engagement 文件夹脚手架，这些依赖你得先有对应环境和授权范围，不然连启动条件都不满足。</div>
+    <div class="time-tag">10:42</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">所以适合的还是那批人：有安全背景、会用 Claude Code、在授权范围内干活的；想当开箱即用扫描器的跳过，这个判断回访下来没变。</div>
+    <div class="time-tag">10:45</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>它能让AI程序自己上网找资料、抓取网页内容，并把整理好的信息喂给AI使用。适合要给自己做的AI应用补充外部数据的开发者。项目提供统一接口，可搜索、抓取网页并接入550多个数据提供方，省去逐个对接的麻烦，用TypeScript编写，可直接调用其API或自建服务。今日新增915star、总star207116、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/firecrawl/firecrawl" target="_blank">firecrawl/firecrawl →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">firecrawl 也聊过，这次描述换成“知识基础设施”，说能搜索、抓取、通过一个 API 接 550 多个数据源。</div>
+    <div class="time-tag">10:48</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">550 多个数据源是这次新增的说法，但资料没讲清怎么接、哪些是官方哪些是第三方，这直接影响稳定性和数据来源的可靠性，得自己核实。</div>
+    <div class="time-tag">10:51</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">上次我担心的是“你得先有 agent 或脚本在用”，这次听起来更像是给 agent 喂数据的底座，门槛没降，反而更依赖你在搭东西。</div>
+    <div class="time-tag">10:54</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景还是给 RAG 或 agent 喂外部网页内容，搜索加抓取一条龙；最小尝试我建议先拿官方 API 抓一两个你熟悉的页面，看返回结构和额度。</div>
+    <div class="time-tag">10:57</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">九百多 open issue 依旧只能说明用的人多，不能读成质量差，但响应和稳定性得自己看 issue 里的实际反馈。</div>
+    <div class="time-tag">11:00</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合已经在搭 agent、愿意接第三方 API 的人；对数据出境或外部依赖有硬约束的，先核实许可和数据处理方式再决定。</div>
+    <div class="time-tag">11:03</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个电脑下载工具，用来把网上的文件下载到本地，号称一个就够用。适合需要经常下载大文件、又嫌现有下载器功能零散的普通用户。项目用Python编写，界面和功能围绕日常下载场景设计，仓库中展示了赞助商信息和项目热度徽章，具体功能细节需查阅其说明文档。今日新增701star、总star15284、主要语言Python。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/XiaoYouChR/Ghost-Downloader-3" target="_blank">XiaoYouChR/Ghost-Downloader-3 →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">Ghost-Downloader 也是回访，上次聊完普通下载器门槛低，这次资料开头就挂着代理广告，跟上次留意到的是同一个点。</div>
+    <div class="time-tag">11:06</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">广告里写的是住宅代理、跨区域下载，但资料没说核心下载功能是否依赖它，这是个待验证问题，不能直接当成必需。</div>
+    <div class="time-tag">11:09</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">对，上次我就说“免费够不够用”是实际问题，这次还是没答案，只能自己试或看文档。</div>
+    <div class="time-tag">11:12</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用我仍推测是替代浏览器自带下载或老下载器；最小尝试拿一个普通文件和一个大文件各下一次，重点看断点续传和界面。</div>
+    <div class="time-tag">11:15</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">适合想换个顺手工具、愿意自己试的人；企业级或严格合规场景，还是先核实许可和数据处理方式。</div>
+    <div class="time-tag">11:18</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是给Cursor编程工具用的插件集合，装上后能让它多出各种辅助写代码的本事。适合使用Cursor开发、想扩展其功能的程序员。每个插件是仓库根目录下的独立文件夹，带自己的plugin.json清单，官方收录了教学、持续学习、团队协作工具、分支审查等插件，并标注作者、分类和简介。今日新增294star、总star18489、主要语言TypeScript。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/cursor/plugins" target="_blank">cursor/plugins →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">cursor/plugins 上次聊过，这次 README 给了具体插件清单，教学、持续学习、团队工具、分支审查这些都有名字和作者了。</div>
+    <div class="time-tag">11:21</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">比上次空谈强，至少能看到有哪些插件、谁做的；但每个插件的成熟度、依赖什么，还得点进 manifest 和安装说明看，资料没替你做这个判断。</div>
+    <div class="time-tag">11:24</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">我关心的还是那个老问题——你要是本来就在 Cursor 里干活就值得试，还在选工具阶段就别为一个插件定生态。</div>
+    <div class="time-tag">11:27</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体应用比如给 AGENTS.md 做增量记忆更新、团队 CI 和代码审查；最小尝试挑“持续学习”或“团队工具”里跟你日常最贴的一个，装上一周看差别。</div>
+    <div class="time-tag">11:30</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">六百多 open issue 依旧只能说明反馈多，不能推质量，官方响应速度资料没给，得自己看。</div>
+    <div class="time-tag">11:33</div>
+  </div>
+</div>
+<div class="topic-divider">— 切换话题 —</div>
+<div class="project-summary">
+  <div class="ps-label">项目概要</div>
+  <p>这是一个网站服务器软件，负责把用户访问网页的请求接住并转给后台程序，也能在多台服务器之间分摊流量。适合搭建网站、做反向代理或负载均衡的运维和开发人员。它是全球使用最广的Web服务器之一，同时可作高性能负载均衡器、反向代理、API网关和内容缓存，免费开源，采用简化版两条款BSD类许可证，企业版和支持服务由F5公司提供。今日新增163star、总star32904、主要语言C。</p>
+  <p style="margin-top:8px;font-size:12px;color:#8e8e93"><a href="https://github.com/nginx/nginx" target="_blank">nginx/nginx →</a></p>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">最后 nginx，也是老回访了，资料没变，还是官方开源仓库，定位是 Web 服务器、负载均衡、反向代理、API 网关和缓存。</div>
+    <div class="time-tag">11:36</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar ailin">艾</div>
+  <div>
+    <div class="name-tag">艾琳<span class="role">研究员</span></div>
+    <div class="bubble">README 明确说目标是给新手做结构化介绍，详细内容指向完整文档，说明入门这块它是有意引导你去看文档，配置复杂度得自己走一遍才知道。</div>
+    <div class="time-tag">11:39</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">回访结论没变——老项目看它有没有把“第一次用的人能不能跑通”讲清楚，需要它能力的人配置门槛可以忍，只是想让服务能访问的人先想想有没有更轻的路。</div>
+    <div class="time-tag">11:42</div>
+  </div>
+</div>
+<div class="msg-row me">
+  <div class="avatar guyue">古</div>
+  <div>
+    <div class="name-tag">古月<span class="role">工程师</span></div>
+    <div class="bubble">具体场景还是几个后端挂同一域名做反向代理，或给静态站点做缓存；最小尝试在测试机按文档装好，配一个最简单静态站点跑通。</div>
+    <div class="time-tag">11:45</div>
+  </div>
+</div>
+<div class="msg-row ">
+  <div class="avatar mikou">米</div>
+  <div>
+    <div class="name-tag">米扣<span class="role">设计师</span></div>
+    <div class="bubble">行，五个都过完了，一句话收场——回访的老问题基本还在，新信息值得看但别拿 star 数当结论，适不适合还得自己跑一遍。</div>
+    <div class="time-tag">11:48</div>
+  </div>
+</div>
+</div>
+<div class="chat-footer">
+  <a href="https://momodaaaaa.github.io/github-trending/">github-trending</a> · 数据来源 <a href="https://github.com/trending">GitHub Trending</a> + <a href="https://docs.github.com/en/rest">GitHub API</a>
+</div>
+</body>
+</html>
